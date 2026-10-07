@@ -183,7 +183,7 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
       ['Kits gardien', 12, 11.25, '13,08 $ pièce · 1 par équipe'],
       ['Taxes d’import (TVA 20 %)', 1, 248, 'Si le fournisseur est hors UE'],
       ['Logo sponsor sur la poitrine', 110, 4, '0 € si déjà imprimé dans le tissu'],
-      ['Logo sponsor sur la manche', 220, 2.5, '2 manches (2 partenaires Prime) · 0 € si imprimé dans le tissu'],
+      ['Logo sponsor sur la manche', 220, 2.5, '2 manches (2 sponsors Officiel) · 0 € si imprimé dans le tissu'],
       ['Nom et numéro au dos', 110, 5, ''],
       ['Livraison', 1, 40, '']
     ]],
@@ -207,9 +207,9 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
   ];
   // [formule, contenu, places, prix pour la saison]. Keep in sync with the sponsor offer page (offre/index.html).
   const FORMULAS = [
-    ['Titre', 'Naming « SFL présentée par… », logo face avant des 110 maillots, 2 bâches, spot mi-temps à tous les matchs, logo sur tout le live, Résumé du dimanche à son nom, 1 vidéo IA par mois, exclusivité de secteur', 1, 4000],
-    ['Prime', 'Logo sur une manche des maillots, 1 bâche dans l’axe de la caméra, spot mi-temps chaque dimanche, logo dans le bandeau du live, Top 5 de la journée à son nom', 1, 3000],
-    ['Club', '1 bâche sur le grillage, drapeau à l’entrée, spot mi-temps chaque dimanche, logo sur les affiches et flyers, cité pendant le live', 1, 2000]
+    ['Principal', 'Naming « SFL présentée par… », logo face avant des 110 maillots, 2 bâches dans l’axe de la caméra, spot mi-temps à tous les matchs, logo sur tout le live, Résumé du dimanche à son nom, 1 vidéo IA par mois', 1, 2500],
+    ['Officiel', 'Logo sur une manche des maillots, 1 bâche, spot mi-temps chaque dimanche, logo dans le bandeau du live, un format vidéo à son nom (Top 5 ou Portrait du MVP)', 1, 1300],
+    ['Partenaire', '1 bâche, drapeau à l’entrée, spot mi-temps chaque dimanche, logo sur les affiches et flyers, cité pendant le live', 1, 800]
   ];
   const DEFAULTS = { pct: 10, players: 100, fee: 70 };
 

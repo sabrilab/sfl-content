@@ -118,7 +118,7 @@ footer { border-top: 1px solid var(--line); padding-top: 16px; font-size: 11px; 
   </section>
 
   <section>
-    <div class="sec-title"><div class="eyebrow">Les formules</div><h2>Choisissez votre place</h2><p class="muted" style="margin:0">Prix pour toute la saison. Cliquez sur une formule pour voir votre récapitulatif plus bas.</p></div>
+    <div class="sec-title"><div class="eyebrow">Les formules</div><h2>Choisissez votre place</h2><p class="muted" style="margin:0">La saison est partagée entre 4 partenaires au maximum, pour que chaque marque reste bien visible. Prix pour toute la saison. Cliquez sur une formule pour voir votre récapitulatif plus bas.</p></div>
     <div class="cards" id="cards"></div>
   </section>
 
@@ -146,19 +146,18 @@ footer { border-top: 1px solid var(--line); padding-top: 16px; font-size: 11px; 
   const SUNDAYS = 13;
   // Same formulas and prices as the "Formules sponsors" table of the budget page.
   const FORMULAS = [
-    { name: 'Club', kicker: 'La saison', places: '2 places', price: 2000, unit: 'la saison', items: [
+    { name: 'Partenaire', kicker: 'La saison', places: '1 place', price: 800, unit: 'la saison', items: [
       '1 bâche sur le grillage pendant les 13 dimanches', 'Drapeau à vos couleurs à l’entrée', 'Spot mi-temps chaque dimanche',
       'Logo sur les affiches et les flyers', 'Nom cité pendant le live', '1 publication SFL par mois'] },
-    { name: 'Prime', kicker: 'La saison', places: '2 places', price: 3000, unit: 'la saison', items: [
-      'Logo sur une manche des 110 maillots', '1 bâche dans l’axe de la caméra', 'Spot mi-temps chaque dimanche',
-      'Logo dans le bandeau du live', 'Le Top 5 de la journée présenté par votre marque', '2 publications SFL par mois'] },
-    { name: 'Titre', kicker: 'La saison · exclusif', places: '1 seule place', price: 4000, unit: 'la saison', top: true, items: [
-      'Naming : « SFL présentée par votre marque »', 'Logo face avant des 110 maillots', '2 bâches, dont l’axe de la caméra',
+    { name: 'Officiel', kicker: 'La saison', places: '2 places', price: 1300, unit: 'la saison', items: [
+      'Logo sur une manche des 110 maillots', '1 bâche au bord du terrain', 'Spot mi-temps chaque dimanche',
+      'Logo dans le bandeau du live', 'Un format vidéo à votre nom : le Top 5 de la journée ou le Portrait du MVP', '2 publications SFL par mois'] },
+    { name: 'Principal', kicker: 'La saison · exclusif', places: '1 seule place', price: 2500, unit: 'la saison', top: true, items: [
+      'Naming : « SFL présentée par votre marque »', 'Logo face avant des 110 maillots', '2 bâches dans l’axe de la caméra',
       'Spot mi-temps à tous les matchs', 'Logo à l’écran pendant tout le live', 'Le Résumé du dimanche présenté par votre marque',
       '1 vidéo IA dédiée chaque mois', 'Exclusivité de votre secteur'] }
   ];
   const OPTIONS = [
-    { name: 'Portrait du MVP à votre nom', note: 'Le portrait vidéo du meilleur joueur de chaque dimanche, présenté par votre marque (13 épisodes)', price: 400 },
     { name: 'Spot mi-temps en plus', note: 'Un 2e spot de 15 s chaque dimanche', price: 150 },
     { name: 'Vidéo IA dédiée', note: 'Une vidéo de votre marque générée par IA, diffusée dans le live', price: 100 },
     { name: 'Drapeau à l’entrée', note: 'Un beach flag à vos couleurs à l’entrée du complexe', price: 120 },
