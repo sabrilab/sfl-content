@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap">
 <style>
-/* Layout: one spreadsheet-style sheet. Short title line, then a single table: section rows, editable Qté and Prix cells, totals at the bottom. */
+/* Layout: spreadsheet look. Title + total, then two summary sheets side by side (dépenses / financement), then the detailed sheet. */
 :root {
   --bg: #f4f6fa;
   --sheet: #ffffff;
@@ -17,46 +17,58 @@
   --cell: #f1f6ff;
   --total: #0b1424;
   --total-fg: #ffffff;
+  --good: #0b7a3e;
+  --bad: #c2410c;
   --display: "Saira Condensed", "Arial Narrow", sans-serif;
   --body: "Barlow", "Segoe UI", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #070b14; --sheet: #0e1624; --grid: #22304a; --head: #131d30; --head-fg: #eef3fb;
   --sec: #16233a; --fg: #eef3fb; --muted: #93a3bd; --accent: #4aa2ff; --cell: #0a1220;
-  --total: #3d9bff; --total-fg: #06101f; color-scheme: dark;
+  --total: #3d9bff; --total-fg: #06101f; --good: #3fcf7f; --bad: #fb923c; color-scheme: dark;
 } }
 :root[data-theme="dark"] {
   --bg: #070b14; --sheet: #0e1624; --grid: #22304a; --head: #131d30; --head-fg: #eef3fb;
   --sec: #16233a; --fg: #eef3fb; --muted: #93a3bd; --accent: #4aa2ff; --cell: #0a1220;
-  --total: #3d9bff; --total-fg: #06101f; color-scheme: dark;
+  --total: #3d9bff; --total-fg: #06101f; --good: #3fcf7f; --bad: #fb923c; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body { background: var(--bg); color: var(--fg); font: 14.5px/1.4 var(--body); }
-.wrap { max-width: 1000px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 56px; display: grid; gap: 18px; }
+.wrap { max-width: 1000px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 56px; display: grid; gap: 22px; }
 @media (max-width: 520px) { .wrap { padding-inline: 16px; } }
 .top { display: flex; justify-content: space-between; align-items: end; gap: 12px 24px; flex-wrap: wrap; }
 h1 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(30px, 5vw, 42px); line-height: 1; margin: 0; }
 h1 b { color: var(--accent); font-style: italic; }
+h2 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 22px; line-height: 1; margin: 0 0 8px; }
 .top p { margin: 4px 0 0; color: var(--muted); }
 .sum { text-align: right; }
 .sum .v { font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
 .sum .n { color: var(--muted); font-size: 13px; }
+.duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+@media (max-width: 760px) { .duo { grid-template-columns: minmax(0, 1fr); } }
+.wrap > *, .duo > div { min-width: 0; }
 .scroll { overflow-x: auto; background: var(--sheet); border: 1px solid var(--grid); }
-table { border-collapse: collapse; width: 100%; min-width: 680px; font-variant-numeric: tabular-nums; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+#detail table { min-width: 680px; }
 th, td { border: 1px solid var(--grid); padding: 6px 10px; text-align: left; vertical-align: middle; }
-thead th { background: var(--head); color: var(--head-fg); font-weight: 600; font-size: 13px; position: sticky; top: 0; }
+thead th { background: var(--head); color: var(--head-fg); font-weight: 600; font-size: 13px; }
 .r { text-align: right; }
-td.q, td.pu { width: 96px; padding: 0; background: var(--cell); }
+td.in { width: 90px; padding: 0; background: var(--cell); }
 td.tot { width: 110px; font-weight: 600; }
-td.note { color: var(--muted); font-size: 13px; width: 32%; }
+td.note { color: var(--muted); font-size: 13px; width: 30%; }
+td small { display: block; color: var(--muted); font-size: 12.5px; }
 tr.sec td { background: var(--sec); font-weight: 700; text-transform: uppercase; font-size: 12.5px; letter-spacing: .06em; }
 tr.sec td.tot { font-size: 14px; letter-spacing: 0; }
 tr.int td.tot { color: var(--muted); font-weight: 500; }
+tr.strong td { font-weight: 700; background: var(--sec); }
 input { font: inherit; color: var(--fg); background: transparent; border: 0; width: 100%; padding: 6px 10px; text-align: right; font-variant-numeric: tabular-nums; }
 input:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; background: var(--sheet); }
 tfoot td { font-weight: 600; }
-tfoot td.pu input { font-weight: 600; }
-tfoot tr.grand td { background: var(--total); color: var(--total-fg); font-family: var(--display); font-weight: 800; font-size: 20px; text-transform: uppercase; border-color: var(--total); }
+tr.grand td { background: var(--total); color: var(--total-fg); font-family: var(--display); font-weight: 800; font-size: 20px; text-transform: uppercase; border-color: var(--total); }
+.verdict { border: 1px solid var(--grid); border-left: 4px solid var(--bad); background: var(--sheet); padding: 12px 16px; display: grid; gap: 2px; }
+.verdict.ok { border-left-color: var(--good); }
+.verdict b { font-family: var(--display); font-size: 24px; font-weight: 800; line-height: 1.1; }
+.verdict span { color: var(--muted); font-size: 13.5px; }
 .hint { color: var(--muted); font-size: 13px; margin: 0; }
 .hint i { display: inline-block; width: 12px; height: 12px; background: var(--cell); border: 1px solid var(--grid); vertical-align: -1px; margin-right: 4px; }
 </style>
@@ -65,116 +77,155 @@ tfoot tr.grand td { background: var(--total); color: var(--total-fg); font-famil
   <div class="top">
     <div>
       <h1><b>SFL</b> · Budget saison</h1>
-      <p>Captation et sponsoring · 13 dimanches, du 1er novembre 2026 au 24 janvier 2027</p>
+      <p>13 dimanches de matchs filmés, du 1er novembre 2026 au 24 janvier 2027</p>
     </div>
     <div class="sum"><div class="v" id="grand-top">—</div><div class="n" id="per-day">—</div></div>
   </div>
 
-  <div class="scroll">
-    <table>
-      <thead><tr><th>Poste</th><th class="r">Qté</th><th class="r">Prix unitaire</th><th class="r">Total</th><th>Note</th></tr></thead>
-      <tbody id="rows"></tbody>
-      <tfoot>
-        <tr><td colspan="3">Sous-total</td><td class="r tot" id="base">—</td><td></td></tr>
-        <tr><td>Imprévus</td><td></td><td class="pu"><input type="number" id="pct" min="0" step="1" aria-label="Pourcentage d'imprévus"></td><td class="r tot" id="cont">—</td><td class="note">% du sous-total</td></tr>
-        <tr class="grand"><td colspan="3">Total</td><td class="r" id="grand">—</td><td></td></tr>
-      </tfoot>
-    </table>
+  <div class="duo">
+    <div>
+      <h2>Ce qu'on dépense</h2>
+      <div class="scroll"><table>
+        <thead><tr><th>Rubrique</th><th class="r">Montant</th></tr></thead>
+        <tbody id="sum-rows"></tbody>
+        <tfoot><tr class="grand"><td>Total</td><td class="r" id="sum-total">—</td></tr></tfoot>
+      </table></div>
+    </div>
+    <div>
+      <h2>Comment on le finance</h2>
+      <div class="scroll"><table>
+        <thead><tr><th>Source</th><th class="r">Nombre</th><th class="r">Prix</th><th class="r">Montant</th></tr></thead>
+        <tbody>
+          <tr><td>Inscriptions joueurs<small>Participation à la saison</small></td>
+            <td class="in"><input type="number" min="0" step="1" id="f-players" aria-label="Joueurs inscrits"></td>
+            <td class="in"><input type="number" min="0" step="1" id="f-fee" aria-label="Prix de l'inscription"></td>
+            <td class="r tot" id="f-reg">—</td></tr>
+          <tr><td>Sponsors<small>Ce qu'il reste à trouver</small></td>
+            <td class="in"><input type="number" min="1" step="1" id="f-sponsors" aria-label="Nombre de sponsors"></td>
+            <td class="r" id="f-each">—</td>
+            <td class="r tot" id="f-spons">—</td></tr>
+        </tbody>
+        <tfoot><tr class="grand"><td colspan="3">Total financé</td><td class="r" id="f-total">—</td></tr></tfoot>
+      </table></div>
+    </div>
   </div>
-  <p class="hint"><i></i>Les cases teintées se modifient comme dans un tableur. Les totaux se recalculent seuls.</p>
+
+  <div class="verdict" id="verdict"><b id="v-main">—</b><span id="v-sub">—</span></div>
+
+  <div id="detail">
+    <h2>Le détail</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Poste</th><th class="r">Qté</th><th class="r">Prix unitaire</th><th class="r">Total</th><th>Note</th></tr></thead>
+        <tbody id="rows"></tbody>
+        <tfoot>
+          <tr><td colspan="3">Sous-total</td><td class="r tot" id="base">—</td><td></td></tr>
+          <tr><td>Imprévus</td><td></td><td class="in"><input type="number" id="pct" min="0" step="1" aria-label="Pourcentage d'imprévus"></td><td class="r tot" id="cont">—</td><td class="note">% du sous-total</td></tr>
+          <tr class="grand"><td colspan="3">Total</td><td class="r" id="grand">—</td><td></td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <p class="hint"><i></i>Les cases teintées se modifient comme dans un tableur. Tout le reste se recalcule seul.</p>
 </div>
 
 <script>
 (() => {
   const SUNDAYS = 13;
-  // [poste, qté, prix unitaire, note]
+  // [rubrique, [poste, qté, prix unitaire, note]]
   const DATA = [
-    ['Captation & régie', [
+    ['Matériel pour filmer', [
       ['iPhone 12 (caméras)', 3, 200, ''],
-      ['Mac mini M1 d’occasion', 1, 380, ''],
-      ['Batteries externes 20 000 mAh', 3, 30, ''],
-      ['Supports / trépieds smartphone', 3, 20, ''],
-      ['Routeur 5G + Wi-Fi 6 + Ethernet', 1, 220, ''],
-      ['Forfait SIM 5G (1er mois)', 1, 30, ''],
-      ['Écran portable régie', 1, 110, ''],
+      ['Mac mini M1 d’occasion (régie)', 1, 380, ''],
+      ['Batteries externes', 3, 30, ''],
+      ['Trépieds pour téléphone', 3, 20, ''],
+      ['Box internet 5G', 1, 220, ''],
+      ['Forfait 5G (1er mois)', 1, 30, ''],
+      ['Écran pour la régie', 1, 110, ''],
       ['Clavier + souris', 1, 30, ''],
-      ['SSD externe 1 To', 1, 80, ''],
-      ['Chargeur USB multiports', 1, 40, ''],
-      ['Câbles divers (Lightning / USB-C / Ethernet)', 1, 30, ''],
-      ['Multiprise / rallonge', 1, 20, ''],
-      ['Kit audio DJI 2 micros', 1, 150, ''],
-      ['Casque régie', 1, 30, ''],
-      ['Stream Deck DIY SFL', 1, 50, ''],
+      ['Disque dur externe 1 To', 1, 80, ''],
+      ['Chargeur multiprise USB', 1, 40, ''],
+      ['Câbles', 1, 30, ''],
+      ['Rallonge électrique', 1, 20, ''],
+      ['Micros sans fil (DJI)', 1, 150, ''],
+      ['Casque audio', 1, 30, ''],
+      ['Boîtier de commande du live', 1, 50, 'Stream Deck fait maison'],
       ['Protection pluie / soleil', 1, 30, ''],
-      ['Sac / caisse transport', 1, 40, ''],
-      ['Applications / licences', 1, 70, '']
+      ['Caisse de transport', 1, 40, ''],
+      ['Logiciels', 1, 70, '']
     ]],
-    ['Arbitrage', [
-      ['Arbitres (rémunération)', 26, 60, '2 arbitres × 13 dimanches'],
-      ['Charges sociales', 1, 0, 'Selon le statut des arbitres, à confirmer'],
-      ['Tenues arbitres', 2, 40, 'Maillot, sifflet, cartons']
+    ['Arbitres', [
+      ['Rémunération des arbitres', 26, 60, '2 arbitres × 13 dimanches'],
+      ['Charges sociales', 1, 0, 'Selon leur statut, à confirmer'],
+      ['Tenues des arbitres', 2, 40, 'Maillot, sifflet, cartons']
     ]],
-    ['Fonctionnement des dimanches', [
-      ['Forfait SIM 5G (mois 2 et 3)', 2, 30, ''],
-      ['Multistream', 3, 20, '3 mois'],
-      ['Stockage cloud des rushs', 3, 10, '3 mois'],
-      ['Défraiement bénévoles captation', 26, 15, '2 personnes × 13 dimanches'],
-      ['Consommables', 13, 5, 'Gaffer, piles, colliers']
+    ['Frais des dimanches', [
+      ['Forfait 5G (mois 2 et 3)', 2, 30, ''],
+      ['Diffusion sur plusieurs réseaux', 3, 20, '3 mois (YouTube, Twitch, Instagram)'],
+      ['Stockage des vidéos en ligne', 3, 10, '3 mois'],
+      ['Repas et transport des bénévoles', 26, 15, '2 bénévoles × 13 dimanches'],
+      ['Petites fournitures', 13, 5, 'Scotch, piles, colliers']
     ]],
-    ['Maillots sponsorisés', [
-      ['Création graphique du maillot', 1, 300, ''],
-      ['Kits joueurs (maillot + short + chaussettes)', 71, 11.25, '13,08 $ pièce (≈ 0,86 €/$) · 8 équipes × 8 joueurs + 10 % de réserve'],
-      ['Kits gardien', 8, 11.25, '13,08 $ pièce · 1 par équipe'],
-      ['TVA à l’import (20 %)', 1, 178, 'Si le fournisseur est hors UE'],
-      ['Logo sponsor poitrine', 79, 4, '0 € si maillot sublimé'],
-      ['Logo sponsor manche', 79, 2.5, '0 € si maillot sublimé'],
-      ['Numéro + nom au dos', 79, 5, ''],
-      ['Livraison et bon à tirer', 1, 40, '']
+    ['Maillots', [
+      ['Création du maillot', 1, 300, ''],
+      ['Kits joueurs (maillot, short, chaussettes)', 98, 11.25, '13,08 $ pièce · 100 joueurs + 10 réserve, moins les gardiens'],
+      ['Kits gardien', 12, 11.25, '13,08 $ pièce · 1 par équipe'],
+      ['Taxes d’import (TVA 20 %)', 1, 248, 'Si le fournisseur est hors UE'],
+      ['Logo sponsor sur la poitrine', 110, 4, '0 € si déjà imprimé dans le tissu'],
+      ['Logo sponsor sur la manche', 110, 2.5, '0 € si déjà imprimé dans le tissu'],
+      ['Nom et numéro au dos', 110, 5, ''],
+      ['Livraison', 1, 40, '']
     ]],
-    ['Visibilité autour du terrain', [
-      ['Bâches PVC sponsors 3 × 1 m', 6, 55, 'Sur le grillage, dans le champ des caméras'],
-      ['Beach flags à l’entrée', 4, 90, ''],
-      ['Roll-up partenaires', 2, 65, ''],
-      ['Mur photocall 2 × 2 m', 1, 220, 'Interviews, joueur du jour'],
-      ['Affiches A2 et flyers', 1, 120, 'Lot pour la saison'],
-      ['Fixations', 1, 40, 'Colliers, tendeurs, lests'],
-      ['Droit d’affichage du complexe', 1, 0, 'À vérifier avec le gestionnaire']
+    ['Affichage sponsors', [
+      ['Bâches sponsors (3 × 1 m)', 6, 55, 'Sur le grillage, visibles à la caméra'],
+      ['Drapeaux à l’entrée', 4, 90, ''],
+      ['Kakémonos (roll-up)', 2, 65, ''],
+      ['Mur pour photos et interviews', 1, 220, ''],
+      ['Affiches et flyers', 1, 120, 'Pour toute la saison'],
+      ['Fixations', 1, 40, ''],
+      ['Autorisation d’affichage', 1, 0, 'À vérifier avec le complexe']
     ]],
-    ['Contenus & pubs entre les matchs', [
-      ['Habillage du live et gestion OBS', 1, 0, 'Fait en interne'],
-      ['Jingles et spots sponsors', 1, 0, 'Fait en interne'],
-      ['Crédits IA pour les montages', 3, 30, '3 mois · highlights et formats courts'],
-      ['Crédits vidéo IA Seedance 2.5', 3, 60, '3 mois · prix à confirmer selon la plateforme'],
-      ['TV 55 pouces d’occasion + pied', 1, 380, 'Diffusion des spots sur place'],
-      ['Enceinte sur batterie', 1, 180, 'Jingles et annonces']
+    ['Vidéos et pubs', [
+      ['Habillage du live (OBS)', 1, 0, 'Fait en interne'],
+      ['Jingles et pubs sponsors', 1, 0, 'Fait en interne'],
+      ['IA pour monter les vidéos', 3, 30, '3 mois'],
+      ['Vidéos générées par IA (Seedance 2.5)', 3, 60, '3 mois · prix à confirmer'],
+      ['TV pour passer les pubs sur place', 1, 380, 'D’occasion, avec pied'],
+      ['Enceinte', 1, 180, 'Jingles et annonces']
     ]]
   ];
-  const DEFAULT_PCT = 10;
+  const DEFAULTS = { pct: 10, players: 100, fee: 70, sponsors: 5 };
 
   // Saved edits are tied to this version of the defaults, so updated figures are never hidden by old edits.
-  const KEY = 'sfl-budget-' + [...JSON.stringify(DATA)].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7);
+  const KEY = 'sfl-budget-' + [...JSON.stringify([DATA, DEFAULTS])].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7);
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
   const store = () => { try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} };
 
   const eur = v => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: Number.isInteger(Math.round(v * 100) / 100) ? 0 : 2 }).format(v);
+  const eur0 = v => eur(Math.round(v));
   const num = v => { const n = parseFloat(String(v).replace(',', '.')); return isFinite(n) && n >= 0 ? n : 0; };
   const $ = id => document.getElementById(id);
 
-  let html = '';
+  let html = '', sumHtml = '';
   DATA.forEach(([sec, lines], s) => {
     html += `<tr class="sec"><td colspan="3">${sec}</td><td class="r tot" id="s${s}"></td><td></td></tr>`;
+    sumHtml += `<tr><td>${sec}</td><td class="r tot" id="ss${s}"></td></tr>`;
     lines.forEach(([label, q, pu, note], i) => {
       const id = `${s}-${i}`;
-      const internal = note === 'Fait en interne';
-      html += `<tr${internal ? ' class="int"' : ''}><td>${label}</td>
-        <td class="q"><input type="number" min="0" step="1" id="q${id}" value="${saved['q' + id] ?? q}" aria-label="Quantité ${label}"></td>
-        <td class="pu"><input type="number" min="0" step="0.5" id="p${id}" value="${saved['p' + id] ?? pu}" aria-label="Prix unitaire ${label}"></td>
+      html += `<tr${note === 'Fait en interne' ? ' class="int"' : ''}><td>${label}</td>
+        <td class="in"><input type="number" min="0" step="1" id="q${id}" value="${saved['q' + id] ?? q}" aria-label="Quantité ${label}"></td>
+        <td class="in"><input type="number" min="0" step="0.5" id="p${id}" value="${saved['p' + id] ?? pu}" aria-label="Prix unitaire ${label}"></td>
         <td class="r tot" id="t${id}"></td><td class="note">${note}</td></tr>`;
     });
   });
+  sumHtml += `<tr><td>Imprévus <span id="ss-pct"></span></td><td class="r tot" id="ss-cont"></td></tr>`;
   $('rows').innerHTML = html;
-  $('pct').value = saved.pct ?? DEFAULT_PCT;
+  $('sum-rows').innerHTML = sumHtml;
+  $('pct').value = saved.pct ?? DEFAULTS.pct;
+  $('f-players').value = saved['f-players'] ?? DEFAULTS.players;
+  $('f-fee').value = saved['f-fee'] ?? DEFAULTS.fee;
+  $('f-sponsors').value = saved['f-sponsors'] ?? DEFAULTS.sponsors;
 
   function update() {
     let base = 0;
@@ -186,15 +237,39 @@ tfoot tr.grand td { background: var(--total); color: var(--total-fg); font-famil
         sub += t;
       });
       $(`s${s}`).textContent = eur(sub);
+      $(`ss${s}`).textContent = eur0(sub);
       base += sub;
     });
-    const cont = base * num($('pct').value) / 100;
-    const total = base + cont;
+    const pct = num($('pct').value);
+    const cont = base * pct / 100;
+    const total = Math.round(base + cont);
     $('base').textContent = eur(base);
     $('cont').textContent = eur(cont);
-    $('grand').textContent = eur(Math.round(total));
-    $('grand-top').textContent = eur(Math.round(total));
-    $('per-day').textContent = `soit ${eur(Math.round(total / SUNDAYS))} par dimanche`;
+    $('ss-pct').textContent = `(${pct} %)`;
+    $('ss-cont').textContent = eur0(cont);
+    [$('grand'), $('grand-top'), $('sum-total')].forEach(el => el.textContent = eur(total));
+    $('per-day').textContent = `soit ${eur0(total / SUNDAYS)} par dimanche`;
+
+    // Financing: registrations first, sponsors cover the rest.
+    const players = num($('f-players').value), fee = num($('f-fee').value);
+    const reg = players * fee;
+    const gap = Math.max(0, total - reg);
+    const nSp = Math.max(1, Math.round(num($('f-sponsors').value)) || 1);
+    $('f-reg').textContent = eur0(reg);
+    $('f-spons').textContent = eur0(gap);
+    $('f-each').textContent = eur0(gap / nSp);
+    $('f-total').textContent = eur0(reg + gap);
+    const share = total ? Math.round(reg / total * 100) : 0;
+    const v = $('verdict');
+    if (gap > 0) {
+      v.classList.remove('ok');
+      $('v-main').textContent = `Il reste ${eur0(gap)} à trouver avec les sponsors`;
+      $('v-sub').textContent = `Les inscriptions couvrent ${share} % du budget. Avec ${nSp} sponsor${nSp > 1 ? 's' : ''}, ça fait ${eur0(gap / nSp)} chacun.`;
+    } else {
+      v.classList.add('ok');
+      $('v-main').textContent = `Les inscriptions couvrent tout le budget`;
+      $('v-sub').textContent = `Il reste ${eur0(reg - total)} de marge avant même de compter les sponsors.`;
+    }
   }
   document.addEventListener('input', e => {
     if (e.target.tagName !== 'INPUT') return;
