@@ -53,9 +53,8 @@ header p { margin: 0; max-width: 60ch; font-size: 17px; color: var(--muted); }
 .spot p { margin: 0; font-size: 14px; color: var(--muted); }
 .spot svg { width: 28px; height: 28px; color: var(--accent); }
 
-.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-@media (max-width: 920px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 480px) { .cards { grid-template-columns: minmax(0, 1fr); } }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 760px) { .cards { grid-template-columns: minmax(0, 1fr); } }
 .card { font: inherit; color: var(--fg); text-align: left; background: var(--panel); border: 1px solid var(--line); padding: 18px; display: grid; gap: 12px; align-content: start; cursor: pointer; position: relative; }
 .card:hover { border-color: var(--muted); }
 .card[aria-pressed="true"] { border-color: var(--accent); background: var(--panel-2); box-shadow: inset 0 0 0 1px var(--accent); }
@@ -147,18 +146,19 @@ footer { border-top: 1px solid var(--line); padding-top: 16px; font-size: 11px; 
   const SUNDAYS = 13;
   // Same formulas and prices as the "Formules sponsors" table of the budget page.
   const FORMULAS = [
-    { name: 'Essai', kicker: 'Un dimanche', places: 'Ouvert', price: 80, unit: 'la journée', items: [
-      'Spot mi-temps à tous les matchs du dimanche', 'Logo dans le bandeau du live ce jour-là', '1 story SFL le jour du match', 'Le bon moyen de tester avant la saison'] },
-    { name: 'Club', kicker: 'La saison', places: '2 places', price: 300, unit: 'la saison', items: [
-      '1 bâche sur le grillage pendant les 13 dimanches', 'Logo sur les affiches et les flyers', '1 publication SFL par mois'] },
-    { name: 'Prime', kicker: 'La saison', places: '2 places', price: 800, unit: 'la saison', items: [
-      'Logo sur une manche des 110 maillots', '1 bâche dans l’axe de la caméra', 'Spot mi-temps chaque dimanche', 'Logo dans le bandeau du live', '2 publications SFL par mois'] },
-    { name: 'Titre', kicker: 'La saison · exclusif', places: '1 seule place', price: 1800, unit: 'la saison', top: true, items: [
+    { name: 'Club', kicker: 'La saison', places: '2 places', price: 2000, unit: 'la saison', items: [
+      '1 bâche sur le grillage pendant les 13 dimanches', 'Drapeau à vos couleurs à l’entrée', 'Spot mi-temps chaque dimanche',
+      'Logo sur les affiches et les flyers', 'Nom cité pendant le live', '1 publication SFL par mois'] },
+    { name: 'Prime', kicker: 'La saison', places: '2 places', price: 3000, unit: 'la saison', items: [
+      'Logo sur une manche des 110 maillots', '1 bâche dans l’axe de la caméra', 'Spot mi-temps chaque dimanche',
+      'Logo dans le bandeau du live', 'Le Top 5 de la journée présenté par votre marque', '2 publications SFL par mois'] },
+    { name: 'Titre', kicker: 'La saison · exclusif', places: '1 seule place', price: 4000, unit: 'la saison', top: true, items: [
       'Naming : « SFL présentée par votre marque »', 'Logo face avant des 110 maillots', '2 bâches, dont l’axe de la caméra',
-      'Spot mi-temps à tous les matchs', 'Logo à l’écran pendant tout le live', '1 vidéo IA dédiée chaque mois', 'Exclusivité de votre secteur'] }
+      'Spot mi-temps à tous les matchs', 'Logo à l’écran pendant tout le live', 'Le Résumé du dimanche présenté par votre marque',
+      '1 vidéo IA dédiée chaque mois', 'Exclusivité de votre secteur'] }
   ];
   const OPTIONS = [
-    { name: 'Format vidéo à votre nom', note: 'Le Résumé du dimanche ou le Top 5 de la journée, présenté par votre marque (13 épisodes)', price: 400 },
+    { name: 'Portrait du MVP à votre nom', note: 'Le portrait vidéo du meilleur joueur de chaque dimanche, présenté par votre marque (13 épisodes)', price: 400 },
     { name: 'Spot mi-temps en plus', note: 'Un 2e spot de 15 s chaque dimanche', price: 150 },
     { name: 'Vidéo IA dédiée', note: 'Une vidéo de votre marque générée par IA, diffusée dans le live', price: 100 },
     { name: 'Drapeau à l’entrée', note: 'Un beach flag à vos couleurs à l’entrée du complexe', price: 120 },
@@ -166,7 +166,7 @@ footer { border-top: 1px solid var(--line); padding-top: 16px; font-size: 11px; 
   ];
   const eur = v => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(v);
   const $ = id => document.getElementById(id);
-  let chosen = 2;
+  let chosen = 1;
   const opts = new Set();
 
   $('cards').innerHTML = FORMULAS.map((f, i) => `

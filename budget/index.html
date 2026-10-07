@@ -116,7 +116,7 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
     <h2>Formules sponsors</h2>
     <div class="scroll">
       <table id="formulas">
-        <thead><tr><th>Formule</th><th>Ce que le sponsor obtient</th><th class="r">Places</th><th class="r">Prix saison</th><th class="r">Montant</th></tr></thead>
+        <thead><tr><th>Formule</th><th>Ce que le sponsor obtient</th><th class="r">Places visées</th><th class="r">Prix saison</th><th class="r">Montant</th></tr></thead>
         <tbody id="f-rows"></tbody>
         <tfoot><tr class="grand"><td colspan="4">Total sponsors</td><td class="r" id="fo-total">—</td></tr></tfoot>
       </table>
@@ -207,10 +207,9 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
   ];
   // [formule, contenu, places, prix pour la saison]. Keep in sync with the sponsor offer page (offre/index.html).
   const FORMULAS = [
-    ['Titre', 'Naming « SFL présentée par… », logo face avant des 110 maillots, 2 bâches, spot mi-temps à tous les matchs, logo sur tout le live, 1 vidéo IA par mois, exclusivité de catégorie', 1, 1800],
-    ['Prime', 'Logo sur une manche des maillots, 1 bâche dans l’axe de la caméra, spot mi-temps chaque dimanche, logo dans le bandeau du live', 2, 800],
-    ['Club', '1 bâche sur le grillage toute la saison, logo sur les affiches et flyers, 1 publication SFL par mois', 2, 300],
-    ['Essai', 'Un dimanche : spot mi-temps, logo dans le live, 1 story SFL', 3, 80]
+    ['Titre', 'Naming « SFL présentée par… », logo face avant des 110 maillots, 2 bâches, spot mi-temps à tous les matchs, logo sur tout le live, Résumé du dimanche à son nom, 1 vidéo IA par mois, exclusivité de secteur', 1, 4000],
+    ['Prime', 'Logo sur une manche des maillots, 1 bâche dans l’axe de la caméra, spot mi-temps chaque dimanche, logo dans le bandeau du live, Top 5 de la journée à son nom', 1, 3000],
+    ['Club', '1 bâche sur le grillage, drapeau à l’entrée, spot mi-temps chaque dimanche, logo sur les affiches et flyers, cité pendant le live', 1, 2000]
   ];
   const DEFAULTS = { pct: 10, players: 100, fee: 70 };
 
