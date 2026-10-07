@@ -49,7 +49,7 @@ h2 { font-family: var(--display); font-weight: 800; text-transform: uppercase; f
 .wrap > *, .duo > div { min-width: 0; }
 .scroll { overflow-x: auto; background: var(--sheet); border: 1px solid var(--grid); }
 table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
-#detail table { min-width: 680px; }
+#detail table, #formulas { min-width: 680px; }
 th, td { border: 1px solid var(--grid); padding: 6px 10px; text-align: left; vertical-align: middle; }
 thead th { background: var(--head); color: var(--head-fg); font-weight: 600; font-size: 13px; }
 .r { text-align: right; }
@@ -100,9 +100,9 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
             <td class="in"><input type="number" min="0" step="1" id="f-players" aria-label="Joueurs inscrits"></td>
             <td class="in"><input type="number" min="0" step="1" id="f-fee" aria-label="Prix de l'inscription"></td>
             <td class="r tot" id="f-reg">—</td></tr>
-          <tr><td>Sponsors<small>Ce qu'il reste à trouver</small></td>
-            <td class="in"><input type="number" min="1" step="1" id="f-sponsors" aria-label="Nombre de sponsors"></td>
-            <td class="r" id="f-each">—</td>
+          <tr><td>Sponsors<small>Total des formules ci-dessous</small></td>
+            <td class="r" id="f-nsp">—</td>
+            <td></td>
             <td class="r tot" id="f-spons">—</td></tr>
         </tbody>
         <tfoot><tr class="grand"><td colspan="3">Total financé</td><td class="r" id="f-total">—</td></tr></tfoot>
@@ -111,6 +111,17 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
   </div>
 
   <div class="verdict" id="verdict"><b id="v-main">—</b><span id="v-sub">—</span></div>
+
+  <div>
+    <h2>Formules sponsors</h2>
+    <div class="scroll">
+      <table id="formulas">
+        <thead><tr><th>Formule</th><th>Ce que le sponsor obtient</th><th class="r">Places</th><th class="r">Prix saison</th><th class="r">Montant</th></tr></thead>
+        <tbody id="f-rows"></tbody>
+        <tfoot><tr class="grand"><td colspan="4">Total sponsors</td><td class="r" id="fo-total">—</td></tr></tfoot>
+      </table>
+    </div>
+  </div>
 
   <div id="detail">
     <h2>Le détail</h2>
@@ -172,7 +183,7 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
       ['Kits gardien', 12, 11.25, '13,08 $ pièce · 1 par équipe'],
       ['Taxes d’import (TVA 20 %)', 1, 248, 'Si le fournisseur est hors UE'],
       ['Logo sponsor sur la poitrine', 110, 4, '0 € si déjà imprimé dans le tissu'],
-      ['Logo sponsor sur la manche', 110, 2.5, '0 € si déjà imprimé dans le tissu'],
+      ['Logo sponsor sur la manche', 220, 2.5, '2 manches (2 partenaires Prime) · 0 € si imprimé dans le tissu'],
       ['Nom et numéro au dos', 110, 5, ''],
       ['Livraison', 1, 40, '']
     ]],
@@ -194,18 +205,42 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
       ['Enceinte', 1, 180, 'Jingles et annonces']
     ]]
   ];
-  const DEFAULTS = { pct: 10, players: 100, fee: 70, sponsors: 5 };
+  // [formule, contenu, places, prix pour la saison]. Keep in sync with the sponsor offer page (offre/index.html).
+  const FORMULAS = [
+    ['Titre', 'Naming « SFL présentée par… », logo face avant des 110 maillots, 2 bâches, spot mi-temps à tous les matchs, logo sur tout le live, 1 vidéo IA par mois, exclusivité de catégorie', 1, 1800],
+    ['Prime', 'Logo sur une manche des maillots, 1 bâche dans l’axe de la caméra, spot mi-temps chaque dimanche, logo dans le bandeau du live', 2, 800],
+    ['Club', '1 bâche sur le grillage toute la saison, logo sur les affiches et flyers, 1 publication SFL par mois', 2, 300],
+    ['Essai', 'Un dimanche : spot mi-temps, logo dans le live, 1 story SFL', 3, 80]
+  ];
+  const DEFAULTS = { pct: 10, players: 100, fee: 70 };
 
-  // Saved edits are tied to this version of the defaults, so updated figures are never hidden by old edits.
-  const KEY = 'sfl-budget-' + [...JSON.stringify([DATA, DEFAULTS])].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7);
-  let saved = {};
-  try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+  // Edits are saved by line name, so they survive updates of the page.
+  const KEY = 'sfl-budget';
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(KEY)); } catch (e) {}
+  if (!saved) {
+    saved = {};
+    // One-time pickup of edits made in earlier versions of this page (stored by position).
+    try {
+      const legacy = Object.keys(localStorage).filter(k => /^sfl-budget--?\d+$/.test(k))
+        .map(k => JSON.parse(localStorage.getItem(k)) || {})
+        .sort((a, b) => ('f-players' in a) - ('f-players' in b));
+      legacy.forEach(old => Object.entries(old).forEach(([k, v]) => {
+        const m = /^([qp])(\d+)-(\d+)$/.exec(k);
+        if (m) { const line = DATA[+m[2]]?.[1][+m[3]]; if (line) saved[m[1] + ':' + line[0]] = v; }
+        else if (['pct', 'f-players', 'f-fee'].includes(k)) saved[k] = v;
+      }));
+      localStorage.setItem(KEY, JSON.stringify(saved));
+    } catch (e) {}
+  }
   const store = () => { try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} };
 
   const eur = v => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: Number.isInteger(Math.round(v * 100) / 100) ? 0 : 2 }).format(v);
   const eur0 = v => eur(Math.round(v));
   const num = v => { const n = parseFloat(String(v).replace(',', '.')); return isFinite(n) && n >= 0 ? n : 0; };
   const $ = id => document.getElementById(id);
+  const cell = (id, key, def, step, label) =>
+    `<td class="in"><input type="number" min="0" step="${step}" id="${id}" data-key="${key}" value="${saved[key] ?? def}" aria-label="${label}"></td>`;
 
   let html = '', sumHtml = '';
   DATA.forEach(([sec, lines], s) => {
@@ -214,18 +249,23 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
     lines.forEach(([label, q, pu, note], i) => {
       const id = `${s}-${i}`;
       html += `<tr${note === 'Fait en interne' ? ' class="int"' : ''}><td>${label}</td>
-        <td class="in"><input type="number" min="0" step="1" id="q${id}" value="${saved['q' + id] ?? q}" aria-label="Quantité ${label}"></td>
-        <td class="in"><input type="number" min="0" step="0.5" id="p${id}" value="${saved['p' + id] ?? pu}" aria-label="Prix unitaire ${label}"></td>
+        ${cell('q' + id, 'q:' + label, q, 1, 'Quantité ' + label)}
+        ${cell('p' + id, 'p:' + label, pu, 0.5, 'Prix unitaire ' + label)}
         <td class="r tot" id="t${id}"></td><td class="note">${note}</td></tr>`;
     });
   });
   sumHtml += `<tr><td>Imprévus <span id="ss-pct"></span></td><td class="r tot" id="ss-cont"></td></tr>`;
   $('rows').innerHTML = html;
   $('sum-rows').innerHTML = sumHtml;
-  $('pct').value = saved.pct ?? DEFAULTS.pct;
-  $('f-players').value = saved['f-players'] ?? DEFAULTS.players;
-  $('f-fee').value = saved['f-fee'] ?? DEFAULTS.fee;
-  $('f-sponsors').value = saved['f-sponsors'] ?? DEFAULTS.sponsors;
+  $('f-rows').innerHTML = FORMULAS.map(([name, what, n, price], j) => `<tr>
+      <td><b>${name}</b></td><td class="note">${what}</td>
+      ${cell('fn' + j, 'fn:' + name, n, 1, 'Places ' + name)}
+      ${cell('fp' + j, 'fp:' + name, price, 50, 'Prix ' + name)}
+      <td class="r tot" id="ft${j}"></td></tr>`).join('');
+  [['pct', DEFAULTS.pct], ['f-players', DEFAULTS.players], ['f-fee', DEFAULTS.fee]].forEach(([id, d]) => {
+    $(id).dataset.key = id;
+    $(id).value = saved[id] ?? d;
+  });
 
   function update() {
     let base = 0;
@@ -250,30 +290,33 @@ tr.grand td { background: var(--total); color: var(--total-fg); font-family: var
     [$('grand'), $('grand-top'), $('sum-total')].forEach(el => el.textContent = eur(total));
     $('per-day').textContent = `soit ${eur0(total / SUNDAYS)} par dimanche`;
 
-    // Financing: registrations first, sponsors cover the rest.
-    const players = num($('f-players').value), fee = num($('f-fee').value);
-    const reg = players * fee;
-    const gap = Math.max(0, total - reg);
-    const nSp = Math.max(1, Math.round(num($('f-sponsors').value)) || 1);
+    // Sponsors: sum of the formulas.
+    let spons = 0, nSp = 0;
+    FORMULAS.forEach((_, j) => {
+      const n = num($('fn' + j).value), t = n * num($('fp' + j).value);
+      $('ft' + j).textContent = eur0(t);
+      spons += t; nSp += n;
+    });
+    $('fo-total').textContent = eur0(spons);
+
+    // Financing: registrations + sponsors against the total budget.
+    const reg = num($('f-players').value) * num($('f-fee').value);
+    const fin = reg + spons;
+    const diff = fin - total;
     $('f-reg').textContent = eur0(reg);
-    $('f-spons').textContent = eur0(gap);
-    $('f-each').textContent = eur0(gap / nSp);
-    $('f-total').textContent = eur0(reg + gap);
+    $('f-nsp').textContent = `${nSp} sponsor${nSp > 1 ? 's' : ''}`;
+    $('f-spons').textContent = eur0(spons);
+    $('f-total').textContent = eur0(fin);
     const share = total ? Math.round(reg / total * 100) : 0;
     const v = $('verdict');
-    if (gap > 0) {
-      v.classList.remove('ok');
-      $('v-main').textContent = `Il reste ${eur0(gap)} à trouver avec les sponsors`;
-      $('v-sub').textContent = `Les inscriptions couvrent ${share} % du budget. Avec ${nSp} sponsor${nSp > 1 ? 's' : ''}, ça fait ${eur0(gap / nSp)} chacun.`;
-    } else {
-      v.classList.add('ok');
-      $('v-main').textContent = `Les inscriptions couvrent tout le budget`;
-      $('v-sub').textContent = `Il reste ${eur0(reg - total)} de marge avant même de compter les sponsors.`;
-    }
+    v.classList.toggle('ok', diff >= 0);
+    $('v-main').textContent = diff >= 0 ? `Budget couvert, avec ${eur0(diff)} de marge` : `Il manque ${eur0(-diff)}`;
+    $('v-sub').textContent = `Inscriptions ${eur0(reg)} (${share} % du budget) + sponsors ${eur0(spons)}.` +
+      (diff < 0 ? ' Ajoute une place ou monte un prix dans les formules sponsors.' : '');
   }
   document.addEventListener('input', e => {
-    if (e.target.tagName !== 'INPUT') return;
-    saved[e.target.id] = e.target.value;
+    if (e.target.tagName !== 'INPUT' || !e.target.dataset.key) return;
+    saved[e.target.dataset.key] = e.target.value;
     store();
     update();
   });

@@ -1,0 +1,219 @@
+<title>Offre Partenaires SFL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@0,700;0,800;1,800&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: SFL print identity on screen. Brand header → key figures → where the brand shows → formula cards (pick one) → options → live recap. Deliberately dark-only, like the SFL brochures. */
+:root {
+  color-scheme: dark;
+  --bg: #05080f;
+  --panel: #0c1422;
+  --panel-2: #111c2f;
+  --line: #1f2d45;
+  --fg: #eef3fb;
+  --muted: #93a3bd;
+  --accent: #3d9bff;
+  --accent-ink: #04101f;
+  --display: "Saira Condensed", "Arial Narrow", sans-serif;
+  --body: "Barlow", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 32px 64px; display: grid; gap: 44px; }
+.wrap > * { min-width: 0; }
+@media (max-width: 520px) { .wrap { padding-inline: 16px; gap: 36px; } }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; line-height: .95; margin: 0; text-wrap: balance; }
+.eyebrow { font-size: 11px; letter-spacing: .34em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.muted { color: var(--muted); }
+
+header { display: grid; gap: 16px; }
+.brand { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.mark { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 40px; line-height: 1; }
+.mark b { color: var(--accent); }
+.brand small { font-size: 10px; letter-spacing: .44em; text-transform: uppercase; color: var(--muted); }
+header h1 { font-size: clamp(42px, 8vw, 78px); }
+header h1 span { color: var(--accent); display: block; }
+header p { margin: 0; max-width: 60ch; font-size: 17px; color: var(--muted); }
+
+.figs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+@media (max-width: 640px) { .figs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fig { padding: 16px 14px; display: grid; gap: 2px; border-left: 1px solid var(--line); }
+.fig:first-child { border-left: 0; }
+@media (max-width: 640px) { .fig:nth-child(3) { border-left: 0; } .fig:nth-child(n+3) { border-top: 1px solid var(--line); } }
+.fig b { font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: var(--accent); }
+.fig span { font-size: 13px; color: var(--muted); }
+
+.sec-title { display: grid; gap: 8px; margin-bottom: 18px; }
+.sec-title h2 { font-size: clamp(30px, 5vw, 44px); }
+.spots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 820px) { .spots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 440px) { .spots { grid-template-columns: minmax(0, 1fr); } }
+.spot { background: var(--panel); border: 1px solid var(--line); padding: 16px; display: grid; gap: 6px; align-content: start; }
+.spot h3 { font-size: 22px; }
+.spot p { margin: 0; font-size: 14px; color: var(--muted); }
+.spot svg { width: 28px; height: 28px; color: var(--accent); }
+
+.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 920px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .cards { grid-template-columns: minmax(0, 1fr); } }
+.card { font: inherit; color: var(--fg); text-align: left; background: var(--panel); border: 1px solid var(--line); padding: 18px; display: grid; gap: 12px; align-content: start; cursor: pointer; position: relative; }
+.card:hover { border-color: var(--muted); }
+.card[aria-pressed="true"] { border-color: var(--accent); background: var(--panel-2); box-shadow: inset 0 0 0 1px var(--accent); }
+.card .places { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.card h3 { font-size: 26px; }
+.card .price { font-family: var(--display); font-weight: 800; font-size: 38px; line-height: 1; color: var(--accent); }
+.card .price small { font-family: var(--body); font-weight: 500; font-size: 13px; color: var(--muted); display: block; margin-top: 4px; }
+.card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14px; }
+.card li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 8px; }
+.card li::before { content: ""; width: 8px; height: 8px; margin-top: 7px; background: var(--accent); transform: skewX(-12deg); }
+.card .pick { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.card[aria-pressed="true"] .pick { color: var(--accent); }
+.card.top { border-top: 3px solid var(--accent); }
+
+.build { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 760px) { .build { grid-template-columns: minmax(0, 1fr); } }
+.opts { display: grid; gap: 8px; }
+.opt { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; background: var(--panel); border: 1px solid var(--line); padding: 12px 14px; cursor: pointer; }
+.opt:hover { border-color: var(--muted); }
+.opt input { width: 18px; height: 18px; accent-color: var(--accent); margin: 0; }
+.opt b { font-weight: 600; }
+.opt small { display: block; color: var(--muted); font-size: 13px; }
+.opt .p { font-family: var(--display); font-weight: 700; font-size: 20px; white-space: nowrap; }
+.recap { background: var(--accent); color: var(--accent-ink); padding: 22px; display: grid; gap: 12px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); }
+.recap .lbl { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 18px; }
+.recap .big { font-family: var(--display); font-weight: 800; font-size: clamp(48px, 9vw, 64px); line-height: .9; font-variant-numeric: tabular-nums; }
+.recap ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; font-size: 14px; font-weight: 500; }
+.recap li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid rgba(4,16,31,.2); padding-bottom: 4px; }
+.recap .per { font-size: 14px; font-weight: 600; }
+.recap button { font: 700 14px var(--body); background: var(--accent-ink); color: var(--fg); border: 0; padding: 11px 14px; cursor: pointer; justify-self: start; }
+.recap button:hover { filter: brightness(1.4); }
+.recap .toast { font-size: 13px; font-weight: 600; min-height: 1em; }
+button:focus-visible, .opt:focus-within { outline: 2px solid var(--fg); outline-offset: 2px; }
+footer { border-top: 1px solid var(--line); padding-top: 16px; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="mark">SF<b>L</b></span><small>Sunday Five League</small></div>
+    <div class="eyebrow">Offre partenaires · Saison 1 · Métropole lilloise</div>
+    <h1>Votre marque <span>au cœur du foot du dimanche</span></h1>
+    <p>Chaque dimanche, la SFL filme ses matchs de foot à 5 et les diffuse en direct. Votre marque est sur les maillots, autour du terrain, dans le live et entre les matchs, pendant toute la saison.</p>
+  </header>
+
+  <div class="figs">
+    <div class="fig"><b>13</b><span>dimanches de matchs, du 1er nov. 2026 au 24 janv. 2027</span></div>
+    <div class="fig"><b>100</b><span>joueurs en maillot SFL</span></div>
+    <div class="fig"><b>3</b><span>caméras et une régie live chaque dimanche</span></div>
+    <div class="fig"><b>3</b><span>réseaux en direct : YouTube, Twitch, Instagram</span></div>
+  </div>
+
+  <section>
+    <div class="sec-title"><div class="eyebrow">Où votre marque apparaît</div><h2>Quatre endroits, tous les dimanches</h2></div>
+    <div class="spots">
+      <div class="spot"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 4 4 7l2 5 3-1v13h10V11l3 1 2-5-5-3c-1 2-3 3-5 3s-4-1-5-3Z"/></svg><h3>Maillots</h3><p>Votre logo sur les maillots des 100 joueurs, à chaque match et sur chaque image.</p></div>
+      <div class="spot"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="8" width="22" height="10"/><path d="M7 18v5M21 18v5"/></svg><h3>Terrain</h3><p>Bâches sur le grillage, dans le champ des caméras, et drapeaux à l'entrée du complexe.</p></div>
+      <div class="spot"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="22" height="14" rx="1"/><path d="M12 10v6l5-3Z" fill="currentColor"/><path d="M9 24h10"/></svg><h3>Live</h3><p>Votre logo à l'écran pendant le direct et votre nom cité par le commentateur.</p></div>
+      <div class="spot"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11v6h4l7 5V6l-7 5Z"/><path d="M19 10c1.5 2 1.5 6 0 8M22 7c3 4 3 10 0 14"/></svg><h3>Mi-temps</h3><p>Votre spot de 15 secondes dans le live et sur l'écran installé au bord du terrain, quand les joueurs se regroupent.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title"><div class="eyebrow">Les formules</div><h2>Choisissez votre place</h2><p class="muted" style="margin:0">Prix pour toute la saison. Cliquez sur une formule pour voir votre récapitulatif plus bas.</p></div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section>
+    <div class="sec-title"><div class="eyebrow">En plus</div><h2>Ajoutez des options</h2><p class="muted" style="margin:0">Les dotations se font en produits et ne s'ajoutent pas au total.</p></div>
+    <div class="build">
+      <div class="opts" id="opts"></div>
+      <div class="recap" aria-live="polite">
+        <span class="lbl">Votre partenariat</span>
+        <span class="big" id="total">—</span>
+        <span class="per" id="per">—</span>
+        <ul id="lines"></ul>
+        <button type="button" id="copy">Copier le récapitulatif</button>
+        <span class="toast" id="toast"></span>
+        <span class="per">Contact : sponsors@sfl-lille.fr</span>
+      </div>
+    </div>
+  </section>
+
+  <footer><span>SFL · Sunday Five League</span><span>Terrains aujourd'hui. Histoires demain.</span></footer>
+</div>
+
+<script>
+(() => {
+  const SUNDAYS = 13;
+  // Same formulas and prices as the "Formules sponsors" table of the budget page.
+  const FORMULAS = [
+    { name: 'Essai', kicker: 'Un dimanche', places: 'Ouvert', price: 80, unit: 'la journée', items: [
+      'Spot mi-temps à tous les matchs du dimanche', 'Logo dans le bandeau du live ce jour-là', '1 story SFL le jour du match', 'Le bon moyen de tester avant la saison'] },
+    { name: 'Club', kicker: 'La saison', places: '2 places', price: 300, unit: 'la saison', items: [
+      '1 bâche sur le grillage pendant les 13 dimanches', 'Logo sur les affiches et les flyers', '1 publication SFL par mois'] },
+    { name: 'Prime', kicker: 'La saison', places: '2 places', price: 800, unit: 'la saison', items: [
+      'Logo sur une manche des 110 maillots', '1 bâche dans l’axe de la caméra', 'Spot mi-temps chaque dimanche', 'Logo dans le bandeau du live', '2 publications SFL par mois'] },
+    { name: 'Titre', kicker: 'La saison · exclusif', places: '1 seule place', price: 1800, unit: 'la saison', top: true, items: [
+      'Naming : « SFL présentée par votre marque »', 'Logo face avant des 110 maillots', '2 bâches, dont l’axe de la caméra',
+      'Spot mi-temps à tous les matchs', 'Logo à l’écran pendant tout le live', '1 vidéo IA dédiée chaque mois', 'Exclusivité de votre secteur'] }
+  ];
+  const OPTIONS = [
+    { name: 'Format vidéo à votre nom', note: 'Le Résumé du dimanche ou le Top 5 de la journée, présenté par votre marque (13 épisodes)', price: 400 },
+    { name: 'Spot mi-temps en plus', note: 'Un 2e spot de 15 s chaque dimanche', price: 150 },
+    { name: 'Vidéo IA dédiée', note: 'Une vidéo de votre marque générée par IA, diffusée dans le live', price: 100 },
+    { name: 'Drapeau à l’entrée', note: 'Un beach flag à vos couleurs à l’entrée du complexe', price: 120 },
+    { name: 'Dotation joueurs', note: 'Vous offrez un produit au MVP du dimanche ou au meilleur buteur du mois. Remise photographiée avec votre logo.', price: null }
+  ];
+  const eur = v => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(v);
+  const $ = id => document.getElementById(id);
+  let chosen = 2;
+  const opts = new Set();
+
+  $('cards').innerHTML = FORMULAS.map((f, i) => `
+    <button type="button" class="card${f.top ? ' top' : ''}" data-i="${i}" aria-pressed="false">
+      <span class="places">${f.kicker} · ${f.places}</span>
+      <h3>${f.name}</h3>
+      <span class="price">${eur(f.price)}<small>${f.unit === 'la saison' ? `la saison, soit ${eur(Math.round(f.price / SUNDAYS))} par dimanche` : f.unit}</small></span>
+      <ul>${f.items.map(x => `<li>${x}</li>`).join('')}</ul>
+      <span class="pick">Choisir</span>
+    </button>`).join('');
+  $('opts').innerHTML = OPTIONS.map((o, i) => `
+    <label class="opt" for="o${i}"><input type="checkbox" id="o${i}" data-i="${i}">
+      <span><b>${o.name}</b><small>${o.note}</small></span><span class="p">${o.price == null ? 'En produits' : '+ ' + eur(o.price)}</span></label>`).join('');
+
+  function render() {
+    document.querySelectorAll('.card').forEach(c => {
+      const on = +c.dataset.i === chosen;
+      c.setAttribute('aria-pressed', on);
+      c.querySelector('.pick').textContent = on ? 'Formule choisie' : 'Choisir';
+    });
+    const f = FORMULAS[chosen];
+    const extra = [...opts].map(i => OPTIONS[i]);
+    const total = f.price + extra.reduce((s, o) => s + (o.price || 0), 0);
+    $('total').textContent = eur(total);
+    $('per').textContent = f.unit === 'la saison' ? `pour ${SUNDAYS} dimanches, soit ${eur(Math.round(total / SUNDAYS))} par dimanche` : 'pour un dimanche';
+    $('lines').innerHTML = [[f.name, f.price], ...extra.map(o => [o.name, o.price])]
+      .map(([n, p]) => `<li><span>${n}</span><span>${p == null ? 'en produits' : eur(p)}</span></li>`).join('');
+  }
+  $('cards').addEventListener('click', e => { const c = e.target.closest('.card'); if (c) { chosen = +c.dataset.i; render(); } });
+  $('opts').addEventListener('change', e => { const i = +e.target.dataset.i; e.target.checked ? opts.add(i) : opts.delete(i); render(); });
+
+  let t;
+  $('copy').addEventListener('click', () => {
+    const f = FORMULAS[chosen];
+    const extra = [...opts].map(i => OPTIONS[i]);
+    const total = f.price + extra.reduce((s, o) => s + (o.price || 0), 0);
+    const text = [
+      'Partenariat SFL · Sunday Five League, saison 1',
+      `${f.name} : ${eur(f.price)}`,
+      ...f.items.map(x => `  - ${x}`),
+      ...extra.map(o => `+ ${o.name} : ${o.price == null ? 'en produits' : eur(o.price)}`),
+      `Total : ${eur(total)} ${f.unit === 'la saison' ? `pour ${SUNDAYS} dimanches (du 1er novembre 2026 au 24 janvier 2027)` : 'pour un dimanche'}`
+    ].join('\n');
+    const done = msg => { $('toast').textContent = msg; clearTimeout(t); t = setTimeout(() => $('toast').textContent = '', 3000); };
+    try { navigator.clipboard.writeText(text).then(() => done('Copié, prêt à coller dans un message'), () => done('Copie impossible dans ce navigateur')); }
+    catch (err) { done('Copie impossible dans ce navigateur'); }
+  });
+  render();
+})();
+</script>
