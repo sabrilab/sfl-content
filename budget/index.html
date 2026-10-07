@@ -1,0 +1,540 @@
+<title>Budget Saison SFL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: brand header strip → budget summary with split bar → season parameters & Sunday calendar → one table per budget area. Dark-only, matching the SFL print identity. */
+:root {
+  color-scheme: dark;
+  --bg: #070b14;
+  --panel: #0e1624;
+  --panel-2: #131d30;
+  --line: #22304a;
+  --fg: #eef3fb;
+  --muted: #93a3bd;
+  --faint: #5f6f8a;
+  --accent: #3d9bff;
+  --accent-ink: #06101f;
+  --warn: #fab219;
+  --serious: #ec835a;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #5b6578;
+  --display: "Saira Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --body: "Barlow", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; display: grid; gap: 28px; }
+@media (max-width: 520px) { .wrap { padding-inline: 16px; } }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; letter-spacing: .01em; line-height: 1; margin: 0; text-wrap: balance; }
+.num, input[type=number], .tot, .big { font-variant-numeric: tabular-nums; }
+.eyebrow { font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.muted { color: var(--muted); }
+
+/* Header */
+header { display: grid; gap: 14px; border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+.brand { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.mark { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 34px; letter-spacing: .02em; line-height: 1; }
+.mark b { color: var(--accent); font-weight: 800; }
+.brand small { font-size: 10px; letter-spacing: .42em; text-transform: uppercase; color: var(--muted); }
+header h1 { font-size: clamp(38px, 7vw, 68px); }
+header h1 span { color: var(--accent); }
+header p { margin: 0; max-width: 64ch; color: var(--muted); font-size: 16px; }
+
+/* Summary */
+.summary { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr); gap: 20px; align-items: start; }
+@media (max-width: 820px) { .summary { grid-template-columns: minmax(0, 1fr); } }
+.hero { background: var(--accent); color: var(--accent-ink); padding: 22px 24px; display: grid; gap: 6px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%); }
+.hero .lbl { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 16px; letter-spacing: .06em; }
+.hero .big { font-family: var(--display); font-weight: 800; font-size: clamp(48px, 8vw, 72px); line-height: .95; }
+.hero .sub { font-size: 14px; font-weight: 500; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 620px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.kpi { background: var(--panel); padding: 14px 16px; display: grid; gap: 4px; align-content: start; }
+.kpi .k { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.kpi .v { font-family: var(--display); font-weight: 700; font-size: 28px; line-height: 1.05; }
+.kpi .n { font-size: 12.5px; color: var(--muted); }
+.kpi.alert .v { color: var(--warn); }
+.split { display: grid; gap: 12px; margin-top: 14px; }
+.bar { display: flex; gap: 2px; height: 22px; position: relative; }
+.bar .seg { height: 100%; min-width: 2px; transition: opacity .15s; cursor: default; }
+.bar .seg:first-child { border-radius: 4px 0 0 4px; }
+.bar .seg:last-child { border-radius: 0 4px 4px 0; }
+.bar:hover .seg { opacity: .45; }
+.bar .seg:hover { opacity: 1; }
+.legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px 18px; font-size: 13.5px; }
+.legend div { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; }
+.legend b { font-weight: 600; }
+.legend span.p { color: var(--muted); font-size: 12.5px; }
+#tip { position: fixed; pointer-events: none; background: var(--panel-2); border: 1px solid var(--line); padding: 8px 10px; font-size: 13px; z-index: 10; box-shadow: 0 8px 24px rgba(0,0,0,.5); }
+
+/* Panels */
+.panel { background: var(--panel); border: 1px solid var(--line); padding: 20px 22px; display: grid; gap: 18px; }
+@media (max-width: 520px) { .panel { padding: 16px; } }
+.panel-head { display: flex; justify-content: space-between; align-items: end; gap: 12px; flex-wrap: wrap; }
+.panel-head h2 { font-size: 30px; }
+.params { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px 16px; }
+.field { display: grid; gap: 5px; }
+.field label { font-size: 12px; color: var(--muted); font-weight: 500; }
+input { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); padding: 7px 9px; width: 100%; border-radius: 2px; }
+input:hover { border-color: var(--faint); }
+input:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.cal { display: grid; gap: 10px; }
+.cal-head { display: flex; gap: 10px 18px; align-items: baseline; flex-wrap: wrap; font-size: 14px; }
+.cal-head strong { font-family: var(--display); font-size: 22px; font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 600 13px var(--body); border: 1px solid var(--accent); background: rgba(61,155,255,.12); color: var(--fg); padding: 6px 10px; cursor: pointer; display: grid; text-align: left; line-height: 1.15; min-width: 72px; }
+.chip small { font-weight: 500; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.chip.off { border-color: var(--line); background: transparent; color: var(--faint); text-decoration: line-through; }
+.chip.off small { color: var(--faint); text-decoration: none; }
+.chip:hover { border-color: var(--fg); }
+
+/* Budget tables */
+.sec { display: grid; gap: 12px; }
+.sec-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 4px 14px; align-items: center; }
+.sec-head .sw { width: 6px; align-self: stretch; grid-row: span 2; border-radius: 1px; }
+.sec-head h3 { font-size: 26px; }
+.sec-head .st { font-family: var(--display); font-weight: 700; font-size: 26px; grid-row: span 2; text-align: right; }
+.sec-head p { margin: 0; font-size: 13.5px; color: var(--muted); max-width: 72ch; }
+.sec-head .kind { display: inline-block; font: 600 10.5px var(--body); letter-spacing: .14em; text-transform: uppercase; border: 1px solid var(--line); color: var(--muted); padding: 2px 6px; margin-left: 8px; vertical-align: 4px; }
+.scroll { overflow-x: auto; border: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; min-width: 700px; font-size: 14px; }
+thead th { background: var(--panel-2); color: var(--accent); font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 15px; letter-spacing: .04em; text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); }
+thead th.r, td.r { text-align: right; }
+tbody td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+tbody tr:nth-child(even) td { background: rgba(255,255,255,.018); }
+td .lbl { font-weight: 500; }
+td .det { font-size: 12.5px; color: var(--muted); }
+td.q { width: 120px; }
+td.pu { width: 140px; }
+td.tot { width: 120px; font-weight: 600; }
+td.stc { width: 170px; }
+td input[type=number] { width: 84px; text-align: right; padding: 5px 7px; }
+td.pu .w { display: inline-flex; align-items: center; gap: 4px; justify-content: flex-end; }
+td.q .derived { display: grid; justify-items: end; }
+td.q .derived b { font-weight: 600; }
+td.q .derived small { font-size: 11px; color: var(--faint); white-space: nowrap; }
+td input.lbl-in { width: 100%; }
+tfoot td { padding: 10px 12px; background: var(--panel-2); font-weight: 600; }
+tfoot td.tot { font-family: var(--display); font-size: 18px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 3px 8px; border: 1px solid currentColor; white-space: nowrap; border-radius: 2px; }
+.pill svg { width: 12px; height: 12px; flex: none; }
+.st-sfl { color: var(--accent); }
+.st-est { color: var(--muted); }
+.st-wait { color: var(--warn); }
+.st-check { color: var(--serious); }
+.btn { font: 600 13px var(--body); color: var(--fg); background: transparent; border: 1px solid var(--line); padding: 7px 12px; cursor: pointer; border-radius: 2px; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.solid { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.solid:hover { filter: brightness(1.1); color: var(--accent-ink); }
+.btn.x { padding: 3px 8px; font-size: 12px; }
+.add-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.envelope { font-size: 13px; color: var(--muted); }
+.envelope b { color: var(--fg); }
+.envelope .ok { color: var(--accent); }
+.envelope .over { color: var(--serious); }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.toast { font-size: 13px; color: var(--accent); min-height: 1em; }
+.keyrow { display: flex; gap: 8px 14px; flex-wrap: wrap; align-items: center; font-size: 13px; color: var(--muted); }
+footer { border-top: 1px solid var(--line); padding-top: 16px; font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--faint); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="mark">SF<b>L</b></span><small>Sunday Five League</small></div>
+    <div class="eyebrow">Campagne sponsoring · Saison 1</div>
+    <h1>Budget saison <span>captation &amp; sponsoring</span></h1>
+    <p>Ce qu'il faut financer pour filmer chaque dimanche pendant 3 mois et donner aux sponsors leur place : sur les maillots, autour du terrain, dans le live et entre les matchs. Les quantités et les prix se modifient directement dans les tableaux.</p>
+  </header>
+
+  <section class="summary" aria-label="Synthèse">
+    <div class="hero">
+      <div class="lbl">Budget total estimé</div>
+      <div class="big" id="grand">—</div>
+      <div class="sub" id="grand-sub">—</div>
+    </div>
+    <div>
+      <div class="kpis">
+        <div class="kpi"><span class="k">Investissement de départ</span><span class="v" id="k-inv">—</span><span class="n">Achats faits une fois</span></div>
+        <div class="kpi"><span class="k">Fonctionnement</span><span class="v" id="k-run">—</span><span class="n" id="k-run-n">—</span></div>
+        <div class="kpi"><span class="k">Coût par dimanche</span><span class="v" id="k-day">—</span><span class="n">Total ÷ dimanches filmés</span></div>
+        <div class="kpi" id="k-wait-box"><span class="k">Prix à confirmer</span><span class="v" id="k-wait">—</span><span class="n" id="k-wait-n">—</span></div>
+      </div>
+      <div class="split">
+        <div class="bar" id="bar" role="img" aria-label="Répartition du budget par poste"></div>
+        <div class="legend" id="legend"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-params">
+    <div class="panel-head">
+      <h2 id="h-params">La saison</h2>
+      <span class="muted" style="font-size:13px">Ces hypothèses recalculent les quantités liées (maillots, défraiements, spots).</span>
+    </div>
+    <div class="params">
+      <div class="field"><label for="p-debut">Premier dimanche</label><input type="date" id="p-debut"></div>
+      <div class="field"><label for="p-semaines">Nombre de semaines</label><input type="number" id="p-semaines" min="1" max="30" step="1"></div>
+      <div class="field"><label for="p-equipes">Équipes</label><input type="number" id="p-equipes" min="1" step="1"></div>
+      <div class="field"><label for="p-joueurs">Joueurs par équipe</label><input type="number" id="p-joueurs" min="1" step="1"></div>
+      <div class="field"><label for="p-reserve">Réserve maillots (%)</label><input type="number" id="p-reserve" min="0" step="1"></div>
+      <div class="field"><label for="p-sponsors">Sponsors visés</label><input type="number" id="p-sponsors" min="0" step="1"></div>
+      <div class="field"><label for="p-benevoles">Équipe captation / dimanche</label><input type="number" id="p-benevoles" min="0" step="1"></div>
+      <div class="field"><label for="p-imprevus">Imprévus (%)</label><input type="number" id="p-imprevus" min="0" step="1"></div>
+    </div>
+    <div class="cal">
+      <div class="cal-head"><strong id="cal-count">—</strong><span class="muted" id="cal-range">—</span><span class="muted">Clique sur un dimanche pour le passer en relâche.</span></div>
+      <div class="chips" id="chips"></div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-detail">
+    <div class="panel-head">
+      <h2 id="h-detail">Détail par poste</h2>
+      <div class="actions">
+        <button class="btn" id="copy" type="button">Copier pour un tableur</button>
+        <button class="btn" id="reset" type="button">Revenir aux valeurs de départ</button>
+        <span class="toast" id="toast" role="status"></span>
+      </div>
+    </div>
+    <div class="keyrow">
+      <span>Statut des prix :</span>
+      <span class="pill st-sfl" data-icon="sfl">Chiffré SFL</span>
+      <span class="pill st-est" data-icon="est">Estimation</span>
+      <span class="pill st-wait" data-icon="wait">Devis attendu</span>
+      <span class="pill st-check" data-icon="check">À valider</span>
+    </div>
+    <div id="sections" style="display:grid;gap:34px"></div>
+  </section>
+
+  <footer><span>SFL · Sunday Five League</span><span>Terrains aujourd'hui. Histoires demain.</span></footer>
+</div>
+<div id="tip" hidden></div>
+
+<script>
+(() => {
+  const STORE = 'sfl-budget-v1';
+  const MONTHS = 3;
+  const DEFAULT_PARAMS = { debut: '2026-11-01', semaines: 13, equipes: 8, joueurs: 8, reserve: 10, sponsors: 5, benevoles: 2, imprevus: 10 };
+
+  const ICONS = {
+    sfl: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.2 4.8 9 10 3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
+    est: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-dasharray="2 1.6"/></svg>',
+    wait: '<svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 3.4V6l1.8 1.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>',
+    check: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5 11 10.5H1Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 5v2.4M6 8.6v.4" stroke="currentColor" stroke-width="1.4"/></svg>'
+  };
+  const STATUS = { sfl: 'Chiffré SFL', est: 'Estimation', wait: 'Devis attendu', check: 'À valider' };
+
+  // Derived quantities: recomputed from the season parameters.
+  const QTY = {
+    jerseys:    { f: p => Math.ceil(p.equipes * p.joueurs * (1 + p.reserve / 100)), h: p => `${p.equipes} × ${p.joueurs} + ${p.reserve} %` },
+    allShirts:  { f: p => QTY.jerseys.f(p) + p.equipes, h: () => 'joueurs + gardiens' },
+    teams:      { f: p => p.equipes, h: () => '1 par équipe' },
+    months:     { f: () => MONTHS, h: () => `${MONTHS} mois` },
+    monthsNext: { f: () => MONTHS - 1, h: () => 'mois 2 et 3' },
+    sponsors:   { f: p => p.sponsors, h: () => '1 par sponsor' },
+    days:       { f: p => p.journees, h: () => '1 par dimanche' },
+    crewDays:   { f: p => p.journees * p.benevoles, h: p => `${p.benevoles} pers. × ${p.journees} dim.` }
+  };
+
+  const SECTIONS = [
+    { id: 'regie', name: 'Captation & régie', short: 'Captation', kind: 'Investissement', color: 'var(--s1)',
+      intro: 'Le kit SFL Broadcast V1 : 3 iPhone en caméras, un Mac mini en régie, le réseau 5G et les accessoires. Chiffrage repris de la fiche Besoins matériels.',
+      envelope: 2200,
+      lines: [
+        ['iph', 'iPhone 12 (caméras)', '', 3, 200],
+        ['mac', 'Mac mini M1 d’occasion', '', 1, 380],
+        ['bat', 'Batteries externes 20 000 mAh', '', 3, 30],
+        ['tre', 'Supports / trépieds smartphone', '', 3, 20],
+        ['rou', 'Routeur 5G + Wi-Fi 6 + Ethernet', '', 1, 220],
+        ['sim', 'Forfait SIM 5G (1er mois)', '', 1, 30],
+        ['ecr', 'Écran portable régie', '', 1, 110],
+        ['cla', 'Clavier + souris', '', 1, 30],
+        ['ssd', 'SSD externe 1 To', '', 1, 80],
+        ['chg', 'Chargeur USB multiports', '', 1, 40],
+        ['cab', 'Câbles divers (Lightning / USB-C / Ethernet)', '', 1, 30],
+        ['mul', 'Multiprise / rallonge', '', 1, 20],
+        ['dji', 'Kit audio DJI 2 micros', '', 1, 150],
+        ['cas', 'Casque régie', '', 1, 30],
+        ['sdk', 'Stream Deck DIY SFL', '', 1, 50],
+        ['plu', 'Protection pluie / soleil', '', 1, 30],
+        ['sac', 'Sac / caisse transport', '', 1, 40],
+        ['app', 'Applications / licences', '', 1, 70]
+      ].map(([id, label, detail, q, price]) => ({ id, label, detail, q, price, st: 'sfl' })) },
+    { id: 'run', name: 'Fonctionnement des dimanches', short: 'Fonctionnement', kind: 'Récurrent', color: 'var(--s2)',
+      intro: 'Ce qui se paie chaque mois ou chaque dimanche pour que le live tourne pendant toute la saison.',
+      lines: [
+        { id: 'sim2', label: 'Forfait SIM 5G', detail: 'Le 1er mois est déjà dans le kit régie', q: 'monthsNext', price: 30, st: 'sfl' },
+        { id: 'mst', label: 'Multistream (Restream ou équivalent)', detail: 'Diffusion simultanée YouTube, Twitch, Instagram', q: 'months', price: 20, st: 'est' },
+        { id: 'cld', label: 'Stockage cloud des rushs', detail: 'Archives des matchs pour les contenus dérivés', q: 'months', price: 10, st: 'est' },
+        { id: 'dfr', label: 'Défraiement équipe captation', detail: 'Repas et transport des bénévoles', q: 'crewDays', price: 15, st: 'est' },
+        { id: 'cso', label: 'Consommables', detail: 'Gaffer, piles, lingettes, colliers', q: 'days', price: 5, st: 'est' }
+      ] },
+    { id: 'maillots', name: 'Maillots sponsorisés', short: 'Maillots', kind: 'Investissement', color: 'var(--s3)',
+      intro: 'Création et production des maillots avec les emplacements sponsors. Prix provisoires en attendant les tarifs fournisseurs.',
+      lines: [
+        { id: 'dsg', label: 'Création graphique du maillot', detail: 'Graphiste : design + placement des logos sponsors', q: 1, price: 300, st: 'est' },
+        { id: 'mjo', label: 'Maillots joueurs', detail: 'Toutes les équipes, avec une réserve pour les tailles et les remplaçants', q: 'jerseys', price: 22, st: 'wait' },
+        { id: 'mga', label: 'Maillots gardien', detail: 'Couleur distincte', q: 'teams', price: 25, st: 'wait' },
+        { id: 'fpo', label: 'Logo sponsor principal (poitrine)', detail: 'Mettre 0 si le maillot est sublimé, logos inclus', q: 'allShirts', price: 4, st: 'wait' },
+        { id: 'fma', label: 'Logo sponsor secondaire (manche)', detail: 'Mettre 0 si le maillot est sublimé, logos inclus', q: 'allShirts', price: 2.5, st: 'wait' },
+        { id: 'fdo', label: 'Numéro + nom au dos', detail: '', q: 'allShirts', price: 5, st: 'wait' },
+        { id: 'liv', label: 'Livraison et bon à tirer', detail: '', q: 1, price: 40, st: 'wait' }
+      ] },
+    { id: 'site', name: 'Visibilité autour du terrain', short: 'Visibilité terrain', kind: 'Investissement', color: 'var(--s4)',
+      intro: 'Les sponsors visibles sur place, dans le champ des caméras et à l’extérieur du complexe.',
+      lines: [
+        { id: 'bac', label: 'Bâches PVC sponsors 3 × 1 m', detail: 'Sur le grillage, dans le champ des caméras', q: 6, price: 55, st: 'est' },
+        { id: 'bfl', label: 'Beach flags à l’entrée', detail: 'Visibles depuis la rue', q: 4, price: 90, st: 'est' },
+        { id: 'rol', label: 'Roll-up partenaires', detail: 'Accueil et bord de terrain', q: 2, price: 65, st: 'est' },
+        { id: 'pho', label: 'Mur photocall 2 × 2 m', detail: 'Interviews d’après-match, joueur du jour', q: 1, price: 220, st: 'est' },
+        { id: 'aff', label: 'Affiches A2 et flyers', detail: 'Commerces et abords du complexe, lot pour la saison', q: 1, price: 120, st: 'est' },
+        { id: 'fix', label: 'Fixations', detail: 'Colliers, tendeurs, sacs de lest', q: 1, price: 40, st: 'est' },
+        { id: 'drt', label: 'Droit d’affichage du complexe', detail: 'À vérifier avec le gestionnaire du five', q: 1, price: 0, st: 'check' }
+      ] },
+    { id: 'pubs', name: 'Pubs entre les matchs', short: 'Pubs inter-matchs', kind: 'Investissement', color: 'var(--s5)',
+      intro: 'Des spots sponsors diffusés dans le live pendant les pauses, et sur un écran au bord du terrain.',
+      lines: [
+        { id: 'hab', label: 'Habillage du live', detail: 'Score, bandeaux sponsors, transitions : modèles réutilisés chaque dimanche', q: 1, price: 250, st: 'est' },
+        { id: 'spt', label: 'Spots sponsors de 15 secondes', detail: 'Montés à partir des visuels fournis par chaque sponsor', q: 'sponsors', price: 80, st: 'est' },
+        { id: 'tv', label: 'TV 55 pouces d’occasion + pied roulant', detail: 'Diffusion des spots sur place entre les matchs', q: 1, price: 380, st: 'est' },
+        { id: 'enc', label: 'Enceinte sur batterie', detail: 'Jingles sponsors et annonces micro', q: 1, price: 180, st: 'est' }
+      ] }
+  ];
+
+  // ---------- state ----------
+  const fresh = () => ({ params: { ...DEFAULT_PARAMS }, off: [], over: {}, custom: {} });
+  let state = fresh();
+  try {
+    const raw = localStorage.getItem(STORE);
+    if (raw) {
+      const s = JSON.parse(raw);
+      state = { ...fresh(), ...s, params: { ...DEFAULT_PARAMS, ...(s.params || {}) } };
+    }
+  } catch (e) {}
+  const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} };
+
+  const $ = id => document.getElementById(id);
+  const eur = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 2, minimumFractionDigits: 0 });
+  const eur0 = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+  const fmt = v => (Math.round(v * 100) % 100 === 0 ? eur0 : eur).format(v);
+  const num = (v, d = 0) => { const n = parseFloat(String(v).replace(',', '.')); return isFinite(n) && n >= 0 ? n : d; };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  // ---------- calendar ----------
+  const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  function sundays() {
+    const [y, m, d] = (state.params.debut || DEFAULT_PARAMS.debut).split('-').map(Number);
+    const start = new Date(y, (m || 1) - 1, d || 1);
+    start.setDate(start.getDate() + ((7 - start.getDay()) % 7)); // move to the next Sunday if needed
+    const out = [];
+    const n = Math.max(1, Math.min(30, Math.round(num(state.params.semaines, 13))));
+    for (let i = 0; i < n; i++) { const x = new Date(start); x.setDate(start.getDate() + i * 7); out.push(x); }
+    return out;
+  }
+  function params() {
+    const p = state.params;
+    const days = sundays();
+    const journees = days.filter(d => !state.off.includes(iso(d))).length;
+    return {
+      equipes: Math.round(num(p.equipes, 8)), joueurs: Math.round(num(p.joueurs, 8)), reserve: num(p.reserve, 10),
+      sponsors: Math.round(num(p.sponsors, 5)), benevoles: Math.round(num(p.benevoles, 2)), imprevus: num(p.imprevus, 10),
+      journees, days
+    };
+  }
+
+  // ---------- line values ----------
+  const qtyOf = (line, P) => typeof line.q === 'string' ? QTY[line.q].f(P) : num(state.over[line.id]?.qty ?? line.q, 0);
+  const priceOf = line => num(state.over[line.id]?.price ?? line.price, 0);
+  const linesOf = sec => [...sec.lines, ...((state.custom[sec.id] || []).map(c => ({ ...c, custom: true, st: 'est' })))];
+
+  // ---------- render tables ----------
+  function renderSections() {
+    $('sections').innerHTML = SECTIONS.map(sec => `
+      <div class="sec" data-sec="${sec.id}">
+        <div class="sec-head">
+          <span class="sw" style="background:${sec.color}"></span>
+          <h3>${esc(sec.name)}<span class="kind">${sec.kind}</span></h3>
+          <span class="st" data-subtotal="${sec.id}">—</span>
+          <p>${esc(sec.intro)}</p>
+        </div>
+        <div class="scroll"><table>
+          <thead><tr><th>Poste</th><th class="r">Qté</th><th class="r">Prix unitaire</th><th class="r">Total</th><th>Statut</th></tr></thead>
+          <tbody>${linesOf(sec).map(rowHTML).join('')}</tbody>
+          <tfoot><tr><td colspan="3">Sous-total ${esc(sec.short.toLowerCase())}</td><td class="r tot" data-subtotal2="${sec.id}">—</td><td></td></tr></tfoot>
+        </table></div>
+        <div class="add-row">
+          <button class="btn x" type="button" data-add="${sec.id}">+ Ajouter une ligne</button>
+          ${sec.envelope ? `<span class="envelope" data-env="${sec.id}"></span>` : ''}
+        </div>
+      </div>`).join('');
+    update();
+  }
+  function rowHTML(line) {
+    const derived = typeof line.q === 'string';
+    const qty = derived
+      ? `<div class="derived"><b data-q="${line.id}">—</b><small data-qh="${line.id}">—</small></div>`
+      : `<input type="number" min="0" step="1" id="q-${line.id}" data-qty="${line.id}" value="${esc(state.over[line.id]?.qty ?? line.q)}" aria-label="Quantité ${esc(line.label)}">`;
+    const label = line.custom
+      ? `<input class="lbl-in" id="l-${line.id}" data-label="${line.id}" value="${esc(line.label)}" placeholder="Nom du poste" aria-label="Nom du poste">`
+      : `<div class="lbl">${esc(line.label)}</div>${line.detail ? `<div class="det">${esc(line.detail)}</div>` : ''}`;
+    const status = line.custom
+      ? `<button class="btn x" type="button" data-del="${line.id}">Supprimer</button>`
+      : `<span class="pill st-${line.st}">${ICONS[line.st]}${STATUS[line.st]}</span>`;
+    return `<tr>
+      <td>${label}</td>
+      <td class="r q">${qty}</td>
+      <td class="r pu"><span class="w"><input type="number" min="0" step="0.5" id="p-${line.id}" data-price="${line.id}" value="${esc(state.over[line.id]?.price ?? line.price)}" aria-label="Prix unitaire ${esc(line.label)}"> €</span></td>
+      <td class="r tot" data-tot="${line.id}">—</td>
+      <td class="stc">${status}</td>
+    </tr>`;
+  }
+
+  // ---------- compute + paint numbers ----------
+  function compute() {
+    const P = params();
+    let inv = 0, run = 0, waitCount = 0, waitSum = 0;
+    const secs = SECTIONS.map(sec => {
+      let sub = 0;
+      const rows = linesOf(sec).map(l => {
+        const q = qtyOf(l, P), pu = priceOf(l), t = q * pu;
+        sub += t;
+        if (l.st === 'wait' || l.st === 'check') { waitCount++; waitSum += t; }
+        return { l, q, pu, t };
+      });
+      if (sec.kind === 'Récurrent') run += sub; else inv += sub;
+      return { sec, sub, rows };
+    });
+    const base = inv + run;
+    const contingency = base * P.imprevus / 100;
+    return { P, secs, inv, run, base, contingency, total: base + contingency, waitCount, waitSum };
+  }
+
+  function update() {
+    const C = compute(), P = C.P;
+    C.secs.forEach(({ sec, sub, rows }) => {
+      rows.forEach(({ l, q, t }) => {
+        const tot = document.querySelector(`[data-tot="${l.id}"]`); if (tot) tot.textContent = fmt(t);
+        const qd = document.querySelector(`[data-q="${l.id}"]`); if (qd) qd.textContent = q;
+        const qh = document.querySelector(`[data-qh="${l.id}"]`); if (qh) qh.textContent = QTY[l.q].h(P);
+      });
+      document.querySelectorAll(`[data-subtotal="${sec.id}"],[data-subtotal2="${sec.id}"]`).forEach(el => el.textContent = fmt(sub));
+      const env = document.querySelector(`[data-env="${sec.id}"]`);
+      if (env) {
+        const diff = sec.envelope - sub;
+        env.innerHTML = `Enveloppe partenaire régie : <b>${fmt(sec.envelope)}</b> · ` + (diff >= 0
+          ? `<span class="ok">marge de ${fmt(diff)}</span>`
+          : `<span class="over">dépassement de ${fmt(-diff)}</span>`);
+      }
+    });
+
+    $('grand').textContent = fmt(Math.round(C.total));
+    $('grand-sub').textContent = `${fmt(Math.round(C.base))} de postes + ${fmt(Math.round(C.contingency))} d’imprévus (${P.imprevus} %)`;
+    $('k-inv').textContent = fmt(Math.round(C.inv));
+    $('k-run').textContent = fmt(Math.round(C.run));
+    $('k-run-n').textContent = `Sur ${MONTHS} mois et ${P.journees} dimanches`;
+    $('k-day').textContent = P.journees ? fmt(Math.round(C.total / P.journees)) : '—';
+    $('k-wait').textContent = C.waitCount;
+    $('k-wait-n').textContent = C.waitCount ? `lignes, soit ${fmt(Math.round(C.waitSum))} provisoires` : 'Tous les prix sont posés';
+    $('k-wait-box').classList.toggle('alert', C.waitCount > 0);
+
+    // split bar
+    const parts = C.secs.map(s => ({ name: s.sec.short, color: s.sec.color, v: s.sub }))
+      .concat([{ name: `Imprévus ${P.imprevus} %`, color: 'var(--s6)', v: C.contingency }]);
+    const T = C.total || 1;
+    $('bar').innerHTML = parts.filter(p => p.v > 0).map(p =>
+      `<div class="seg" style="flex:${p.v} 1 0;background:${p.color}" data-n="${esc(p.name)}" data-v="${p.v}"></div>`).join('');
+    $('legend').innerHTML = parts.map(p =>
+      `<div><i style="background:${p.color}"></i><span>${esc(p.name)} <span class="p">${Math.round(p.v / T * 100)} %</span></span><b>${fmt(Math.round(p.v))}</b></div>`).join('');
+
+    // calendar
+    const days = P.days;
+    $('cal-count').textContent = `${P.journees} dimanche${P.journees > 1 ? 's' : ''} filmé${P.journees > 1 ? 's' : ''}`;
+    const dfmt = d => d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
+    $('cal-range').textContent = `du ${dfmt(days[0])} au ${dfmt(days[days.length - 1])}`;
+    $('chips').innerHTML = days.map((d, i) => {
+      const k = iso(d), off = state.off.includes(k);
+      return `<button type="button" class="chip${off ? ' off' : ''}" data-day="${k}" aria-pressed="${!off}" title="${off ? 'Relâche : cliquer pour filmer ce dimanche' : 'Cliquer pour passer en relâche'}"><small>${off ? 'Relâche' : 'J' + (days.slice(0, i + 1).filter(x => !state.off.includes(iso(x))).length)}</small>${d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })}</button>`;
+    }).join('');
+    save();
+  }
+
+  // ---------- params ----------
+  const PKEYS = ['debut', 'semaines', 'equipes', 'joueurs', 'reserve', 'sponsors', 'benevoles', 'imprevus'];
+  function fillParams() { PKEYS.forEach(k => { $('p-' + k).value = state.params[k]; }); }
+  PKEYS.forEach(k => $('p-' + k).addEventListener('input', e => { state.params[k] = e.target.value; update(); }));
+
+  // ---------- events ----------
+  document.addEventListener('input', e => {
+    const t = e.target;
+    if (t.dataset.qty) { (state.over[t.dataset.qty] ||= {}).qty = t.value; setCustom(t.dataset.qty, 'qty', t.value); update(); }
+    else if (t.dataset.price) { (state.over[t.dataset.price] ||= {}).price = t.value; setCustom(t.dataset.price, 'price', t.value); update(); }
+    else if (t.dataset.label) { setCustom(t.dataset.label, 'label', t.value); save(); }
+  });
+  function setCustom(id, key, v) {
+    Object.values(state.custom).forEach(arr => arr.forEach(c => { if (c.id === id) c[key] = v; }));
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.day) {
+      const k = b.dataset.day;
+      state.off = state.off.includes(k) ? state.off.filter(x => x !== k) : [...state.off, k];
+      update();
+    } else if (b.dataset.add) {
+      const id = 'c' + Date.now().toString(36);
+      (state.custom[b.dataset.add] ||= []).push({ id, label: '', q: 1, price: 0 });
+      renderSections();
+      document.getElementById('l-' + id)?.focus();
+    } else if (b.dataset.del) {
+      Object.keys(state.custom).forEach(s => { state.custom[s] = state.custom[s].filter(c => c.id !== b.dataset.del); });
+      delete state.over[b.dataset.del];
+      renderSections();
+    }
+  });
+  let resetArmed = null;
+  $('reset').addEventListener('click', () => {
+    if (!resetArmed) {
+      $('reset').textContent = 'Confirmer la remise à zéro';
+      resetArmed = setTimeout(() => { $('reset').textContent = 'Revenir aux valeurs de départ'; resetArmed = null; }, 4000);
+      return;
+    }
+    clearTimeout(resetArmed); resetArmed = null;
+    $('reset').textContent = 'Revenir aux valeurs de départ';
+    state = fresh(); fillParams(); renderSections(); toast('Valeurs de départ rétablies');
+  });
+  let toastT;
+  function toast(msg) { $('toast').textContent = msg; clearTimeout(toastT); toastT = setTimeout(() => $('toast').textContent = '', 3000); }
+  $('copy').addEventListener('click', () => {
+    const C = compute();
+    const n = v => String(Math.round(v * 100) / 100).replace('.', ',');
+    const rows = [['Section', 'Poste', 'Qté', 'Prix unitaire (€)', 'Total (€)', 'Statut']];
+    C.secs.forEach(({ sec, rows: r, sub }) => {
+      r.forEach(({ l, q, pu, t }) => rows.push([sec.name, l.label || 'Sans nom', n(q), n(pu), n(t), l.custom ? 'Ajout' : STATUS[l.st]]));
+      rows.push([sec.name, 'Sous-total', '', '', n(sub), '']);
+    });
+    rows.push(['', `Imprévus ${C.P.imprevus} %`, '', '', n(C.contingency), '']);
+    rows.push(['', 'Total', '', '', n(C.total), '']);
+    const text = rows.map(r => r.join('\t')).join('\n');
+    try {
+      navigator.clipboard.writeText(text).then(() => toast('Tableau copié : colle-le dans Sheets ou Excel'), () => toast('Copie refusée par le navigateur'));
+    } catch (err) { toast('Copie refusée par le navigateur'); }
+  });
+
+  // tooltip on the split bar
+  const tip = $('tip');
+  $('bar').addEventListener('mousemove', e => {
+    const s = e.target.closest('.seg'); if (!s) { tip.hidden = true; return; }
+    const T = compute().total || 1, v = +s.dataset.v;
+    tip.innerHTML = `<b>${esc(s.dataset.n)}</b><br>${fmt(Math.round(v))} · ${Math.round(v / T * 100)} %`;
+    tip.hidden = false;
+    const x = Math.min(e.clientX + 12, window.innerWidth - tip.offsetWidth - 8);
+    tip.style.left = x + 'px'; tip.style.top = (e.clientY + 14) + 'px';
+  });
+  $('bar').addEventListener('mouseleave', () => { tip.hidden = true; });
+
+  document.querySelectorAll('.keyrow .pill').forEach(p => p.insertAdjacentHTML('afterbegin', ICONS[p.dataset.icon]));
+  fillParams();
+  renderSections();
+})();
+</script>
