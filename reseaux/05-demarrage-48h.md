@@ -2,12 +2,25 @@
 
 *Du samedi 31/10 au lundi 2/11/2026. Le premier dimanche filmé, c'est demain : la J4, coup d'envoi à 12 h 30 à l'Hippodrome de Marcq (`annonces-ligue.ts`).*
 
+> **Statut au 01/11.** Le premier dimanche (J4, 1er novembre) est passé. Les parties A à C sont donc historiques : **Démarrage (1er novembre) : fait / à reprendre pour le 8 novembre.** Ce qui reste valable pour le 8 novembre :
+> - **Droit à l'image (D1, validée)** : seuls les joueurs qui ont signé l'autorisation (E3) apparaissent sur les réseaux. Sans signature, on ne les montre pas. Les règles sur les mineurs restent.
+> - **Structure (D12a)** : la SFL est une **association**, pas une société. Autorisations, contrats et comptes se font au nom de l'association SFL ([nom exact de l'association], [numéro] à compléter).
+> - **Comptes (D2, en attente de Sabri)** : Sabri crée lui-même les comptes et donnera les noms retenus. Recommandation inchangée : `@sundayfiveleague`.
+> - **Marque (D3, validée)** : les comptes sont au nom de la SFL. BOLA n'apparaît que comme l'appli qui fait les stats et les cartes.
+> - **Direct (D5, validée sur le principe)** : Twitch **et** YouTube en simultané, dès que Sabri fixe la date. Pas de date ferme pour l'instant.
+> - **Tournage (D6)** : assuré par une association partenaire, Poleed, avec laquelle la SFL fait un partenariat. Elle fournit de quoi tourner. Les rôles exacts sont à définir avec elle.
+> - **Identité (D7, validée avec modification)** : presque noir et blanc, avec le bleu SFL `#3D9BFF` en couleur d'accent, et l'or seulement pour la Pépite d'Or et la carte MVP.
+> - **TikTok (D8, validée)** : un seul compte.
+> - **Capacité (D0)** : objectif 150 joueurs dans la ligue, 300 au maximum avec plus de terrains. Le nombre de places par dimanche est à confirmer avec l'app (réglage actuel : 2 terrains de 15, soit 30 places, `SFL/src/lib/sfl/equipes-division.ts`, à revoir avec Sabri).
+> - **Reportées, « on verra bien »** : D9 (stars), D10 (offre aux sponsors ; un direct Instagram reste impossible avant 1 000 abonnés), D11 (outils payants), D12b (budget pub, pas avant décembre).
+
 **Le principe.** Demain, on ne vise pas la perfection. On vise à **ne rien perdre** : les images, les accords des joueurs, les noms des comptes. Le reste se rattrape.
 
 **Qui fait quoi.**
 - **[Sabri]** : seulement toi (comptes, signatures, décisions).
 - **[Régie]**, **[Bord terrain]**, **[Commentateur]**, **[Noteur]** : les rôles du dimanche (A6). **Si vous n'êtes que deux, ou si tu es seul : A7.**
 - **[Agence]** : ce que les agents préparent (textes, listes, faits).
+- **[Production]** : le tournage sera assuré par l'association partenaire Poleed, qui fournit de quoi tourner, dès que le partenariat est en place ; rôles et date à définir avec elle (D6).
 
 Rien ici ne crée de compte, n'achète ni n'installe quoi que ce soit à ta place.
 
@@ -19,10 +32,10 @@ Rien ici ne crée de compte, n'achète ni n'installe quoi que ce soit à ta plac
 
 Tout ce qui demande de créer un compte, c'est toi qui le fais.
 
-- [ ] **Choisir le nom** (D2) : `sundayfiveleague`, sinon `sundayfive_league` (et `sfl_lille` réservé en protection). Vérifier qu'il est libre sur Instagram, TikTok, YouTube et Twitch **avant** d'en créer un seul.
+- [ ] **Choisir le nom** (D2, en attente : Sabri crée les comptes et donnera les noms retenus) : recommandé `sundayfiveleague`, sinon `sundayfive_league` (et `sfl_lille` réservé en protection). Vérifier qu'il est libre sur Instagram, TikTok, YouTube et Twitch **avant** d'en créer un seul. Les comptes sont au nom de la SFL (D3).
 - [ ] **Une adresse e-mail dédiée** pour tous les comptes, pas ta boîte perso. Par exemple une adresse sur sfl-lille.fr, si le domaine a des boîtes mail. C'est aussi l'adresse de contact des textes E2 et E3.
 - [ ] **Instagram** : compte professionnel de type **Entreprise**. Threads reprendra le même identifiant.
-- [ ] **TikTok** : compte **Entreprise**.
+- [ ] **TikTok** : compte **Entreprise**. Un seul compte (D8).
 - [ ] **YouTube** : une chaîne au nom de la SFL, liée à un compte de marque pour pouvoir ajouter des gestionnaires plus tard (à vérifier à la création).
 - [ ] **YouTube, à faire aujourd'hui** : **activer le direct**. L'activation peut prendre jusqu'à 24 h.
 - [ ] **Twitch** : vérifier le nom de la chaîne (le même que les autres).
@@ -68,10 +81,11 @@ Pourquoi `/inscription` et pas « / » : pour un visiteur sans compte, « / » o
   - Ou, dans le dépôt SFL : `npx tsx tools/sigle-sfl.ts --serre /tmp/sfl-serre.svg`, puis la même recoloration. **Toujours avec un chemin de sortie** : sans lui, le script écrase le sigle officiel de l'app (`public/bola/sfl.svg`).
   - Export en PNG carré de 1080 px.
 - **Bannières YouTube et Twitch** : fond Noir Nuit uni et sigle, en attendant les vraies (étape 2).
+- **Couleurs (D7, validée avec modification)** : presque noir et blanc, avec le bleu SFL `#3D9BFF` en accent (« même si on joue en noir et blanc, tu rajoutes du bleu »). L'or seulement pour la Pépite d'Or et la carte MVP. Point de vigilance : le bleu SFL est la couleur de la marque ; le bleu cobalt reste celui du titre Défensive gagné. Ne pas les mettre côte à côte sans repère.
 
 ### A4. Le droit à l'image : le minimum avant de filmer [Sabri]
 
-Décision D1. Les textes sont prêts en partie E.
+Décision D1, validée le 01/11 : **seuls les joueurs qui ont signé l'autorisation (E3) apparaissent sur les réseaux**. Sans signature, on ne les montre pas. Les textes sont prêts en partie E.
 
 - [ ] **Envoyer le message aux joueurs ce soir** (E1), dans l'app ou sur le groupe.
 - [ ] **Imprimer deux pancartes A3** (E2) : une à l'entrée, une près de la régie.
@@ -83,7 +97,7 @@ Ce sont des textes modèles. **Ils sont à faire relire par un avocat** dès la 
 
 ### A5. Matériel et régie, ce soir [Régie]
 
-- [ ] **Test complet du flux Twitch** depuis le Mac mini.
+- [ ] **Test complet du flux Twitch** depuis le Mac mini. Pour la suite : le direct passera sur Twitch **et** YouTube en simultané (D5), dès que Sabri fixe la date ; tester alors les deux flux ensemble.
 - [ ] **Enregistrement local** activé dans OBS, en pleine qualité, en MP4 hybride si la version installée le permet (pour les marqueurs, A7). C'est la copie de sécurité : l'archive Twitch s'efface en 7 jours.
 - [ ] **Habillage minimal** : le sigle et le score. Prénoms et notes seulement pour les joueurs qui ont signé E3. Rien qui renvoie vers une autre plateforme.
 - [ ] **Chat Twitch** : AutoMod activé, une liste de mots bloqués, un modérateur humain demain.
@@ -103,6 +117,8 @@ Ce sont des textes modèles. **Ils sont à faire relire par un avocat** dès la 
 | **Commentateur** | La voix du live. Promis aux sponsors | [à nommer] |
 | **Noteur** | Note l'heure de chaque temps fort (B2). Modère le chat si personne d'autre | [à nommer, ou la régie] |
 | **Sabri** | La table d'accueil : les autorisations, les joueurs, les choix | Toi |
+
+Pour le 8/11 : la régie et le bord terrain pourront être tenus par l'association partenaire Poleed (D6). La répartition est à définir avec elle.
 
 ### A7. Si vous êtes deux, ou si tu es seul
 
@@ -131,7 +147,7 @@ Ce sont des textes modèles. **Ils sont à faire relire par un avocat** dès la 
 
 **Avant les matchs**
 - [ ] 3 plans d'ambiance de 10 s : le terrain vide sous le ciel du jour, les maillots Noirs et Blancs posés, le sac de ballons.
-- [ ] Les arrivées, de dos ou de loin.
+- [ ] Les arrivées, de dos ou de loin : seulement des joueurs qui ont signé, ou personne de reconnaissable.
 - [ ] **Le Studio, version zéro** : le portrait de chaque nouveau joueur et des Têtes d'affiche, contre la face noire du mur (ou un mur sombre), au flash. Une photo verticale, une horizontale. Seulement ceux qui ont signé.
 
 **Pendant les matchs**
@@ -241,29 +257,31 @@ La J4 jouée déclenche la première mise à jour officielle des cartes (`saisie
 
 ## E. Les textes prêts
 
-**Un seul contact dans tous les textes** : Sabri, à la table d'accueil, et une adresse de contact réelle (A1). Remplacer `[NOM]` et `[adresse]` avant d'imprimer.
+**Un seul contact dans tous les textes** : Sabri, à la table d'accueil, et une adresse de contact réelle (A1). Remplacer `[nom exact de l'association]`, `[numéro]` et `[adresse]` avant d'imprimer. Depuis le 01/11 (D12a), l'organisateur et le responsable des images est l'**association SFL**, pas Sabri en personne.
 
-### E1. Message aux joueurs (ce soir)
+### E1. Message aux joueurs (la veille)
 
-> Demain, la SFL est filmée et diffusée en direct sur Twitch.
+*Envoyé pour le 1er novembre ; repris pour le 8 novembre selon D1 (`04` : seuls les joueurs qui ont signé apparaissent).*
+
+
+> Demain, la SFL est filmée et diffusée en direct sur Twitch. *(Pour la suite : « sur Twitch et YouTube », dès que la date du direct simultané est fixée, D5.)*
 > Les matchs du terrain filmé passent en plan large. Des extraits (buts, gestes, interviews) pourront être publiés sur les comptes de la SFL : Instagram, TikTok, YouTube.
-> À ton arrivée, tu signeras une courte autorisation à la table d'accueil. Sans elle : ni ton nom ni ta note à l'écran, aucun gros plan, aucun extrait.
-> Tu ne veux pas apparaître en gros plan ou dans un extrait ? Dis-le à Sabri, à la table d'accueil. On respecte ton choix, sans question.
+> À ton arrivée, tu signeras une courte autorisation à la table d'accueil. Sans elle, tu n'apparais pas sur les réseaux de la SFL : tu ne joues pas sur le terrain filmé, ni en direct, ni dans un extrait, une story ou un visuel.
 > Moins de 18 ans : aucun extrait, aucune interview, aucun gros plan. Ton match n'est diffusé en direct qu'avec l'accord écrit de tes deux parents.
 
 ### E2. Pancarte (A3)
 
 > **MATCHS FILMÉS ET DIFFUSÉS EN DIRECT**
 > Les matchs du terrain filmé passent en direct en plan large, puis en extraits sur les réseaux de la SFL.
-> Tu ne veux ni gros plan, ni extrait, ni ton nom à l'écran ? Dis-le à Sabri, à la table d'accueil : on respecte ton choix.
-> Organisateur et responsable des images : Sabri [NOM], pour la SFL. Contact, accès à tes images, opposition, effacement : [adresse]. Recours possible auprès de la CNIL.
+> Seuls les joueurs qui ont signé l'autorisation à la table d'accueil apparaissent (direct, extraits, visuels). Sans signature, tu joues sur un terrain non filmé.
+> Organisateur et responsable des images : l'association SFL ([nom exact de l'association]). Contact, accès à tes images, opposition, effacement : [adresse]. Recours possible auprès de la CNIL.
 
 ### E3. Autorisation de tournage et de diffusion (modèle, à faire relire par un avocat)
 
 > **SFL, saison 1 : autorisation de tournage et de diffusion**
 >
-> Je soussigné·e [nom, prénom], né·e le [date], autorise Sabri [NOM], organisateur de la SFL (Sunday Five League), et toute structure qu'il créera pour l'organiser, à me filmer et à me photographier pendant les dimanches de la SFL, et à diffuser ces images :
-> - en direct sur Twitch et YouTube, avec mon prénom, ma note et ma carte BOLA à l'écran, et avec les logos, mentions et spots des partenaires de la SFL (maillots, bâches, habillage) ;
+> Je soussigné·e [nom, prénom], né·e le [date], autorise l'association SFL (Sunday Five League) ([nom exact de l'association], [numéro]), organisatrice de la ligue, à me filmer et à me photographier pendant les dimanches de la SFL, et à diffuser ces images :
+> - en direct sur Twitch et YouTube (en simultané), avec mon prénom, ma note et ma carte BOLA à l'écran, et avec les logos, mentions et spots des partenaires de la SFL (maillots, bâches, habillage) ;
 > - en résumés, extraits, portraits et interviews sur les comptes de la SFL (Instagram, TikTok, YouTube, Twitch), y compris les rubriques présentées par un partenaire (Résumé, Top 5, Portrait) ;
 > - pour la promotion de la saison suivante ;
 >
@@ -275,7 +293,7 @@ La J4 jouée déclenche la première mise à jour officielle des cartes (`saisie
 > Je peux la retirer à tout moment pour les publications à venir, en écrivant à [adresse].
 > Mon Instagram / TikTok, pour qu'on m'identifie : ____________
 >
-> *Mes données.* Responsable : Sabri [NOM], pour la SFL. But : filmer et diffuser la ligue. Les rushs bruts sont effacés après le Résumé ; l'enregistrement du direct et les publications sont gardés [durée]. Je peux y accéder, m'y opposer ou les faire effacer en écrivant à [adresse], et saisir la CNIL.
+> *Mes données.* Responsable : l'association SFL ([nom exact de l'association]). But : filmer et diffuser la ligue. Les rushs bruts sont effacés après le Résumé ; l'enregistrement du direct et les publications sont gardés [durée]. Je peux y accéder, m'y opposer ou les faire effacer en écrivant à [adresse], et saisir la CNIL.
 >
 > Fait à [lieu], le [date]. Signature :
 >
@@ -305,4 +323,4 @@ La J4 jouée déclenche la première mise à jour officielle des cartes (`saisie
    - Présence +1 · Victoire +2 · Nul +1 · But +1 · Passe décisive +1 · Clean sheet +3 · MVP +2 · Joueur Impact +1 · Défensive +1 · Chaque paire d'arrêts +1 · Chaque paire d'interceptions +1 · Retard −1 · Absence injustifiée −2.
    - Extra time (venir compléter une autre équipe) : +1 seulement avec un but ou une passe.
    - Le sens de « SFL Time » (victoire à +3) n'est écrit nulle part : à préciser par toi avant de le publier.
-3. **« Viens seul »** (carrousel) : comment s'inscrire, ce qu'il faut pour un premier dimanche, combien de places (D0), répondre à la convocation avant vendredi minuit, à qui écrire.
+3. **« Viens seul »** (carrousel) : comment s'inscrire, ce qu'il faut pour un premier dimanche, combien de places (D0 : objectif 150 joueurs dans la ligue, 300 au maximum avec plus de terrains ; le nombre de places par dimanche est à confirmer dans l'app avant de l'écrire), répondre à la convocation avant vendredi minuit, à qui écrire.

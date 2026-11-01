@@ -2,6 +2,8 @@
 
 **Statut : première proposition, à valider par Sabri.** Rien n'est publié, aucun compte n'est créé.
 
+**Mise à jour du 01/11/2026 (décisions de Sabri).** Validées : D1 (seuls les joueurs qui ont signé la charte apparaissent), D3 (comptes au nom de la SFL, BOLA = l'appli des stats), D5 (direct Twitch et YouTube en simultané, date à fixer), D7 (noir et blanc, avec le bleu SFL et l'or), D8 (un seul TikTok). La SFL est une association (D12a). Capacité visée : 150 joueurs, 300 au maximum avec plus de terrains (D0). En attente : D2 (Sabri crée les comptes et donnera les noms), D6 (tournage par une association partenaire). Reportées : D9, D10, D11, D12b.
+
 Les fréquences, durées et parts données ici sont des **choix à tester**, pas des faits. Les faits et leurs sources sont dans `02-etude.md`. Les chiffres de la ligue viennent du code de l'app (`/home/user/SFL`), pas de la base réelle : à revérifier avant publication.
 
 ---
@@ -37,7 +39,7 @@ Ses faiblesses : elle risquait de faire de cinq visages la marque, et ta vitrine
 | La braise réservée au recrutement (« Il manque 1. ») | Communauté | Une couleur, un sens : orange veut dire « une place pour toi » |
 | Le parcours en cinq étapes (voir, se projeter, oser, revenir, ramener) | Communauté | Chaque série a un rôle précis dans le recrutement |
 | « Le programme du jour » le samedi, les chapitres du Résumé envoyés en famille, l'Équipe de la semaine par terrain | Communauté | Fait venir les proches sur le live, montre les deux terrains |
-| La capacité d'abord | Communauté | 30 places par dimanche dans le code (`04` D0) : ne pas recruter plus vite que la ligue ne peut faire jouer |
+| La capacité d'abord | Communauté | Objectif 150 joueurs, 300 au maximum avec plus de terrains (`04` D0) : ne pas recruter plus vite que la ligue ne peut faire jouer |
 
 Les deux options écartées sont résumées en annexe, pour que tu puisses changer d'avis.
 
@@ -85,10 +87,10 @@ Cinq règles pour le tenir :
 
 ## 3. SFL la compétition, BOLA la technologie
 
-- **Les comptes sont au nom de la SFL.** La ligue est le héros.
-- **BOLA est le fournisseur officiel**, comme une grande ligue affiche « données par… ». Signature des contenus : « Stats et cartes : BOLA », lien getbola.app.
+- **Les comptes sont au nom de la SFL.** La ligue est le héros. Validé par Sabri le 01/11 (D3).
+- **BOLA n'apparaît que comme l'appli qui fait les stats et les cartes**, comme une grande ligue affiche « données par… ». Signature des contenus : « Stats et cartes : BOLA », lien getbola.app.
 - BOLA garde son ton de « mouvement » dans l'app et sur son site.
-- Le nom exact des comptes est une décision à toi (`04-decisions.md`, D2).
+- Le nom exact des comptes : Sabri crée lui-même les comptes et donnera les noms retenus. Recommandation : @sundayfiveleague. En attente de Sabri (`04-decisions.md`, D2).
 
 ---
 
@@ -134,6 +136,8 @@ Cinq règles pour le tenir :
 
 Le niveau **Recommandé** de `04` D6 (3 personnes le dimanche, un monteur le lundi). **Le tableau des niveaux de D6 est le seul qui fait foi** ; au Minimum, on garde les lignes en gras.
 
+Le tournage sera assuré par l'association partenaire Poleed, avec laquelle la SFL fait un partenariat : elle fournit de quoi tourner. Les rôles exacts sont à définir avec elle (D6).
+
 | Jour | Instagram | TikTok | YouTube | Twitch |
 |---|---|---|---|---|
 | **Vendredi** | Story « La Feuille » à 19 h (les équipes révélées) | — | Post « La Feuille » | — |
@@ -170,7 +174,7 @@ Total au Recommandé : 5 publications dans le fil Instagram (L'Action, Les Carte
 | **Le Top 5 · J#** | Reel : les cinq plus beaux gestes | Mardi | Terrain |
 | **Portrait** | Photo du Studio en noir et blanc, trois phrases du joueur. C'est le « Portrait du MVP » vendu aux sponsors | Mercredi | Visages |
 | **La Course** | Carrousel : top 10, flèches, écarts, puis la plus grosse montée de chaque division | Jeudi | Course |
-| **Jour de Verdict** | Carrousel : les cartes avant et après (joueurs avec l'accord « hors de l'app ») | 2/11, 30/11, 28/12, 25/01 | Course |
+| **Jour de Verdict** | Carrousel : les cartes avant et après (seulement les joueurs qui ont signé la charte, `04` D1) | 2/11, 30/11, 28/12, 25/01 | Course |
 | **Venu seul** | Reel : un nouveau, sa carte au 1er puis au 4e dimanche, trois phrases face caméra | Un dimanche sur deux | Porte |
 | **Le Défi Pépite** | Reel en Collab avec la tête d'affiche et le challenger | Une semaine sur deux | Visages |
 | **Stories** | « La Feuille », « Le programme », Matchday, sondage MVP, « Minuit. Les votes ferment. », republication des stories « Ton dimanche » des joueurs | Chaque semaine | Tous |
@@ -182,7 +186,7 @@ Total au Recommandé : 5 publications dans le fil Instagram (L'Action, Les Carte
 **Rôle.** Faire découvrir la ligue, surtout aux Lillois, via le fil « À proximité » et la recherche.
 
 **Réglages.**
-- **Un seul compte**, trois registres : vitrine ~25 %, match ~45 %, vestiaire ~30 %.
+- **Un seul compte** (validé par Sabri le 01/11, D8), trois registres : vitrine ~25 %, match ~45 %, vestiaire ~30 %.
 - L'underground le plus crédible vient des comptes perso des joueurs : on les relaie, crédités, avec leur accord.
 - Lieu identifié à chaque vidéo. Mots-clés **dits, écrits à l'écran et légendés** : « foot à 5 Lille », « ligue du dimanche », « Pépite d'Or ».
 - Musique : la bibliothèque commerciale de TikTok, et le son original de la SFL.
@@ -206,7 +210,7 @@ Total au Recommandé : 5 publications dans le fil Instagram (L'Action, Les Carte
 
 **Rôle.** L'archive de la ligue, l'information et le divertissement. C'est là que vivent les formats longs des stars.
 
-**Objectif de saison** : **500 abonnés et 3 000 h de visionnage public** (les directs archivés en public y contribuent, à vérifier dans YouTube Studio). Les abonnements de chaîne et le Super Chat ne s'ouvrent qu'aux deux conditions réunies, avec 3 vidéos en 90 jours, puis une candidature acceptée et un compte AdSense (`04` D12a). Pas de pari sur la pub : le seuil doublerait pour les nouvelles chaînes le 01/02/2027 [à vérifier sur blog.youtube / support.google.com].
+**Objectif de saison** : **500 abonnés et 3 000 h de visionnage public** (les directs archivés en public y contribuent, à vérifier dans YouTube Studio). Les abonnements de chaîne et le Super Chat ne s'ouvrent qu'aux deux conditions réunies, avec 3 vidéos en 90 jours, puis une candidature acceptée et un compte AdSense, au nom de l'association SFL ([nom exact de l'association], [numéro RNA] à compléter) (`04` D12a). Pas de pari sur la pub : le seuil doublerait pour les nouvelles chaînes le 01/02/2027 [à vérifier sur blog.youtube / support.google.com].
 
 | Série | Format | Quand |
 |---|---|---|
@@ -232,7 +236,7 @@ Total au Recommandé : 5 publications dans le fil Instagram (L'Action, Les Carte
 - **Le statut d'Affilié** : à suivre dans le tableau de bord Twitch (Succès → Chemin vers Affilié). Si 7 jours de diffusion sur 30 sont exigés, le seul dimanche n'y suffit pas : ajouter un live en semaine (l'After, ou la rediffusion du jeudi).
 - **L'After** : 30 min de débrief si un animateur s'en charge. Raid de fin vers une star qui streame.
 - **Les règles** : la même qualité que sur YouTube ; jamais « va sur YouTube » à l'écran ; aucune musique commerciale (y compris la sono du complexe) ; modération dès le premier live ; la case « contenu de marque » cochée à chaque live (naming, spot mi-temps).
-- **Toute la saison 1, en simultané avec YouTube** : c'est promis aux sponsors. Le point du 6 décembre décide seulement où mettre la modération et les animations, et prépare la saison 2.
+- **En simultané avec YouTube**, validé par Sabri le 01/11 (D5) : c'est promis aux sponsors. Date de départ : dès que Sabri fixe la date. Le point d'étape, environ un mois après le premier direct simultané (prévu le 6/12, à recaler sur sa date de départ), décide seulement où mettre la modération et les animations, et prépare la saison 2.
 
 ---
 
@@ -246,7 +250,7 @@ Le risque est double : une ligue individuelle qui paraît servir cinq joueurs, e
    - le Top 5 contient au moins 2 actions de D2 ou D3 ;
    - « Le But du Dimanche » change de division chaque semaine ;
    - la feuille de tournage fait tourner le vertical entre les terrains et les divisions.
-4. **La couverture.** Chaque joueur actif est **nommé dans une publication du fil ou un Reel** (une story ne compte pas) au moins une fois toutes les 4 journées ; toutes les 6 au-delà de 120 actifs. Les mineurs, la liste rouge et les joueurs sans accord « hors de l'app » sortent du compte.
+4. **La couverture.** Chaque joueur actif est **nommé dans une publication du fil ou un Reel** (une story ne compte pas) au moins une fois toutes les 4 journées ; toutes les 6 au-delà de 120 actifs. Les mineurs, la liste rouge et les joueurs qui n'ont pas signé la charte (`04` D1) sortent du compte.
 5. **La séparation des pouvoirs.** Un format star ne donne jamais un point Pépite ni un cran de carte. Les équipes sont composées par l'app. Les points donnés à la main (`pepiteBonus`) et toute correction de feuille ont un motif public et un plafond. **Ilyes est admin** (`admin.ts`) : il ne saisit ni ne corrige la feuille d'un match qu'il joue (`04` D9).
 6. **Un contrat écrit par Tête d'affiche**, même sous 1 000 €, pour un cycle de 4 journées renouvelable : droit à l'image, propriété des contenus, co-crédit, et la mention « Collaboration commerciale » dès qu'il y a une dotation. **Aucun mineur** dans ces formats.
 7. **La marque, c'est la Pépite et la carte, pas cinq personnes.** Si une star part, la série continue avec le n° 6.
@@ -257,7 +261,7 @@ Ce qu'on reprend du duo Victor et Thibault : un exercice signature, les mêmes v
 
 - **L'exercice signature proposé : « Le Coffre ».** Une cible de 40 cm à 15 m. Trois manches. Il a son propre classement, **hors Pépite**. À tester sur le terrain avant de le figer.
 - **Le principe** : « le n° 1 de la ligue contre un inscrit de mardi ».
-- **Le tournage** : en marge d'un dimanche ou un soir de semaine, deux téléphones, un animateur fixe.
+- **Le tournage** : en marge d'un dimanche ou un soir de semaine, deux téléphones, un animateur fixe. Le matériel peut venir de l'association partenaire du tournage (D6, à définir avec elle).
 - **Ce que ça donne** : une vidéo longue, 4 à 6 Shorts, un Reel en Collab, un TikTok.
 
 ---
@@ -279,7 +283,7 @@ Ce qu'on reprend du duo Victor et Thibault : un exercice signature, les mêmes v
 **Accroches (première seconde)**
 - « Il est arrivé seul il y a trois dimanches. Il est 7e. »
 - « Cet homme a un contrat sur la tête. »
-- « 30 places en D1. Dimanche, il en restait une. »
+- « [N] places en D1. Dimanche, il en restait une. » ([N] : le chiffre réel, une fois les places par dimanche confirmées, `04` D0)
 - « Minuit. Les votes ferment. »
 - « L'or ne se donne pas. »
 
@@ -307,15 +311,19 @@ Ce qu'on reprend du duo Victor et Thibault : un exercice signature, les mêmes v
 
 ### Une couleur, un sens
 
+Validé par Sabri le 01/11 (D7) : une DA presque noir et blanc, avec du bleu, et l'or pour l'univers Pépite d'Or. Ses mots : « même si on joue en noir et blanc, tu rajoutes du bleu ».
+
 | Couleur | Code | Usage sur les réseaux |
 |---|---|---|
 | Noir Nuit | `#08090B` | Le fond |
 | Blanc Craie | `#F4F5F2` | Le texte, le sigle |
 | Gris Béton | `#8F908B` | Le texte secondaire |
+| Bleu SFL | `#3D9BFF` | **La couleur d'accent de la marque** : cartouche de série, filets, détails du cadre, sigle sur fond clair |
 | Or | (couleur de la carte MVP) | **Seulement** la Pépite d'Or et la carte MVP |
 | Rouge Impact, bleu cobalt Défensive | (couleurs des cartes) | **Seulement** quand le titre est gagné |
 | Braise | `#FF8A4C` | **Seulement** le recrutement : « Il manque 1. » |
-| ~~Bleu SFL~~ | ~~`#3D9BFF`~~ | **Retiré des réseaux** : il se confond avec la carte Défensive. À trancher (D7) |
+
+**Point de vigilance.** Le bleu SFL est proche du bleu cobalt de la carte Défensive. Règle : le bleu SFL habille le cadre (la marque) ; le cobalt n'apparaît que sur une carte Défensive gagnée. Le bleu SFL ne colore jamais une carte ni un joueur.
 
 ### Les signes fixes
 - **Typo** : Inter très grasse en capitales pour les titres ; Anton pour tous les chiffres (score, note, points, rang) ; Barlow Condensed sur les cartes, comme dans l'app.
@@ -325,7 +333,7 @@ Ce qu'on reprend du duo Victor et Thibault : un exercice signature, les mêmes v
 - **Le son** : de vrais sons du terrain (sifflet, frappe, filet), enregistrés un dimanche et montés en interne, sans IA ni dépense ; une signature d'1 s, publiée comme son original sur TikTok.
 
 ### Les images
-- **L'hiver de midi.** On joue de 12 h 30 à 16 h environ, de jour, en plein air (Hippodrome de Marcq). Lumière basse et rasante, ciel gris, pluie, buée. Noir et blanc contrasté, contre-plongée (comme l'écran 1 du site), grain assumé. La seule couleur vive, c'est le titre gagné.
+- **L'hiver de midi.** On joue de 12 h 30 à 16 h environ, de jour, en plein air (Hippodrome de Marcq). Lumière basse et rasante, ciel gris, pluie, buée. Noir et blanc contrasté, contre-plongée (comme l'écran 1 du site), grain assumé. Dans l'image, la seule couleur vive, c'est le titre gagné ; le bleu SFL reste dans le cadre.
 - **Des images de match vraies**, à l'iPhone, jamais générées ni modifiées par IA. Miniatures YouTube : un vrai visage, un chiffre en Anton, trois mots au plus.
 - **La carte BOLA** est un portrait de marque : sa photo est faite par l'IA dans l'app (`api/photo-studio`), et c'est assumé. Elle signe nos contenus ; elle ne remplace jamais une image du terrain.
 - **Le Studio du dimanche.** Le « Mur pour photos et interviews » déjà budgété : une face noire unie pour les portraits, l'autre aux logos des sponsors pour les interviews (`04` D7). Chaque nouveau joueur y fait son portrait officiel à son premier dimanche, s'il a signé l'accord. Ce portrait nourrit « Portrait » et le recrutement.
@@ -357,7 +365,7 @@ Carrousel 3:4 (cartes, course, verdict), couverture de Reel, story (feuille, pro
 - **La braise ne promet que ce que l'app permet dans le délai annoncé.** Pas de « place libre dimanche » pour un inconnu le vendredi.
 - **Cent joueurs, cent diffuseurs.** Chaque joueur montré reçoit son visuel prêt à poster (la story « Ton dimanche » de l'app) et, pour les mis en avant, une invitation en Collab.
 - **Mesure sans traceur, dès la semaine 1.** Les paramètres `utm_*` gardés à l'arrivée et enregistrés avec le compte, et le champ « Comment as-tu connu la SFL ? » (deux changements dans l'app, `05` A2). La politique actuelle de l'app exclut tout pixel : on la respecte.
-- **La capacité d'abord.** 30 places par dimanche dans le code (`04` D0). Au-delà, les remplaçants (déjà dans l'app, dans l'ordre d'arrivée) et une liste d'attente visible, qui devient elle-même un argument.
+- **La capacité d'abord.** Objectif : 150 joueurs dans la ligue, 300 au maximum quand il y aura plus de terrains (`04` D0). La pub reste conditionnée à la capacité réelle d'accueil (places par dimanche à confirmer avec l'app). Au-delà, les remplaçants (déjà dans l'app, dans l'ordre d'arrivée) et une liste d'attente visible, qui devient elle-même un argument.
 
 ### Les sponsors : les séries sont l'inventaire
 
@@ -374,7 +382,7 @@ Carrousel 3:4 (cartes, course, verdict), couverture de Reel, story (feuille, pro
 - **Chaque contenu sponsorisé est déclaré avec l'outil de la plateforme** : « Partenariat rémunéré » sur Instagram, « contenu de marque » sur TikTok, « promotion payée » sur YouTube, « contenu de marque » sur Twitch, à chaque live (naming, spot mi-temps).
 - Ce qu'on doit aux sponsors est inscrit chaque semaine dans le calendrier (§6, ligne « Dû aux sponsors »).
 
-**À corriger dans l'offre** (D10) : d'abord savoir qui a signé quoi ; puis le live Instagram (impossible avant 1 000 abonnés), TikTok absent, les « vidéos IA », le nombre de places Officiel.
+**À corriger dans l'offre** (D10, reportée par Sabri le 01/11 : « on verra bien » ; recommandation inchangée) : d'abord savoir qui a signé quoi ; puis le live Instagram (impossible avant 1 000 abonnés), TikTok absent, les « vidéos IA », le nombre de places Officiel. Les contrats se signent au nom de l'association SFL ([nom exact de l'association] à compléter, D12a).
 
 ---
 
@@ -382,11 +390,14 @@ Carrousel 3:4 (cartes, course, verdict), couverture de Reel, story (feuille, pro
 
 ### Les indicateurs maîtres : des joueurs, dans la limite des places
 
-Le code fixe 2 terrains de 15, soit **30 places par dimanche** (`04` D0). Un joueur actif a joué au moins un dimanche sur les quatre derniers : avec 30 places, il y en a **au plus 120**. Viser 200 actifs n'a de sens que si tu ouvres des terrains ou des créneaux.
-- **Remplissage** : 30 places sur 30, chaque dimanche.
-- **Inscrits** : environ 100 aujourd'hui ; l'objectif chiffré dépend de D0.
+L'objectif de Sabri (01/11, D0) : **150 joueurs dans la ligue**, et **300 au maximum** « quand on aura vraiment des terrains ». Un joueur actif a joué au moins un dimanche sur les quatre derniers.
+
+**Réglage de l'app à revoir avec Sabri.** Le code fixe aujourd'hui 2 terrains de 15, soit 30 places par dimanche (`TERRAINS_MAX = 2`, `SFL/src/lib/sfl/equipes-division.ts`). Cela ne correspond pas à son objectif. Le code n'est pas modifié ici.
+- **Remplissage** : toutes les places du dimanche prises (nombre de places par dimanche à confirmer avec l'app).
+- **Inscrits** : environ 100 aujourd'hui ; objectif 150.
 - **Liste d'attente** : elle grandit, et elle devient la réserve de la saison 2 (pré-inscriptions du 10/01 au 24/01).
-- 200 à 300 joueurs : l'objectif de l'ouverture de la saison 2, si la capacité suit.
+- 300 joueurs : le maximum, quand la SFL aura plus de terrains.
+- La pub reste conditionnée à la capacité réelle d'accueil.
 
 ### Trois indicateurs par plateforme
 
@@ -401,7 +412,8 @@ Le code fixe 2 terrains de 15, soit **30 places par dimanche** (`04` D0). Un jou
 
 | | Au 6/12 | Au 24/01 |
 |---|---|---|
-| Remplissage | 30/30 chaque dimanche | 30/30, et une liste d'attente |
+| Remplissage | Toutes les places prises chaque dimanche | Toutes les places prises, et une liste d'attente |
+| Joueurs dans la ligue | (à recaler) | Vers 150 |
 | Inscriptions attribuées (UTM ou « Comment as-tu connu ») | 10 | 40 |
 | Instagram | 300 abonnés | 1 000 (le live s'ouvre) |
 | TikTok | 500 abonnés | 1 500 |

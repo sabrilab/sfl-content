@@ -1,11 +1,13 @@
 # 02. L'étude : ce que la recherche a établi
 
 *Dossier de cadrage des réseaux SFL. Rédigé le 31/10/2026 à partir de cinq rapports de l'agence (marque, Instagram, TikTok, YouTube et Twitch, concurrence, pub et droit).*
+*Mis à jour le 01/11/2026 avec les décisions de Sabri (marquées [D]). Les faits et les sources ne changent pas.*
 
 **Légende**
 - **[F]** fait sourcé : le lien est donné.
 - **[E]** estimation : un calcul, un consensus de praticiens ou un chiffre d'un tiers non vérifié.
 - **[A]** avis de l'agence.
+- **[D]** décision de Sabri, 01/11/2026.
 
 **Limites de méthode, à garder en tête**
 - Les pages officielles des plateformes n'ont pas pu être ouvertes depuis la session : support.tiktok.com, newsroom.tiktok.com, about.instagram.com, creators.instagram.com, support.google.com, help.twitch.tv, twitch.tv, ads.tiktok.com. Les sites juridiques non plus : Légifrance, cnil.fr. Ni plusieurs sites de mesure : streamscharts.com, kolsquare.com, creatordb.app.
@@ -21,10 +23,10 @@
 | Question | Réponse | Section |
 |---|---|---|
 | « Instagram, c'est lisse et beau » ? | **À moitié vrai.** Juste pour le cadre (profil, grille, gabarits). Faux pour l'image : ce qui se partage, c'est le vrai, l'émotion, le brut. | §1.2 |
-| Le direct : Twitch ou YouTube ? | **Garder Twitch comme tu le veux, mais diffuser le même flux en même temps sur YouTube.** YouTube garde les archives et fait découvrir ; Twitch presque pas. Faire le point le 6/12. | §5 |
-| Un ou deux comptes TikTok ? | **Un seul**, avec trois registres (vitrine, match, vestiaire). L'underground le plus crédible vient des comptes perso des joueurs. | §2.5 |
+| Le direct : Twitch ou YouTube ? | **Les deux en même temps** : le même flux sur Twitch et sur YouTube. **[D] Validé par Sabri le 01/11.** Date de départ : pas encore fixée, elle revient à Sabri. YouTube garde les archives et fait découvrir ; Twitch presque pas. Faire le point environ un mois après le premier direct. | §5 |
+| Un ou deux comptes TikTok ? | **Un seul**, avec trois registres (vitrine, match, vestiaire). **[D] Validé par Sabri le 01/11.** L'underground le plus crédible vient des comptes perso des joueurs. | §2.5 |
 | C'est qui, « pitch addict » ? | **Très probablement Pitch Addict**, duo français (Victor et Thibault) de défis foot. Fort sur TikTok, plus petit sur YouTube. À confirmer par toi. | §6.1 |
-| Le direct Instagram promis aux sponsors ? | **Impossible au lancement** : il faut un compte public d'au moins 1 000 abonnés. | §1.3 |
+| Le direct Instagram promis aux sponsors ? | **Impossible au lancement** : il faut un compte public d'au moins 1 000 abonnés. **[D]** Correction de l'offre reportée par Sabri (« on verra bien ») ; la recommandation reste. | §1.3 |
 | Quelqu'un occupe déjà la place de média du foot à 5 lillois ? | **Rien trouvé** en ligne. À vérifier à la main dans les apps. | §6.6 |
 
 ---
@@ -213,7 +215,8 @@
 - Ton choix de Twitch tient pour **la culture du direct** : le chat, les raids, les pronostics avec les points de chaîne.
 - Mais Twitch seul, c'est un live vu par les joueurs et leurs proches, et effacé en 7 jours. Les recherches convergent : **diffuser le même flux en même temps sur YouTube**, en même qualité, sans jamais écrire « va sur YouTube » à l'écran.
 - **[E]** Débit montant : environ 6 Mb/s par flux 1080p60. Envoyer soi-même vers deux plateformes double le débit ; un service comme Restream n'envoie qu'un flux (gratuit pour 2 destinations avec filigrane, environ 19 $/mois sans, d'après un tiers : à revérifier sur la page officielle). ([Upstream](https://upstream.so/blog/restream-pricing/)) Le budget a déjà une ligne « Diffusion sur plusieurs réseaux, 3 × 20 € ».
-- **Le simultané est tenu toute la saison 1** : le direct Twitch est promis aux sponsors. **Point d'étape le 6 décembre** : heures vues, spectateurs, abonnés gagnés, plateforme par plateforme, pour décider où mettre la modération et les animations, et préparer la saison 2.
+- **[D] Validé par Sabri le 01/11 : le direct passe sur Twitch et sur YouTube en même temps.** Il démarre dès que Sabri fixe la date ; aucune date n'est arrêtée.
+- **Le simultané est tenu toute la saison 1** : le direct Twitch est promis aux sponsors. **Point d'étape environ un mois après le premier direct** : heures vues, spectateurs, abonnés gagnés, plateforme par plateforme, pour décider où mettre la modération et les animations, et préparer la saison 2.
 - **[E]** Attendre quelques dizaines de spectateurs simultanés, pas des milliers : la SFL n'a pas de streamer star, à la différence de la Kings League.
 
 ---
@@ -297,13 +300,16 @@ Détail complet dans le rapport « pub, outils, droit » de l'agence. Ce qui cha
 - **[Code]** L'inscription est ouverte **dès 12 ans** (`SFL/src/lib/sfl/inscription.ts`, `ageMin: 12`), avec l'accord d'un parent avant 15 ans. Des mineurs peuvent donc apparaître dans les matchs filmés.
 - **[Code]** La case « hors de l'app » ne couvre que **la carte et la photo** du joueur dans les vidéos et visuels « que Bola publie » (`SFL/src/lib/sfl/consentement.ts`, champ `horsApp`). Elle ne couvre **ni la captation, ni le direct, ni la pub**, ni nommément les comptes de la SFL. La même politique prévoit que la photo de carte (faite par l'IA) « peut être confiée à un outil de génération vidéo, comme Magnific » (`politique.tsx`).
 - **[F]** Droit à l'image : il faut un consentement distinct, qui nomme les supports et la durée ; pour un mineur, ce sont les parents. ([CNIL](https://cnil.fr/fr/cnil-direct/question/le-droit-limage-sapplique-t-il-sur-internet)) Loi du 19/02/2024 : les parents protègent en commun l'image de l'enfant. ([La GBD](https://lagbd.org/Le_droit_a_l_image_des_enfants_sur_internet_nouvelle_protection_par_la_loi_du_19_fevrier_2024))
+- **[D] 01/11 :** seuls les joueurs qui ont signé la charte (l'autorisation) apparaissent sur les réseaux. Sans signature, on ne les montre pas. Les règles sur les mineurs restent.
 - **[F]** Loi influenceurs (n° 2023-451) : mention « Publicité » ou « Collaboration commerciale » pendant tout le contenu ([vie-publique](https://www.vie-publique.fr/node/288793)).
 - **[E, à vérifier sur Légifrance : décret d'application de l'art. 8 de la loi 2023-451]** Contrat écrit obligatoire au-delà de 1 000 € HT depuis le 01/01/2026 ([Lettre des Réseaux](https://www.lettredesreseaux.com/remunerations-superieures-a-1-000e-contrat-ecrit-obligatoire-pour-les-influenceurs.html)).
 - **[F]** Loi Évin : « toute opération de parrainage est interdite » en faveur des boissons alcooliques (Code de la santé publique, art. L3323-2).
 - **[A]** Chaque plateforme a son outil de déclaration : « Partenariat rémunéré » (Instagram), « contenu de marque » (TikTok), « promotion payée » (YouTube), « contenu de marque » (Twitch). La mention écrite ne les remplace pas.
-- **[Code]** Aucune personne morale n'existe encore (« le jour où Bola devient une société »). Contrats sponsors, contrats stars, comptes publicitaires et AdSense en ont besoin.
+- **[Code]** L'app ne mentionne encore aucune personne morale (« le jour où Bola devient une société »). Contrats sponsors, contrats stars, comptes publicitaires et AdSense en ont besoin.
+- **[D] 01/11 :** la SFL est une **association**, pas une société. La question « association ou SAS » est close. Contrats, comptes pub, autorisations et AdSense se font au nom de l'association SFL ([nom exact de l'association], [numéro RNA] à compléter).
 - **[E]** CPM Meta en France : environ 8 à 10 $, d'après un tiers ([Superads](https://www.superads.ai/facebook-ads-costs/cpm/france)). **[F]** TikTok : plus de 20 $/jour par groupe d'annonces ([aide TikTok](https://ads.tiktok.com/resources/help/article/budget), lu en extrait). **[E]** CPM YouTube côté annonceur : non établi (le « 2 à 7 € » de [Codeur](https://www.codeur.com/blog/cpm-youtube/) est très probablement un revenu côté créateur) ; la pub vidéo s'achète surtout au CPV, à mesurer dans Google Ads.
 - **[E]** Audience pub réaliste dans la métropole (hommes de 18 à 35 ans intéressés par le foot) : 40 000 à 70 000 personnes. Elle sature vite.
+- **[D] 01/11 :** la SFL vise 150 joueurs, 300 au maximum quand il y aura plus de terrains. La pub reste conditionnée à la capacité réelle d'accueil : les places par dimanche sont à confirmer avec l'app (réglage actuel `TERRAINS_MAX = 2`, soit 30 places, `SFL/src/lib/sfl/equipes-division.ts`, à revoir avec Sabri). Budget pub : pas avant décembre.
 
 ---
 

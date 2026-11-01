@@ -1,25 +1,42 @@
 # 04. Les décisions qui te reviennent
 
+## Décidé le 01/11
+
+- **D0** : objectif 150 joueurs, 300 au plus « quand on aura vraiment des terrains ». L'app règle 30 places par dimanche : réglage à revoir avec toi.
+- **D1** : validée. Seuls les joueurs qui ont signé la charte apparaissent sur les réseaux.
+- **D2** : en attente. Tu crées les comptes et tu me donnes les noms ; je recommande toujours `sundayfiveleague`.
+- **D3** : validée. Comptes au nom de la SFL ; BOLA n'apparaît que comme l'appli qui fait les stats et les cartes.
+- **D5** : validée. Le direct sur Twitch et YouTube en même temps ; la date de départ, c'est toi qui la fixes.
+- **D6** : le tournage par une association partenaire, Poleed ; rôles à définir avec elle.
+- **D7** : validée. Presque noir et blanc, avec le bleu SFL en accent, et l'or pour l'univers Pépite d'Or.
+- **D8** : validée. Un seul compte TikTok.
+- **D12a** : close. La SFL est une association : contrats, comptes pub et autorisations à son nom.
+- **D9, D10, D11, D12b** : reportées (« on verra bien » ; la pub, pas avant décembre). Recommandations inchangées.
+
+Tes mots exacts sont en fin de fichier.
+
+---
+
 Quatorze décisions, triées par urgence. Pour chacune : la question, ma recommandation, ce que ça change.
 
-**Pour répondre vite** : écris le numéro et « oui », « non » ou ton choix. Par exemple : « D0 2 terrains, D1 oui, D2 sundayfiveleague ». Sans réponse, on part sur la recommandation pour ce qui ne coûte rien et se défait facilement ; on attend ton oui pour le reste (comptes, argent, contrats, droit).
+**Pour répondre vite** : écris le numéro et « oui », « non » ou ton choix. Par exemple : « D0 4 terrains, D6 oui, D5 le 15/11 ». Sans réponse, on part sur la recommandation pour ce qui ne coûte rien et se défait facilement ; on attend ton oui pour le reste (comptes, argent, contrats, droit).
 
-| # | Urgence | Question courte | Ma recommandation |
-|---|---|---|---|
-| D0 | Cette semaine, avant toute pub | Combien de joueurs la ligue peut-elle faire jouer ? | Le code dit 2 terrains, soit 30 places : on recrute vers la liste d'attente, pas vers « 200 actifs » |
-| D1 | Aujourd'hui | Avec quel accord on filme et on diffuse demain ? | L'autorisation E3 signée à l'arrivée ; sans elle, ni prénom ni note à l'écran ; mineurs : le direct seulement |
-| D2 | Aujourd'hui | Quel nom pour les comptes ? | `sundayfiveleague`, sinon `sundayfive_league` ; `sfl_lille` réservé en protection |
-| D3 | Aujourd'hui | Quelle marque se voit : SFL ou BOLA ? | SFL la compétition, BOLA la technologie |
-| D4 | **Close** | Demain, c'est la J1 ou la J4 ? | **J4**, d'après le code |
-| D5 | Aujourd'hui | Le direct de demain : Twitch seul ou Twitch + YouTube ? | Twitch seul demain, + YouTube dès le 8/11, toute la saison |
-| D6 | Cette semaine | Qui fait quoi, et quel rythme ? | Le niveau **Minimum**, tant que l'équipe n'a pas de noms |
-| D7 | Cette semaine | Quelle identité visuelle sur les réseaux ? | La nuit BOLA + le sigle SFL, sans le bleu ; le Studio = le mur déjà budgété |
-| D8 | Cette semaine | Un ou deux comptes TikTok ? | Un |
-| D9 | Avant le 1er format star | Comment on traite les stars ? | Top 10 vérifié le 2/11, contrat par cycle, Ilyes ne saisit pas ses matchs |
-| D10 | Avant la prochaine facture sponsor | On corrige l'offre sponsors ? | D'abord : qui a signé quoi ? Ensuite seulement, corriger |
-| D11 | Novembre | Quels outils payer ? | Les outils gratuits d'abord ; 2 disques |
-| D12a | **Cette semaine** | Association ou SAS ? | Avec un conseil : c'est le préalable aux factures, aux contrats et à la pub |
-| D12b | Pas avant décembre | Budget pub ? | Palier 0 par défaut |
+| # | Urgence | Question courte | Ma recommandation | Statut |
+|---|---|---|---|---|
+| D0 | Cette semaine, avant toute pub | Combien de joueurs la ligue peut-elle faire jouer ? | Objectif 150 joueurs, 300 au plus avec plus de terrains ; l'app règle 30 places par dimanche : à revoir avec toi ; pas de pub au-delà des places réelles | Validée 01/11 (objectif) ; places de l'app en attente de Sabri |
+| D1 | Chaque dimanche filmé | Avec quel accord on filme et on diffuse ? | Seuls les joueurs qui ont signé la charte (autorisation E3) apparaissent ; mineurs : le direct seulement, avec l'accord des parents | Validée 01/11 |
+| D2 | Avant le 8/11 | Quel nom pour les comptes ? | `sundayfiveleague`, sinon `sundayfive_league` ; `sfl_lille` réservé en protection | En attente de Sabri (il crée les comptes) |
+| D3 | — | Quelle marque se voit : SFL ou BOLA ? | Comptes au nom de la SFL ; BOLA seulement comme l'appli des stats et des cartes | Validée 01/11 |
+| D4 | — | Le 1er novembre, J1 ou J4 ? | **J4**, d'après le code | Close |
+| D5 | Avant le 1er direct YouTube | Le direct : Twitch seul ou Twitch + YouTube ? | Twitch et YouTube en simultané, dès que Sabri fixe la date | Validée 01/11 ; date en attente de Sabri |
+| D6 | Cette semaine | Qui fait quoi, et quel rythme ? | Le niveau **Minimum** ; le tournage par l'association partenaire (Poleed), rôles à définir avec elle | En attente de Sabri |
+| D7 | — | Quelle identité visuelle sur les réseaux ? | Presque noir et blanc, le bleu SFL `#3D9BFF` en accent, l'or seulement pour la Pépite d'Or ; le Studio = le mur déjà budgété | Validée 01/11 (avec le bleu) |
+| D8 | — | Un ou deux comptes TikTok ? | Un | Validée 01/11 |
+| D9 | Avant le 1er format star | Comment on traite les stars ? | Top 10 vérifié le 2/11, contrat par cycle, Ilyes ne saisit pas ses matchs | Reportée |
+| D10 | Avant la prochaine facture sponsor | On corrige l'offre sponsors ? | D'abord : qui a signé quoi ? Ensuite seulement, corriger | Reportée |
+| D11 | Novembre | Quels outils payer ? | Les outils gratuits d'abord ; 2 disques | Reportée |
+| D12a | — | Association ou SAS ? | **Association** : tout se fait au nom de l'association SFL | Close |
+| D12b | Pas avant décembre | Budget pub ? | Palier 0 par défaut | Reportée (pas avant décembre) |
 
 ---
 
@@ -27,34 +44,43 @@ Quatorze décisions, triées par urgence. Pour chacune : la question, ma recomma
 
 **Ce que dit le code.** `TERRAINS_MAX = 2` et `maxParTerrain: 15` (`SFL/src/lib/sfl/equipes-division.ts`, commit du 29/10, « À CONFIRMER PAR SABRI ») : **30 places par dimanche**. Au-delà, les joueurs restent remplaçants, dans l'ordre d'arrivée. Avec 2 terrains, des divisions voisines jouent ensemble (sous 8 joueurs, une division rejoint sa voisine).
 
+**Ta décision (01/11).** La SFL vise **150 joueurs**. **300 au maximum**, « quand on aura vraiment des terrains ». Ma lecture : 150 joueurs dans la ligue, et 300 places au plus le jour où les terrains suivent.
+
+**Un réglage de l'app à revoir avec toi.** Les 30 places par dimanche de l'app ne correspondent pas à cet objectif. À 15 par terrain, 150 joueurs le même dimanche demandent 10 terrains, et 300 en demandent 20. Je n'ai pas touché au code : le réglage (`TERRAINS_MAX`, aujourd'hui 2) suit ta réponse, avec ton accord.
+
 **Ce que ça change.**
-- Un « joueur actif » a joué au moins un dimanche sur les quatre derniers. Avec 30 places, il y a **au plus 120 actifs** (30 × 4), et moins en pratique. « 200 actifs au 24/01 » est impossible tant qu'il n'y a que 2 terrains.
-- Les contenus « par division » (Les Cartes, l'Équipe de la semaine) deviennent « par terrain » : au plus 2 matchs par dimanche (un par terrain), donc 2 MVP sauf égalité.
-- La pub ne doit rien dépenser tant que la capacité n'est pas fixée.
+- L'objectif devient **150 joueurs** ; il remplace « 200 actifs au 24/01 ».
+- Un « joueur actif » a joué au moins un dimanche sur les quatre derniers. Avec 30 places, il y a **au plus 120 actifs** (30 × 4), et moins en pratique. Sans plus de places, une partie des 150 reste remplaçante chaque dimanche.
+- Tant que l'app règle 2 terrains, les contenus « par division » (Les Cartes, l'Équipe de la semaine) deviennent « par terrain » : au plus 2 matchs par dimanche (un par terrain), donc 2 MVP sauf égalité.
+- La pub reste conditionnée à la **capacité réelle d'accueil** : les places par dimanche, à confirmer avec l'app.
 
 **Quatre réponses qu'il me faut, cette semaine.**
-1. **Les places** : tu confirmes 2 terrains, soit 30 places ? Peux-tu ouvrir un 3e terrain ou un 2e créneau, et à partir de quand ?
+1. **Les terrains** : combien de terrains ou de créneaux as-tu pour accueillir les 150, et à partir de quand ? Combien de places par dimanche l'app doit-elle ouvrir ?
 2. **Le prix d'un nouveau en cours de saison** (le budget compte 70 € la saison) : je propose un premier dimanche d'essai, puis un prorata.
-3. **Le maillot des nouveaux** : les 110 maillots portent nom et numéro. Une réserve à commander ?
+3. **Le maillot des nouveaux** : les 110 maillots portent nom et numéro. Pour 150 joueurs, il en manque au moins 40 : une réserve à commander ?
 4. **La date de la saison 2**, pour lancer les pré-inscriptions du 10/01 au 24/01.
 
-**Ma recommandation.** Tant qu'il y a 30 places, l'objectif de la saison 1 est un **taux de remplissage** (30 sur 30 chaque dimanche) et une **liste d'attente** qui grandit. Les 200 à 300 joueurs se visent à l'ouverture de la saison 2, si tu ouvres des terrains ou des créneaux.
+**Ma recommandation.** Viser 150 joueurs, et 300 au plus quand les terrains suivent. Tant que l'app règle 30 places, suivre le **taux de remplissage** (30 sur 30 chaque dimanche) et la **liste d'attente**. Aucune pub au-delà des places réelles (D12b).
 
 ---
 
-## D1. Avec quel accord on filme et on diffuse demain ?
+## D1. Avec quel accord on filme et on diffuse ? (validée le 01/11)
 
-**Urgence : aujourd'hui.** La case « hors de l'app » de l'app ne couvre que la carte et la photo, seulement si elle est cochée, et seulement dans « les vidéos et les visuels que Bola publie » (`consentement.ts`, `politique.tsx`). Elle ne couvre ni la captation, ni le direct, ni les clips, ni les comptes au nom de la SFL. L'inscription est ouverte dès 12 ans. Or l'habillage du live affiche le prénom, la note et la carte de chaque joueur : la CNIL demande un consentement distinct qui nomme les supports et la durée (`02-etude.md` §7).
+**Ta décision (01/11) : validée.** Seuls les joueurs qui ont signé la charte (l'autorisation E3) apparaissent sur les réseaux. Sans signature, on ne les montre pas : « sinon c'est pas la peine ». Les règles sur les mineurs restent.
 
-**Ma recommandation, pour demain.**
-1. Le message aux joueurs ce soir (E1) et la pancarte (E2).
+**Conséquence pour le direct.** Un joueur qui n'a pas signé ne joue pas sur le terrain filmé ; sinon, ce match ne passe pas en direct. C'est la même règle que pour les mineurs sans l'accord des parents.
+
+**Le constat.** La case « hors de l'app » de l'app ne couvre que la carte et la photo, seulement si elle est cochée, et seulement dans « les vidéos et les visuels que Bola publie » (`consentement.ts`, `politique.tsx`). Elle ne couvre ni la captation, ni le direct, ni les clips, ni les comptes au nom de la SFL. L'inscription est ouverte dès 12 ans. Or l'habillage du live affiche le prénom, la note et la carte de chaque joueur : la CNIL demande un consentement distinct qui nomme les supports et la durée (`02-etude.md` §7).
+
+**Démarrage (1er novembre) : fait / à reprendre pour le 8 novembre.** Je ne sais pas encore ce qui a été fait dimanche : dis-moi combien d'autorisations sont signées. Pour le 8 novembre, on reprend la même méthode, avec la règle validée.
+1. Le message aux joueurs la veille (E1) et la pancarte (E2).
 2. **L'autorisation E3, signée à la table d'accueil par chaque joueur du terrain filmé, à son arrivée.** Elle couvre le direct, les extraits, les rubriques présentées par un partenaire ; la publicité payante a sa case à part.
-3. Qui ne signe pas va sur la **liste rouge** : aucun prénom, aucune note, aucune carte à l'écran du live, aucun gros plan, aucun extrait.
+3. Qui ne signe pas **n'apparaît pas** : ni dans le live, ni dans un extrait, une story ou un visuel de la SFL.
 4. **Mineurs** : aucun extrait, aucune interview, aucun gros plan cette saison. Le direct seulement avec l'accord écrit des deux parents ; sinon, leur match ne passe pas en direct (`05`, A4).
 5. **Un seul contact** dans tous les textes : Sabri, à la table d'accueil, et une adresse de contact réelle.
 6. **Un seul registre des accords**, tenu par Sabri (`01-agence.md` §6).
 
-**Et la semaine prochaine.** Une nouvelle version de l'accord de l'app (`VERSION_ACCEPTEE`) : une case « vidéos de match », et « Bola et la SFL » nommées toutes les deux. Une ligne dans le règlement de la ligue. Une relecture par un avocat.
+**Et cette semaine.** Une nouvelle version de l'accord de l'app (`VERSION_ACCEPTEE`) : une case « vidéos de match », et « Bola et l'association SFL » nommées toutes les deux. Une ligne dans le règlement de la ligue. Une relecture par un avocat.
 
 **Impact.** Sans ça, chaque clip, Collab ou pub qui montre un joueur est juridiquement exposé. Avec ça, on perd peut-être quelques gros plans, pas la saison.
 
@@ -62,7 +88,9 @@ Quatorze décisions, triées par urgence. Pour chacune : la question, ma recomma
 
 ## D2. Quel nom pour les comptes ?
 
-**Urgence : aujourd'hui**, avant que quelqu'un le prenne.
+**Ta décision (01/11) : en attente.** Tu crées toi-même les comptes et tu me donnes les noms retenus. Ma recommandation ne change pas.
+
+**Urgence : avant le 8/11**, avant que quelqu'un prenne le nom.
 
 **Ma recommandation.**
 - **`sundayfiveleague`, sinon `sundayfive_league`**, identique sur les quatre plateformes (donné à Sabri le 31/10, visuel `reseaux/visuels/sfl-a-faire-avant-dimanche.png`). Pas de point : Twitch n'accepte que lettres, chiffres et tiret bas. Le nom entier se trouve en recherche, « SFL » seul est très pris, et il ne dépend pas d'une ville si la ligue s'étend.
@@ -71,35 +99,39 @@ Quatorze décisions, triées par urgence. Pour chacune : la question, ma recomma
 - Type de compte : **Entreprise** sur Instagram et TikTok (musique commerciale, pub, planification).
 - Réserver aussi le nom sur Facebook et X, sans les animer. Threads reprend automatiquement l'identifiant Instagram.
 
-**Ce qu'il faut de toi.** Vérifier la disponibilité sur les quatre avant d'en créer un seul, puis créer les comptes. **C'est toi qui crées les comptes** : l'agence n'en crée aucun et ne saisit aucun identifiant.
+**Ce qu'il faut de toi.** Vérifier la disponibilité sur les quatre avant d'en créer un seul, puis créer les comptes, et me dire lesquels tu as créés. **C'est toi qui crées les comptes** : l'agence n'en crée aucun et ne saisit aucun identifiant.
 
 ---
 
-## D3. Quelle marque se voit : SFL ou BOLA ?
+## D3. Quelle marque se voit : SFL ou BOLA ? (validée le 01/11)
+
+**Ta décision (01/11) : validée.** Les comptes sont au nom de la SFL. BOLA n'apparaît que comme l'appli qui fait les stats et les cartes.
 
 **Ma recommandation.** **SFL la compétition, BOLA la technologie.** Les comptes sont au nom de la SFL. Les contenus signent « Stats et cartes : BOLA » avec le lien getbola.app.
 
 **Pourquoi.** Le maillot est « SFL » dans l'offre sponsors et « BOLA » dans les maquettes 3D ; l'adresse des sponsors est sur sfl-lille.fr, la story des joueurs finit sur getbola.app. BOLA se dit « un mouvement, pas une institution » ; la SFL est une ligue. Les deux tiennent si chacun garde son rôle.
 
-**Impact si tu choisis BOLA partout.** Une seule marque à faire grandir, mais on perd le côté « ligue officielle » qui rassure les sponsors, et l'offre sponsors est à réécrire.
+**Conséquence.** On garde le côté « ligue officielle » qui rassure les sponsors. Pas d'offre sponsors à réécrire pour ce point.
 
 ---
 
-## D4. Demain, c'est la J4 (close)
+## D4. Le 1er novembre, c'était la J4 (close)
 
-Le code tranche : « J4 · Dimanche 1er novembre » (`annonces-ligue.ts`, `api/ligue/annoncer/route.ts`), `DEFIS_DEPUIS = { saison: 1, j: 4 }` (`defis.ts`), divisions `depuis: 4` (`divisions.ts`), et le carrousel `public/actus/j3` existe. **Demain = J4, le 24/01 = J16.** Pour les sponsors, on parle de « 13 dimanches filmés ».
+Le code tranche : « J4 · Dimanche 1er novembre » (`annonces-ligue.ts`, `api/ligue/annoncer/route.ts`), `DEFIS_DEPUIS = { saison: 1, j: 4 }` (`defis.ts`), divisions `depuis: 4` (`divisions.ts`), et le carrousel `public/actus/j3` existe. **Le 1er novembre = J4, le 24/01 = J16.** Pour les sponsors, on parle de « 13 dimanches filmés ».
 
 **La conséquence.** Les cartes se mettent à jour toutes les 4 journées jouées, comptées depuis la J1 de la saison 1 (`saisie/evolution.ts`, `JOURNEES_PAR_MAJ = 4`). Les **Jours de Verdict** tombent donc après J4 (1/11), J8 (29/11), J12 (27/12) et J16 (24/01), publiés les lundis 2/11, 30/11, 28/12 et 25/01. Lundi 2/11 est le premier, si J1 à J3 ont bien leurs résultats en base : l'app affiche la prochaine mise à jour, un coup d'œil suffit. Un dimanche annulé décale tout.
 
 ---
 
-## D5. Le direct de demain : Twitch seul, ou Twitch + YouTube ?
+## D5. Le direct : Twitch seul, ou Twitch + YouTube ? (validée le 01/11)
+
+**Ta décision (01/11) : validée sur le principe.** Le direct passe sur Twitch **et** YouTube en même temps. La date de départ n'est pas encore fixée : c'est toi qui la fixes.
 
 **Ma recommandation.**
-- **Demain : Twitch seul**, avec la régie que tu as testée, et un **enregistrement local** en pleine qualité. On ne change pas une régie la veille du lancement.
-- **Aujourd'hui** : activer le direct sur la chaîne YouTube. L'activation peut prendre jusqu'à 24 h.
-- **Dès le 8/11, et toute la saison 1** : le même flux en simultané sur Twitch et YouTube, en même qualité, après un test. Le direct Twitch est promis aux sponsors pour les 13 dimanches.
-- **Le 6/12** : le point d'étape décide seulement où mettre la modération et les animations (le Flair, le banc), et prépare le choix de la saison 2.
+- **Démarrage (1er novembre)** : Twitch seul était prévu, avec la régie que tu as testée, et un **enregistrement local** en pleine qualité. On ne change pas une régie la veille du lancement.
+- **Avant le premier direct YouTube** : activer le direct sur la chaîne YouTube. L'activation peut prendre jusqu'à 24 h.
+- **Dès que tu fixes la date, et jusqu'à la fin de la saison 1** : le même flux en simultané sur Twitch et YouTube, en même qualité, après un test. Jusque-là, Twitch seul. Le direct Twitch est promis aux sponsors pour les 13 dimanches.
+- **Environ un mois après le premier direct simultané** (6/12 indicatif, à recaler sur la date que tu fixes) : le point d'étape décide seulement où mettre la modération et les animations (le Flair, le banc), et prépare le choix de la saison 2.
 
 **Pourquoi.** Twitch apporte presque aucune découverte à une petite chaîne et efface ses archives en 7 à 14 jours. YouTube garde tout et fait découvrir. Twitch autorise le simultané si on ne renvoie pas les spectateurs ailleurs (`02-etude.md` §4 et §5).
 
@@ -108,6 +140,8 @@ Le code tranche : « J4 · Dimanche 1er novembre » (`annonces-ligue.ts`, `api/l
 ---
 
 ## D6. Qui fait quoi, et quel rythme ?
+
+**Ta décision (01/11).** La production (le tournage) sera assurée par une **association partenaire**, **Poleed**, avec qui la SFL fait un partenariat. Elle fournit de quoi tourner. Les rôles exacts sont à définir avec elle. Statut : en attente.
 
 **Le constat.** L'équipe réelle compte une à trois personnes, toi compris, et tu organises aussi la ligue. Le budget n'a ni monteur ni commentateur (2 bénévoles), alors que le commentateur est promis aux sponsors. **Ce tableau est le seul qui fait foi** ; `01` et `03` y renvoient.
 
@@ -127,17 +161,28 @@ Le code tranche : « J4 · Dimanche 1er novembre » (`annonces-ligue.ts`, `api/l
 
 **Ma recommandation.** Le **Minimum** tant que les rôles n'ont pas de noms ; le Recommandé si tu les trouves. Mieux vaut un rythme tenu 13 dimanches qu'un rythme lâché à la J6.
 
-**Ce qu'il faut de toi.** Les noms : la régie, le commentateur, le bord terrain, le monteur, la personne qui publie et modère, l'animateur des formats stars.
+**Ce qu'il faut de toi.**
+- Le nom exact de l'association partenaire, et ce qu'elle fournit : du matériel, des personnes, ou les deux.
+- Un accord écrit avec elle : à qui sont les images, qui les publie, qui fait signer les autorisations (D1).
+- Les noms : la régie, le commentateur, le bord terrain, le monteur, la personne qui publie et modère, l'animateur des formats stars. Certains rôles peuvent revenir à l'association.
 
 ---
 
-## D7. Quelle identité visuelle sur les réseaux ?
+## D7. Quelle identité visuelle sur les réseaux ? (validée le 01/11, avec le bleu)
 
-**Les deux options.**
+**Ta décision (01/11) : validée, avec une modification.** Une DA presque noir et blanc, **avec du bleu** : « même si on joue en noir et blanc, tu rajoutes du bleu ». Et l'or pour l'univers Pépite d'Or.
+
+**Les deux options de départ.**
 - **SFL « bleu nuit »** des brochures sponsors : fond `#05080F`, accent bleu `#3D9BFF`, polices Saira Condensed et Barlow.
 - **BOLA « nuit »** de l'app : Noir Nuit `#08090B`, Blanc Craie, Gris Béton ; Inter et Anton ; l'or, le rouge et le bleu réservés aux cartes à titre.
 
-**Ma recommandation.** **La nuit BOLA, avec le sigle SFL en signature.** Le passage est court : les deux sont sombres. On retire le bleu `#3D9BFF`, qui se confond avec la carte Défensive. La braise `#FF8A4C` devient la couleur du recrutement. Les brochures sponsors s'alignent ensuite.
+**Ma recommandation, après ta décision.** **La nuit BOLA, presque noir et blanc, avec le sigle SFL en signature.**
+- Le bleu SFL `#3D9BFF` **n'est plus retiré** : il devient la couleur d'accent de la marque sur les réseaux.
+- L'or reste réservé à la Pépite d'Or et à la carte MVP.
+- La braise `#FF8A4C` n'est plus la couleur du recrutement : le bleu SFL prend ce rôle (ma lecture de « presque noir et blanc »).
+- Les brochures sponsors, déjà en bleu, s'alignent ensuite.
+
+**Point de vigilance.** Le bleu SFL est la couleur de la marque ; le bleu cobalt est celui du titre Défensive gagné, sur la carte. Sur un visuel qui montre une carte Défensive, le bleu SFL reste hors de la carte (texte, cadre), pour qu'on ne lise pas un titre là où il n'y en a pas.
 
 **Trois points en plus.**
 - **Le trophée physique de la Pépite d'Or** : tu le choisis ou tu le fais fabriquer ? (Un vrai objet, pas de rendu IA.)
@@ -146,7 +191,9 @@ Le code tranche : « J4 · Dimanche 1er novembre » (`annonces-ligue.ts`, `api/l
 
 ---
 
-## D8. Un ou deux comptes TikTok ?
+## D8. Un ou deux comptes TikTok ? (validée le 01/11)
+
+**Ta décision (01/11) : validée.** Un seul compte.
 
 **Ma recommandation.** **Un seul**, avec trois registres : vitrine ~25 %, match ~45 %, vestiaire ~30 %.
 
@@ -156,7 +203,9 @@ Le code tranche : « J4 · Dimanche 1er novembre » (`annonces-ligue.ts`, `api/l
 
 ---
 
-## D9. Comment on traite les stars ?
+## D9. Comment on traite les stars ? (reportée)
+
+**Ta décision (01/11) : reportée** (« on verra bien »). Ma recommandation ne change pas.
 
 **Ma recommandation.**
 1. **Le casting suit le classement.** Cinq Têtes d'affiche prises dans le top 10 du Pépite d'Or, **vérifié sur l'export du lundi 2/11**. Ton premier choix (Zachary, Junaid, Ilyes, Selim, Abdel) passe pour ceux qui y sont ; sinon, le suivant du classement qui accepte. L'affiche est revue à chaque Jour de Verdict.
@@ -171,7 +220,9 @@ Le code tranche : « J4 · Dimanche 1er novembre » (`annonces-ligue.ts`, `api/l
 
 ---
 
-## D10. On corrige l'offre sponsors ?
+## D10. On corrige l'offre sponsors ? (reportée)
+
+**Ta décision (01/11) : reportée** (« on verra bien »). Tu as relevé le point : l'offre promet un direct Instagram, impossible avant 1 000 abonnés. Ma recommandation ne change pas. Elle colle à D5 : « Twitch et YouTube en direct ».
 
 **D'abord, une question.** **Qui a déjà signé, quelle formule, sur quelle version de l'offre ?** Tant que je n'ai pas la réponse, aucune promesse de l'offre (3 réseaux en direct, vidéos IA, commentateur) ne peut être retirée sans renégociation.
 
@@ -195,7 +246,7 @@ Le code tranche : « J4 · Dimanche 1er novembre » (`annonces-ligue.ts`, `api/l
 
 ## Coût du plan réseaux, saison 1
 
-Le budget par défaut (`budget/index.html`) fait **10 671 €** avec 10 % d'imprévus. Il est couvert par 100 joueurs × 70 € et 4 600 € de sponsors (Principal, 1 Officiel, Partenaire) : **environ 929 € de marge**, si ces sponsors ont signé. Le plan réseaux n'y est pas.
+Le budget par défaut (`budget/index.html`) fait **10 671 €** avec 10 % d'imprévus. Il est couvert par 100 joueurs × 70 € et 4 600 € de sponsors (Principal, 1 Officiel, Partenaire) : **environ 929 € de marge**, si ces sponsors ont signé. Le plan réseaux n'y est pas. L'objectif de 150 joueurs (D0) n'ajoute des recettes que si les places suivent ; je n'ai pas modifié le budget. Les dépenses et les recettes passent par l'association SFL (D12a).
 
 | Palier | Ce qu'il contient (estimation) | Coût en plus | Ce qui le finance |
 |---|---|---|---|
@@ -203,11 +254,13 @@ Le budget par défaut (`budget/index.html`) fait **10 671 €** avec 10 % d'impr
 | **≈ 600 €** | 2 disques de 4 To (≈ 200 €), un test de pub de 200 € en décembre, le trophée et les petits frais (≈ 200 €) | ≈ 600 € | La marge, **seulement après la signature d'un sponsor de plus** que le budget par défaut |
 | **≈ 2 500 €** | Le palier 600 €, plus la pub de décembre et janvier (≈ 1 600 €) et un outil de planification payant | ≈ 2 500 € | Deux sponsors de plus, ou la 2e place Officiel et des options |
 
-Non chiffrés : l'avocat, la création de la structure, un monteur, un commentateur. **Ma recommandation : le palier 0 par défaut.**
+Non chiffrés : l'avocat, un monteur, un commentateur. La structure existe déjà : c'est l'association (D12a). **Ma recommandation : le palier 0 par défaut.**
 
 ---
 
-## D11. Quels outils payer ?
+## D11. Quels outils payer ? (reportée)
+
+**Ta décision (01/11) : reportée** (« on verra bien »). Ma recommandation ne change pas : rien n'est payé ni installé sans ton oui.
 
 **Ma recommandation : partir des lignes déjà budgétées.**
 - **« Diffusion sur plusieurs réseaux », 3 × 20 €** : le relais Twitch + YouTube (D5).
@@ -221,17 +274,23 @@ Non chiffrés : l'avocat, la création de la structure, un monteur, un commentat
 
 ---
 
-## D12a. Association ou SAS ? (cette semaine)
+## D12a. Association ou SAS ? (close : association)
 
-Il n'existe pas de structure juridique (le code parle du « jour où Bola devient une société »). C'est le préalable aux **factures des sponsors** (déjà démarchés), aux **contrats des stars** (fin novembre) et aux **comptes publicitaires**. **Association loi 1901 ou SAS : à toi de choisir**, avec un conseil.
+**Ta décision (01/11) : close.** « Pour l'instant, on est en association, pas en société. » La SFL est une **association**. La question « association ou SAS » ne se pose plus.
 
-**En attendant.** Les textes de demain nomment « Sabri [NOM], organisateur de la SFL, et toute structure qu'il créera pour l'organiser » (`05`, E2 et E3). Aucun compte publicitaire Meta, TikTok ou Google, ni AdSense, n'est ouvert avant la structure : il serait à ton nom, avec des dépenses et des revenus personnels. **AdSense : à quel nom ?** est une question de la même décision.
+**Ce que ça change.**
+- Les **factures des sponsors**, les **contrats des stars**, les **autorisations** (E2, E3), les **comptes publicitaires** Meta, TikTok ou Google, et **AdSense** se font au nom de l'association SFL, pas au tien.
+- Dans les textes (`05`, E2 et E3), « Sabri [NOM], organisateur de la SFL, et toute structure qu'il créera pour l'organiser » devient : **« l'association SFL ([nom exact de l'association]) »**.
+- À compléter : le nom exact de l'association et son numéro (RNA, et SIRET s'il existe).
+- BOLA, l'appli, reste à part : le code parle encore du « jour où Bola devient une société ». Ça ne change rien aux comptes de la SFL.
 
 ---
 
-## D12b. Le budget pub (pas avant décembre)
+## D12b. Le budget pub (reportée, pas avant décembre)
 
-**Les préalables.** La capacité (D0) et la structure (D12a). On ne paie pas pour recruter des joueurs qui resteront remplaçants.
+**Ta décision (01/11) : reportée**, « pas avant décembre ». Ma recommandation ne change pas.
+
+**Les préalables.** La capacité réelle d'accueil (D0 : les places par dimanche, à confirmer avec l'app). La structure est réglée : les comptes pub s'ouvrent au nom de l'association (D12a). On ne paie pas pour recruter des joueurs qui resteront remplaçants.
 
 **Ma recommandation.**
 - **Pas de pub en novembre.** On laisse 3 à 4 dimanches à l'organique pour savoir ce qui marche.
@@ -250,3 +309,19 @@ Il n'existe pas de structure juridique (le code parle du « jour où Bola devien
 - **« Le » ou « la » Pépite d'Or ?** L'app écrit surtout « le Pépite d'Or » pour le classement (« points au Pépite d'Or »), et « la Pépite d'Or » pour le titre. Je propose de garder les deux : **le** Pépite d'Or, le classement ; **la** Pépite d'Or, le titre et le trophée.
 - **Le nombre de mineurs** dans l'effectif, pour savoir combien de matchs risquent de ne pas passer en direct.
 - **« SFL Time »** (victoire à +3) : son sens, avant de l'expliquer en public.
+
+---
+
+## Les mots de Sabri, 01/11
+
+Dictés à la voix, en réponse à ce dossier :
+
+> « pour la D1. Donc on va mettre que des joueurs qui ont signé la charte, sinon c'est pas la peine. En D2, le nom des comptes, ben, je vais les créer et je te dirai quel compte j'ai créé. Les comptes sont nom de la SFL. Et voilà, ça apparaît seulement comme l'appli qui fait les stats, exactement. Et du coup, en D5, le direct il passera sur Twitch et sur YouTube en même temps. À partir de quelle date, je ne sais pas encore. Mais pour l'instant, on met en place des zéros. Combien de joueurs par dimanche? Le vrai nombre de places, c'est 300 personnes. Maximum quand on aura vraiment des terrains. Mais sinon, la SFL, elle tend là à avoir 150 joueurs. Qui fait quoi? Ce sera l'association sûrement Polide [Poleed] avec laquelle on va faire un partenariat. Elle va nous fournir de quoi faire un tournage. La SFL, tu peux faire une DA presque noir-blanc, mais rajoute un bleu. On veut quand même, même si on joue en noir et blanc, tu rajoutes du bleu. Avec le délire de pépites d'or et tout, tu vois. La D8, combien de comptes TikTok Marocco? Un seul. Bah oui, ce sera un seul. Pour l'instant, on est en association, pas en société. Donc les stars, ouais, voilà, en D9, en D10, corriger l'offre au sponsor, elle promet un direct Instagram possible avant 1000 abonnés. On verra bien. D11, les outils payants, on verra bien. D12B, le budget pub, pas avant décembre. Voilà, bon, fais ce que je te dis. »
+
+**Les mots incertains, et ma lecture.**
+- « la charte » : l'autorisation E3.
+- « Les comptes sont nom de la SFL » : « au nom de la SFL ».
+- « on met en place des zéros » : sans doute « on met en place les deux » (Twitch et YouTube), sans date.
+- « 300 personnes […] 150 joueurs » : 300 places au plus avec assez de terrains ; 150 joueurs dans la ligue.
+- « Polide » : le nom de l'association partenaire. Sabri a corrigé le 01/11 : **Poleed**.
+- « TikTok Marocco » : non élucidé ; la question portait sur le nombre de comptes TikTok.

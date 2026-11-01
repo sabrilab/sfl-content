@@ -9,7 +9,7 @@ L'agence, c'est **des agents IA** qui préparent (études, textes, faits, gabari
 À dire tout de suite, pour ne pas compter dessus :
 
 - **Filmer, être au terrain, tenir un téléphone.** Toute la matière vient des humains.
-- **Se connecter aux comptes et publier.** Aucun agent ne crée de compte ni ne saisit d'identifiant. C'est toi, ou la personne que tu désignes, qui publie.
+- **Se connecter aux comptes et publier.** Aucun agent ne crée de compte ni ne saisit d'identifiant. C'est toi, ou la personne que tu désignes, qui publie. Tu crées toi-même les comptes, au nom de la SFL, et tu donnes les noms retenus (`04` D2).
 - **Juger une vidéo.** Un agent ne sent pas le rythme d'un montage, la fluidité d'un ralenti, la justesse d'un son, l'émotion d'un but. Il peut relire un texte à l'écran ou vérifier un cadrage sur une image fixe ; le reste, c'est ton œil.
 - **Monter.** Il peut proposer les coupes à partir du carnet des temps forts ; le montage reste humain.
 - **Générer des images, des vidéos ou du son.** Interdit par ta règle. Les gabarits sont dessinés en code à partir de vraies données (comme le carrousel J3 ou la story « Ton dimanche » de l'app), jamais générés.
@@ -32,7 +32,7 @@ L'agence, c'est **des agents IA** qui préparent (études, textes, faits, gabari
 | **Le Statisticien** | Chaque lundi : les faits de la journée (titres par terrain, écarts, montées, chiffre du jour, duels), le registre de couverture (qui a été montré), le tableau de bord du lundi | L'export du classement et des feuilles depuis l'app | Chaque semaine |
 | **La Rédaction** | Légendes, accroches, textes à l'écran, titres et chapitres YouTube, questions d'interview, scripts des formats stars | Les faits du Statisticien, le carnet des temps forts | Chaque semaine |
 | **Le Planning** | Le calendrier éditorial de la saison, la feuille de tournage de chaque dimanche, les listes de contrôle | Les décisions, les dates de l'app | Étape 3, puis chaque semaine |
-| **Le Média** | Le plan de pub, les paliers de budget, les liens marqués (UTM), le rapport mensuel aux sponsors | Les chiffres des plateformes, ton budget | Étapes 4 et 5 |
+| **Le Média** | Le plan de pub, les paliers de budget, les liens marqués (UTM), le rapport mensuel aux sponsors | Les chiffres des plateformes, ton budget, la capacité réelle d'accueil (places par dimanche) | Étapes 4 et 5 |
 | **Le Contrôle** | La relecture de chaque lot avant publication : chiffres vérifiés, orthographe des prénoms, accords signés, liste rouge, mineurs, mention « Publicité », zones sûres, règles de marque | Le lot de la semaine, la liste des accords | Chaque semaine |
 
 **Où ils travaillent.** Dans des sessions Claude Code, sur le dépôt `sfl-content`. Ils écrivent des fichiers texte (markdown, tableaux) et, avec ton accord, des gabarits en code. Ils ne publient rien.
@@ -45,7 +45,7 @@ Les charges sont des **estimations**.
 
 | Rôle | Ce qu'il fait | Charge | Peut se cumuler avec |
 |---|---|---|---|
-| **Sabri, directeur artistique** | Décide, valide, possède les comptes, tient le registre des accords, exporte les chiffres, finit les carrousels, gère les stars et les sponsors au début ; organise aussi la ligue | 5 à 8 h par semaine | — |
+| **Sabri, directeur artistique** | Décide, valide, crée et possède les comptes (au nom de la SFL), tient le registre des accords, exporte les chiffres, finit les carrousels, gère les stars et les sponsors au début ; organise aussi la ligue | 5 à 8 h par semaine | — |
 | **Régie** | OBS, le direct, l'enregistrement local, l'habillage ; les marqueurs à chaque action s'il n'y a pas de noteur | Le dimanche | Noteur |
 | **Commentateur** | La voix du live. Promis aux sponsors, absent du budget | Le dimanche | — |
 | **Noteur** | Note l'heure de chaque temps fort | Le dimanche | Régie, ou modération du chat |
@@ -55,13 +55,16 @@ Les charges sont des **estimations**.
 | **Modération du live** | Chat Twitch et YouTube | Le dimanche | Noteur |
 | **Animateur** | La voix face caméra du Défi Pépite, du podcast Vestiaire et de l'After | Une demi-journée tous les 15 jours (niveau Complet) | Responsable des stars |
 | **Responsable des stars** | Organise les tournages des formats stars, fait signer les contrats | Une demi-journée tous les 15 jours | Sabri au début |
-| **Avocat** | Relit les autorisations, le règlement, les contrats | Ponctuel | — |
+| **Association partenaire Poleed** | La production : elle fournit de quoi tourner, dans le cadre d'un partenariat avec la SFL. Elle peut prendre tout ou partie de la régie, du bord terrain et du montage. Les rôles exacts sont à définir avec elle | À définir avec elle | Régie, Bord terrain, Monteur |
+| **Avocat** | Relit les autorisations, le règlement, les contrats de l'association SFL | Ponctuel | — |
 
-**L'équipe.** L'équipe réelle compte une à trois personnes, toi compris. Le rythme se règle sur elle : le tableau des niveaux de `04-decisions.md` D6 est le seul qui fait foi, et `05` A7 dit quoi faire à deux ou seul.
+**L'équipe.** L'équipe réelle compte une à trois personnes, toi compris. Le tournage passera par l'association partenaire (`04` D6, 01/11) ; tant que ses rôles ne sont pas fixés, on compte sans elle. Le rythme se règle sur l'équipe : le tableau des niveaux de `04-decisions.md` D6 est le seul qui fait foi, et `05` A7 dit quoi faire à deux ou seul.
+
+**La structure.** La SFL est une association, pas une société (`04` D12a, close le 01/11). Les contrats, les comptes pub, les autorisations et AdSense se font au nom de l'association SFL ([nom exact de l'association], [numéro RNA] : à compléter).
 
 **Une règle d'équité.** Les équipes sont composées automatiquement par l'app (vendredi 18 h, révélées à 19 h) ; les admins saisissent les feuilles, et Ilyes ne saisit pas celles des matchs qu'il joue. Ils ne choisissent ni les équipes ni qui passe à l'écran : c'est le classement et le registre de couverture.
 
-**Le registre des accords**, tenu par Sabri, un seul : nom, autorisation papier (et sa case « publicité payante »), accord « hors de l'app », mineur, liste rouge, compte Instagram ou TikTok. Le Contrôle s'y réfère avant chaque lot.
+**Le registre des accords**, tenu par Sabri, un seul : nom, autorisation papier (et sa case « publicité payante »), accord « hors de l'app », mineur, liste rouge, compte Instagram ou TikTok. Le Contrôle s'y réfère avant chaque lot. Règle validée le 01/11 (`04` D1) : seuls les joueurs qui ont signé la charte apparaissent sur les réseaux ; sans signature, on ne les montre pas. Les règles sur les mineurs restent.
 
 ---
 
@@ -70,8 +73,8 @@ Les charges sont des **estimations**.
 ```
    ÉTAPE 0          ÉTAPE 1             ÉTAPE 2             ÉTAPE 3              ÉTAPE 4          ÉTAPE 5
    Démarrage   ──►  Marque et     ──►  Identité visuelle ──► Production et   ──►  Publicité   ──►  Pilotage,
-   d'urgence        ligne éditoriale    et gabarits          calendrier            et budget        outils, mesure
-   (48 h)                                                                                         
+   (1er nov.)       ligne éditoriale    et gabarits          calendrier            et budget        outils, mesure
+   (fait)                                                                                         
        │              │                    │                    │                    │                │
    Directeur      Veille, Stratège    Atelier visuel       Planning, Rédaction   Média            Média, Statisticien
    Planning       Directeur           Contrôle             Statisticien          Contrôle         Directeur
@@ -81,7 +84,7 @@ Les charges sont des **estimations**.
    Sabri valide   Sabri valide         Sabri valide         Sabri valide         Sabri valide     Sabri valide
 ```
 
-Les étapes 3, 4 et 5 se chevauchent : la boucle du dimanche (partie 6) tourne dès le 1er novembre, pendant que le reste se construit.
+Les étapes 3, 4 et 5 se chevauchent : la boucle du dimanche (partie 6) tourne depuis le 1er novembre, pendant que le reste se construit.
 
 **Une étape = un aller-retour court.** Les agents produisent, le Directeur te fait un compte rendu en dix lignes et quelques questions, tu réponds, on passe à la suite.
 
@@ -91,11 +94,17 @@ Les étapes 3, 4 et 5 se chevauchent : la boucle du dimanche (partie 6) tourne d
 
 | Porte | Ce que tu valides | Quand |
 |---|---|---|
-| **V0** | Le nom des comptes, les accords pour filmer demain, l'équipe de demain (`05` A7) | Aujourd'hui |
-| **V1** | La plateforme de marque (`03`), les décisions (`04`), dont la capacité (D0) et la structure juridique (D12a) | Avant le 8/11 |
+| **V0** | Le nom des comptes, les accords pour filmer, l'équipe du dimanche (`05` A7) | Démarrage (1er novembre) : fait, sauf le nom des comptes ; à reprendre pour le 8 novembre |
+| **V1** | La plateforme de marque (`03`), les décisions (`04`), dont la capacité (D0) et la structure juridique (D12a) | En partie validée le 01/11 ; le reste avant le 8/11 |
 | **V2** | Le kit visuel, les gabarits, l'habillage du live, l'identité sonore | Mi-novembre |
 | **V3** | Le calendrier de la saison, le premier format star, la charte de modération | Fin novembre |
-| **V4** | Le budget pub, l'offre sponsors corrigée | Avant toute dépense |
+| **V4** | Le budget pub, l'offre sponsors corrigée | Avant toute dépense ; pas de budget pub avant décembre (D12b) |
+
+**État au 01/11.**
+- **V0.** Accords : validé, seuls les signataires de la charte sont montrés (D1). Nom des comptes : en attente, tu crées les comptes et tu donnes les noms ; la recommandation reste @sundayfiveleague (D2). Équipe : le tournage passera par l'association partenaire, rôles à définir avec elle (D6).
+- **V1, validé.** Comptes au nom de la SFL, BOLA seulement comme l'appli des stats et des cartes (D3). Direct sur Twitch et YouTube en simultané, date à fixer par toi (D5). DA presque noir et blanc, avec le bleu SFL #3D9BFF en accent et l'or pour la Pépite d'Or (D7). Un seul compte TikTok (D8). La SFL est une association (D12a).
+- **V1, capacité (D0).** Objectif : 150 joueurs dans la ligue ; 300 au maximum quand il y aura plus de terrains. Le réglage actuel de l'app (2 terrains, 15 par terrain, soit 30 places par dimanche) ne correspond pas à cet objectif : réglage à revoir avec toi. La pub reste conditionnée à la capacité réelle d'accueil (places par dimanche, à confirmer avec l'app).
+- **Reportées** (« on verra bien ») : D9 (stars), D10 (offre sponsors, dont le direct Instagram impossible avant 1 000 abonnés), D11 (outils payants), D12b (budget pub). Les recommandations restent inchangées.
 | **V5** | Les outils, le tableau de bord, le premier rapport sponsors | Fin novembre, puis chaque mois |
 
 ### La porte de chaque semaine
@@ -140,7 +149,7 @@ Chaque lundi, en 15 minutes, tu valides le lot de la semaine. Pour ne pas tout f
 
 | Quoi | Qui |
 |---|---|
-| Le live Twitch (et YouTube en simultané dès le 8/11), l'enregistrement local | Régie |
+| Le live Twitch et YouTube en simultané (D5), dès que Sabri fixe la date ; l'enregistrement local | Régie (ou l'association partenaire, à définir) |
 | Le commentaire, avec « le banc » (une Tête d'affiche qui ne joue pas ce match) quand c'est possible | Commentateur |
 | Le carnet des temps forts, à l'heure près | Noteur |
 | Le vertical, les interviews de 20 s, les portraits du Studio, les stories | Bord terrain |
@@ -154,11 +163,11 @@ Chaque lundi, en 15 minutes, tu valides le lot de la semaine. Pour ne pas tout f
 | Dimanche, juste après | Deux copies des rushs, rangées dans l'arborescence (`05-demarrage-48h.md`, C1) | Régie, Bord terrain |
 | Dimanche, moins de 2 h après | « Le But du Dimanche » (TikTok), « L'Action » (Reel), un Short à chaud | Bord terrain ou Monteur, puis Publication |
 | Dimanche, minuit | Les votes ferment. Story « Minuit. Les votes ferment. » | Publication |
-| Lundi matin | Export du classement et des titres depuis l'app, et de la liste des accords « hors de l'app » (Admin → Activité → Confidentialité) ; mise à jour du registre des accords | Sabri |
+| Lundi matin | Export du classement et des titres depuis l'app, mise à jour du registre des signatures de la charte (autorisation E3, `04` D1), qui fait référence ; en plus, pour information, la liste des accords « hors de l'app » (Admin → Activité → Confidentialité) | Sabri |
 | Lundi matin | Les faits de la journée, le registre de couverture | Statisticien |
 | Lundi midi | Les légendes, « La Course en 30 s », le titre et les chapitres du Résumé | Rédaction |
 | Lundi | Le carrousel « Les Cartes · J# » (gabarit rempli avec les vraies données) | Atelier visuel prépare, Sabri ou Monteur finit |
-| Lundi | Relecture du lot : chiffres, prénoms, accords, mineurs, mentions. Le Contrôle refuse toute carte d'un joueur sans accord « hors de l'app » | Contrôle |
+| Lundi | Relecture du lot : chiffres, prénoms, accords, mineurs, mentions. Le Contrôle refuse tout contenu (carte, extrait, visuel) d'un joueur qui n'a pas signé la charte (autorisation E3, `04` D1) | Contrôle |
 | Lundi | **Ta porte de la semaine** (15 min) | Sabri |
 | Lundi 18 h | « Le Résumé · J# » sur YouTube | Monteur, puis Publication |
 | Lundi soir | Chaque joueur montré a sa story « Ton dimanche » dans l'app ; les 3 à 5 mis en avant reçoivent leur clip | Publication |
