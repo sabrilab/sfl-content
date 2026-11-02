@@ -4,9 +4,10 @@
 
 | Dossier | Fichiers | Taille |
 |---|---|---|
-| `profil/` | sigle brodé or sur cuir bordeaux ; brodé craie sur maillot vert bouteille | 1080 × 1080 |
-| `posts/` | podium, classement, écarts, le but, dimanche 12 h 30, MVP, ton nom ici (recrutement), verdict, le lieu | 1080 × 1350 |
-| `reels/` | le but, il te manque, il manque 1, podium | 1080 × 1920 |
+| `profil/` | sigle brodé or sur cuir bordeaux ; brodé craie sur maillot vert bouteille ; plaque or gravée « SFL » sur cuir noir | 1080 × 1080 |
+| `trophees/` | les vrais trophées de BOLA (coupes Pépite d’Or, Buteur, Passeur, Défenseur, MVP, et la pépite), en or, argent, bronze, rendus depuis le code 3D de l’app (`outils-trophees/`) | PNG transparents |
+| `posts/` | podium (médailles gravées), classement, écarts, le but, dimanche 12 h 30, MVP (plaque or gravée, diamants), ton nom ici, verdict (plaque gravée), le lieu, les trophées de la saison, la Pépite d’Or | 1080 × 1350 |
+| `reels/` | le but, il te manque, il manque 1, podium, la Pépite d’Or | 1080 × 1920 |
 | `youtube/` | miniature du Résumé | 1280 × 720 |
 | `bannieres/` | YouTube 2560 × 1440 (zone sûre respectée), Twitch 1200 × 480, Twitch hors ligne 1920 × 1080 | |
 

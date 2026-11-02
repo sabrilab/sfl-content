@@ -49,3 +49,25 @@ def brode(fil,h,ombre=True):
 <g filter="url(#{i})"><path d="{D}" fill="url(#{p})" stroke="{fil}" stroke-width="7"/><path d="{D}" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="2.2" stroke-dasharray="7 4"/></g></svg>'''
 def couture(col='#EEE6D3',inset=6,r=8):
     return f'<div style="position:absolute;inset:{inset}px;border:1.4px dashed {col};border-radius:{r}px;opacity:.75;pointer-events:none"></div>'
+
+# --- Métaux nobles et pierres (V2 gravé)
+METAUX={'or':('#F6E3A1','#C9A03A','#8A6A1E','#4A3608'),'argent':('#F4F4F2','#C9CBCC','#8E9194','#3E4144'),'bronze':('#E9B98C','#A86A3C','#6E4120','#3A200E'),'noir':('#5A5A5A','#2A2A2A','#141414','#000000')}
+def metal(kind,w,h,r=3):
+    a,b,c,d=METAUX[kind]; g=uid(); f=uid()
+    return f'''<svg class="tx" viewBox="0 0 {w} {h}" preserveAspectRatio="none"><defs><linearGradient id="{g}" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="{a}"/><stop offset=".35" stop-color="{b}"/><stop offset=".55" stop-color="{a}"/><stop offset=".8" stop-color="{c}"/><stop offset="1" stop-color="{b}"/></linearGradient>
+<filter id="{f}" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.9" numOctaves="2" seed="4" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0" result="ng"/><feBlend in="SourceGraphic" in2="ng" mode="soft-light"/></filter></defs>
+<rect width="{w}" height="{h}" rx="{r}" fill="url(#{g})" filter="url(#{f})"/>
+<rect x=".6" y=".6" width="{w-1.2}" height="{h-1.2}" rx="{r}" fill="none" stroke="{d}" stroke-opacity=".55" stroke-width="1.2"/>
+<rect x="1.8" y="1.8" width="{w-3.6}" height="{h-3.6}" rx="{max(r-1,0)}" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width=".6"/></svg>'''
+def grave(txt,kind,size,stretch=110,weight=900,family='Archivo',italic=False,anchor='start'):
+    # lettre gravée : creux sombre + lèvre claire décalée vers le bas
+    a,b,c,d=METAUX[kind]
+    st=f"font-family:{family};font-weight:{weight};font-stretch:{stretch}%;font-size:{size}px;{'font-style:italic;' if italic else ''}text-transform:uppercase;letter-spacing:.02em"
+    if family!='Archivo': st=st.replace('text-transform:uppercase;','')
+    return f'''<span style="position:relative;display:inline-block;line-height:.9;white-space:nowrap;{st}"><span style="position:absolute;left:0;top:.06em;color:{a};opacity:.9">{txt}</span><span style="position:relative;color:{d};text-shadow:0 -.03em 0 {d}aa">{txt}</span></span>'''
+def pierre(kind,s):
+    col={'rubis':('#FF6B7A','#B3122E','#4A0510'),'saphir':('#7FB2FF','#1F4FC9','#08174A'),'emeraude':('#7FE0B0','#0F7A4E','#03301E'),'diamant':('#FFFFFF','#CFE3EE','#7C93A3')}[kind]
+    g=uid(); return f'''<svg viewBox="0 0 20 20" style="width:{s}px;height:{s}px;display:inline-block;vertical-align:middle;filter:drop-shadow(0 .6px .8px rgba(0,0,0,.6))"><defs><radialGradient id="{g}" cx=".38" cy=".34" r=".75"><stop offset="0" stop-color="{col[0]}"/><stop offset=".45" stop-color="{col[1]}"/><stop offset="1" stop-color="{col[2]}"/></radialGradient></defs>
+<circle cx="10" cy="10" r="9.2" fill="#C9A03A"/><circle cx="10" cy="10" r="7.6" fill="url(#{g})"/><path d="M10 2.4 L14 10 L10 17.6 L6 10Z" fill="#fff" opacity=".12"/><ellipse cx="7.4" cy="6.6" rx="2.2" ry="1.3" fill="#fff" opacity=".8" transform="rotate(-30 7.4 6.6)"/></svg>'''
