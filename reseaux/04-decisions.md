@@ -42,7 +42,7 @@ Quatorze décisions, triées par urgence. Pour chacune : la question, ma recomma
 
 ## D0. Combien de joueurs la ligue peut-elle faire jouer ?
 
-**Ta précision (02/11)** : « on a vraiment 100 places ». Lu comme : 100 places par dimanche. Avec ~150 inscrits, et tout le monde ne venant pas chaque dimanche, ça tient. Le réglage de l'app (`TERRAINS_MAX = 2`, 15 par terrain, soit 30 places, `SFL/src/lib/sfl/equipes-division.ts`) est à mettre à jour : 100 places, c'est environ 7 terrains de 15.
+**Ta précision (02/11)** : « on a vraiment 100 places ». Lu comme : 100 places par dimanche. Avec ~150 inscrits, et tout le monde ne venant pas chaque dimanche, ça tient. Le réglage de l'app (`TERRAINS_MAX = 2`, 15 par terrain, soit 30 places, `SFL/src/lib/sfl/equipes-division.ts`) n'est pas à changer : Sabri ajoute des terrains journée par journée dans l'app (02/11, « je peux rajouter des terrains sur les journées »).
 
 **Ce que dit le code.** `TERRAINS_MAX = 2` et `maxParTerrain: 15` (`SFL/src/lib/sfl/equipes-division.ts`, commit du 29/10, « À CONFIRMER PAR SABRI ») : **30 places par dimanche**. Au-delà, les joueurs restent remplaçants, dans l'ordre d'arrivée. Avec 2 terrains, des divisions voisines jouent ensemble (sous 8 joueurs, une division rejoint sa voisine).
 
