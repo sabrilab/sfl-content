@@ -43,7 +43,7 @@ P.append(f'''<div class="pg">{hd('01','Le logo','gravé, brodé, ou simple')}
 groups=[('Les fonds','60 %',[('Noir','#0B0B0B','Fond des grands moments, texte'),('Blanc','#FFFFFF','Fond du quotidien, respiration'),('Craie','#EEE6D3','Papier, lignes, texte sur couleur')]),
 ('Le terrain','30 %',[('Bordeaux','#5C1F2A','Cuir, Pépite, Verdict'),('Vert bouteille','#1F3B2E','Maillot, écarts'),('Émeraude','#1D5B47','Montée, révélation'),('Olive','#64633A','Ta course, story'),('Terre','#9B5B3A','Recrutement'),('Pelouse','#4E7140','Cartes, hors ligne')]),
 ('La récompense','10 %',[('Or','#C9A03A','MVP, Pépite, 1er. Rare.'),('Fil or','#D8B04A','Broderies, accents serif')]),
-('Les pastels','5 %',[('Rose poudré','#EDCFD4','Encart, citation'),('Sauge','#D2E4DB','Classement, liste'),('Pêche','#F2D8C9','Story « ta course »')])]
+('Les pastels','5 %',[('Rose poudré','#EDCFD4','Lifestyle, mode'),('Sauge','#D2E4DB','Lifestyle, mode'),('Pêche','#F2D8C9','Coulisses, lifestyle')])]
 cols=''
 for t,pct,cs in groups:
     cols+=f'<div><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><div class="A" {A(62,17)}>{t}</div><span class="M" style="color:#5C1F2A">{pct}</span></div>'
@@ -52,7 +52,13 @@ bar=''.join(f'<div style="flex:{f};background:{c}"></div>' for f,c in [(25,'#0B0
 P.append(f'''<div class="pg">{hd('02','Les couleurs','harmonisées, avec une touche de pastel')}
 <div style="display:grid;grid-template-columns:1fr 1.2fr .95fr .95fr;gap:24px">{cols}</div>
 <div class="M" style="margin:16px 0 6px">Proportions dans le fil</div><div style="display:flex;height:26px;outline:1px solid #0B0B0B22">{bar}</div>
-<p class="p" style="margin-top:12px">Harmonisées : les couleurs du terrain sont toutes sombres et un peu éteintes, de la même intensité. Les trois pastels sont leurs versions claires (rose du bordeaux, sauge du vert, pêche de la terre) : une touche par semaine, jamais deux dans le même visuel. Toujours à plat, jamais en dégradé (sauf la lumière d'un métal). L'or se gagne.</p>{FT}</div>''')
+<p class="p" style="margin-top:12px">Harmonisées : les couleurs du terrain sont toutes sombres et un peu éteintes, de la même intensité. Les trois pastels sont leurs versions claires (rose du bordeaux, sauge du vert, pêche de la terre), réservés au lifestyle et à la mode, jamais deux dans le même visuel. Qui utilise quoi : voir « Les quatre univers ». Toujours à plat, jamais en dégradé (sauf la lumière d'un métal). L'or se gagne.</p>{FT}</div>''')
+UNIV=[('Compétition', 'Noir et blanc + métaux gravés', 'Classements, podium, trophées, MVP, verdict, écarts, ta note.', ['posts/02-classement', 'posts/10-trophees-saison']), ('Marque et infos', 'Couleurs sur texture', 'Annonces, saison, lieu, recrutement, partenaires, profil, bannières.', ['posts/12-annonce-saison', 'posts/07-ton-nom']), ('Lifestyle et mode', 'Pastels', 'Tenue, maillot, merch, coulisses, préparation.', ['posts/13-la-tenue', 'posts/14-dans-le-sac']), ('Terrain', 'Vraies photos', 'Matchs, buts, joueurs, résumés, le lieu un dimanche.', ['posts/04-le-but', 'posts/05-dimanche'])]
+
+def _imgs(ex): return ''.join('<img src="'+im(K+e+'.png')+'" style="width:100%;display:block;outline:1px solid #0B0B0B22">' for e in ex)
+cols4=''.join(f'<div><div class="A" {A(62,20)}>{t}</div><div class="S" style="font-size:16px;color:#5C1F2A;margin:2px 0 6px">{c}</div><div style="font-size:11.5px;color:#4a4640;min-height:34px">{u}</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px">{_imgs(ex)}</div></div>' for t,c,u,ex in UNIV)
+P.append(f'''<div class="pg">{hd('02 bis','Les quatre univers','une couleur par usage')}<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px">{cols4}</div>
+<p class="p" style="margin-top:18px">La compétition reste en noir et blanc : seuls les métaux gravés (or, argent, bronze) et les cartes BOLA y apportent de la couleur, parce qu'ils se gagnent.</p>{FT}</div>''')
 # 4 MÉTAUX & PIERRES
 mets=''.join(f'<div><div style="display:flex;justify-content:center">{plq(t,k,220,84,34)}</div><div class="A" {A(62,16,"margin-top:12px")}>{t}</div><p class="p">{u}</p></div>' for k,t,u in [('or','Or','1er, MVP, Pépite d\'Or, Verdict.'),('argent','Argent','2e place, médaille.'),('bronze','Bronze','3e place, médaille.'),('noir','Noir','Plaque du quotidien : noms, séries.')])
 stones=''.join(f'<div style="display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center">{pierre(k,40)}<div><b style="font:700 13px Inter">{n}</b><div style="font-size:11px;color:#4a4640">{u}</div></div></div>' for k,n,u in [('rubis','Rubis','Titre Impact'),('saphir','Saphir','Titre Défensive'),('emeraude','Émeraude','Révélation, plus grosse montée'),('diamant','Diamant','La Pépite d\'Or, le MVP')])
