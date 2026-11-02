@@ -13,7 +13,7 @@
 
 Photos : 4 images générées sur Magnific (Seedream 5 Flash) le 02/11 à la demande de Sabri, utilisées ici en aperçu 512 px : **à remplacer par les fichiers pleine définition téléchargés depuis Magnific** (ou par les vraies photos de Poleed) avant publication. Le maillot généré a un numéro raté (« 2i »).
 
-Couleurs : bordeaux `#5E1A24`, vert bouteille `#1E3B2C`, émeraude `#0F5A43`, olive `#6B6A34`, terre `#A65A34`, pelouse `#4C7A35`, craie `#EEE6D3`, or `#C9A03A` (fil `#D8B04A`), encre `#16130F`.
+Couleurs (harmonisées le 02/11) : bordeaux `#5C1F2A`, vert bouteille `#1F3B2E`, émeraude `#1D5B47`, olive `#64633A`, terre `#9B5B3A`, pelouse `#4E7140` ; pastels, une touche à la fois : rose poudré `#EDCFD4`, sauge `#D2E4DB`, pêche `#F2D8C9`, craie `#EEE6D3`, or `#C9A03A` (fil `#D8B04A`), encre `#16130F`.
 Typos : Archivo (titres), Instrument Serif italique (accent), JetBrains Mono (faits). Chiffres et prénoms d'exemple.
 
 Régénérer : `python3 kit2.py && node render.cjs .`

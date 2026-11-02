@@ -1,7 +1,7 @@
 # Matières SFL dessinées en code (filtres SVG) : aucune image générée.
 import re
 D=re.search(r' d="([^"]+)"',open('/home/user/SFL/public/bola/sfl.svg').read()).group(1)
-PAL={'bordeaux':'#5E1A24','bouteille':'#1E3B2C','emeraude':'#0F5A43','olive':'#6B6A34','terre':'#A65A34','pelouse':'#4C7A35','sable':'#EEE6D3','or':'#C9A03A','encre':'#16130F','ciel':'#CFE0FF'}
+PAL={'bordeaux':'#5C1F2A','bouteille':'#1F3B2E','emeraude':'#1D5B47','olive':'#64633A','terre':'#9B5B3A','pelouse':'#4E7140','sable':'#EEE6D3','or':'#C9A03A','encre':'#16130F','ciel':'#CFE0FF'}
 n=[0]
 def uid(): n[0]+=1; return f'u{n[0]}'
 def cuir(col,w,h,seed=3):
