@@ -49,5 +49,5 @@ Ces trois-là sont gratuits et officiels. Pour aller plus loin depuis Claude, de
 ## Ce qu'il faut de Sabri
 1. ~~Le palier~~ : palier 1, validé le 02/11.
 2. ~~Le prix de la saison~~ : 70 €, confirmé le 02/11.
-3. Les places réelles par dimanche (D0).
+3. ~~Les places réelles~~ : 100 places par dimanche (02/11). Le test de décembre peut partir.
 4. La création des comptes pub au nom de l'association (Meta Business, TikTok Ads, Google Ads), puis, s'il le veut, les connecteurs pour que je pilote les campagnes en pause jusqu'à son oui.
