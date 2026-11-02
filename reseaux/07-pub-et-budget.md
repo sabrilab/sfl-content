@@ -1,5 +1,7 @@
 # 07. La pub et le budget
 
+**Décidé par Sabri le 02/11** : palier 1 (test de 400 € du 1er au 20 décembre : Meta 200 €, TikTok 100 €, Google 100 €) ; le prix de la saison reste 70 € par joueur.
+
 Préparé le 02/11/2026. Rien n'est lancé : aucun compte pub n'existe, et aucun euro ne part sans le oui de Sabri. Les chiffres sont des **estimations** à remplacer par ceux du premier test (simulateur : `SFL-budget-pub.xlsx`).
 
 ## Ce qu'on achète
@@ -45,7 +47,7 @@ Avant chaque campagne, on regarde ce que font les autres (five, ligues, créateu
 Ces trois-là sont gratuits et officiels. Pour aller plus loin depuis Claude, des connecteurs existent (AdWhispr, Adspirer : recherche des pubs concurrentes) ; ils s'ajoutent dans claude.ai, Réglages, Connecteurs. Si « spytool » désigne un outil précis, Sabri en donne le nom.
 
 ## Ce qu'il faut de Sabri
-1. Le palier (0, 1, 2 ou 3).
-2. Le prix de la saison pour un joueur (70 € ?).
+1. ~~Le palier~~ : palier 1, validé le 02/11.
+2. ~~Le prix de la saison~~ : 70 €, confirmé le 02/11.
 3. Les places réelles par dimanche (D0).
 4. La création des comptes pub au nom de l'association (Meta Business, TikTok Ads, Google Ads), puis, s'il le veut, les connecteurs pour que je pilote les campagnes en pause jusqu'à son oui.

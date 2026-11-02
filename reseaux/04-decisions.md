@@ -286,7 +286,10 @@ Non chiffrés : l'avocat, un monteur, un commentateur. La structure existe déj�
 
 ---
 
-## D12b. Le budget pub (reportée, pas avant décembre)
+## D12b. Le budget pub (validée le 02/11 : palier 1)
+
+**Ta décision (02/11)** : « palier 1, 70 € oui ». Test de 400 € du 1er au 20 décembre (Meta 200 €, TikTok 100 €, Google 100 €), détail dans `07-pub-et-budget.md`. Prix de la saison confirmé : 70 € par joueur.
+
 
 **Ta décision (01/11) : reportée**, « pas avant décembre ». Ma recommandation ne change pas.
 
