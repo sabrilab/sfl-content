@@ -80,8 +80,8 @@ job('reels/06-lifestyle',W,V,6,f'<div style="position:absolute;inset:0;backgroun
 <div style="position:absolute;left:12px;width:58%;top:calc(28px + 56% - 6px);height:12px;background:#F2D8C9"></div>
 <div style="position:absolute;left:12px;right:20px;top:68%;color:{NOIR}"><div class="S" style="font-size:20px">Dimanche matin,</div><div class="A" {A(90,24)}>on se prépare.</div><div style="margin-top:6px">{mono('Coulisses · J5',NOIR,5)}</div></div>''')
 # REELS 9:16
-job('reels/01-le-but',W,V,6,f'''<div class="ph" style="left:0;right:0;top:0;height:60%;background-image:url({PH['02-terrain']})"></div><div style="position:absolute;left:0;right:0;top:60%;bottom:0">{papier(W,128)}</div>{top(CR,'J4 · 14:23')}
-<div style="position:absolute;left:12px;right:30px;top:63%;color:{EN}"><div class="S" style="font-size:22px;color:{BX}">et soudain,</div><div class="A" {A(125,52)}>But.</div><div style="margin-top:5px">{mono('Jouneiid · Terrain 1',EN,6)}</div></div>''')
+job('reels/01-le-but',W,V,6,f'''<div class="ph" style="inset:0;background-image:url({PH['02-terrain']})"></div>{top(CR,'J4 · 14:23')}
+<div style="position:absolute;left:12px;right:30px;top:12%;color:{CR};text-shadow:0 2px 8px rgba(0,0,0,.45)"><div class="S" style="font-size:22px">et soudain,</div><div class="A" {A(125,52)}>But.</div><div style="margin-top:5px">{mono('Jouneiid · Terrain 1',CR,6)}</div></div>''')
 job('reels/02-il-te-manque',W,V,6,f'<div style="position:absolute;inset:0;background:{BLANC}"></div>'+top(NOIR,'Ta course',NOIR)+f'''<div style="position:absolute;left:12px;right:20px;top:24%;color:{NOIR}"><div class="S" style="font-size:20px">Il te manque</div><div class="A" {A(110,52)}>9 pts</div><div class="S" style="font-size:20px">pour passer Ilyes.</div>
 <div style="margin-top:14px;display:flex;gap:6px;align-items:center"><img src="{C['sebovic']}" style="width:34px"><div>{mono('Toi · 8e · 340 pts',NOIR,4.8)}<br>{mono('Prochain match : dim. 12 h 30','#0B0B0Bbb',4.4)}</div></div></div>''')
 job('reels/03-il-manque-1',W,V,6,terre(W,V)+top(CR,'Dimanche 12 h 30')+f'''<div style="position:absolute;left:12px;right:20px;top:24%;color:{CR}"><div class="A" {A(125,27)}>Il manque</div><div class="A" {A(125,150,"line-height:.8")}>1.</div><div style="margin-top:10px">{mono('Viens seul · getbola.app',CR,7)}</div></div>''')
@@ -91,6 +91,8 @@ job('reels/05-pepite-or',W,V,6,f'<div style="position:absolute;inset:0;backgroun
 <img src="{TR('coupe-pepite-or')}" style="position:absolute;left:50%;top:90px;height:150px;transform:translateX(-50%);filter:drop-shadow(0 6px 8px rgba(0,0,0,.6))">
 <img src="{TR('pepite-or')}" style="position:absolute;right:16px;top:200px;width:46px;transform:rotate(-12deg)">
 <div style="position:absolute;left:28px;top:250px">{plaque("Pépite d'Or",'or',124,30,13,'Saison 1',95)}</div>''')
+HLS=[('le-principe','<span class="A" style="font-stretch:110%;font-size:70px;color:#fff">?</span>'),('pepite-or',f'<img src="{TR("pepite-or")}" style="width:96px">'),('viens-seul','<span class="A" style="font-stretch:125%;font-size:72px;color:#fff">1.</span>'),('dimanche','<span class="S" style="font-size:64px;color:#fff">dim.</span>'),('partenaires','<span style="font:700 22px JetBrains Mono;letter-spacing:.14em;color:#D8B04A">SFL ×</span>')]
+for n,c in HLS: job(f'a-la-une/{n}',W,V,6,f'<div style="position:absolute;inset:0;background:{NOIR}"></div><div style="position:absolute;inset:0;display:grid;place-items:center">{c}</div>')
 # YOUTUBE miniature 1280x720
 job('youtube/miniature-resume',160,90,8,f'''<div class="ph" style="left:0;top:0;bottom:0;width:58%;background-image:url({PH['02-terrain']})"></div><div style="position:absolute;left:58%;top:0;right:0;bottom:0">{cuir(BX,68,90,4)}</div>
 <div style="position:absolute;left:5px;top:5px">{brode(CR,"4.5px",False)}</div>
