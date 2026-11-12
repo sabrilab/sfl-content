@@ -90,6 +90,8 @@ Quatorze décisions, triées par urgence. Pour chacune : la question, ma recomma
 
 ## D2. Quel nom pour les comptes ?
 
+**Créé (12/11)** : Instagram `@sundayfiveleague`. TikTok, YouTube et Twitch : à confirmer.
+
 **Ta décision (01/11) : en attente.** Tu crées toi-même les comptes et tu me donnes les noms retenus. Ma recommandation ne change pas.
 
 **Urgence : avant le 8/11**, avant que quelqu'un prenne le nom.
