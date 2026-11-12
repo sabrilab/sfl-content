@@ -7,7 +7,7 @@ Tout est prêt à coller dans les outils, dans `SFL-campagnes-decembre.xlsx` (on
 | Budget | 200 € (≈ 10 €/jour) | 100 € (20 €/jour) | 100 € (≈ 3,20 €/jour, CPC max 1 €) |
 | Dates | 1er → 20/12 | 1er → 5/12 | 1er → 31/12 |
 | Objectif | Trafic : vues de la page d'inscription | Trafic | Clics sur la recherche |
-| Cible | 18–35 ans, Marcq-en-Barœul + 20 km | 18–34 ans, Nord | Marcq-en-Barœul + 20 km |
+| Cible | 18–35 ans, métropole lilloise (ciblage, invisible du public) | 18–34 ans, Nord | métropole lilloise (ciblage, invisible du public) |
 | Annonces | M1 « Il manque 1. », M2 « Ton nom ici. », M3 « Le But du Dimanche » | Spark Ads de nos meilleurs TikTok de novembre | 15 titres, 4 descriptions, 11 mots-clés, 11 négatifs |
 
 Chaque lien mène à `getbola.app/inscription` avec un suivi (`utm_source`, `utm_campaign`, `utm_content`) : on sait quelle annonce a fait venir quel inscrit, sans traceur dans l'app. Pourquoi l'objectif Trafic plutôt que Conversions : l'app n'a pas de pixel publicitaire (choix de confidentialité), donc Meta ne peut pas voir les inscriptions ; on les compte nous-mêmes.

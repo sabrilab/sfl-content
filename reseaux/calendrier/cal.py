@@ -49,7 +49,7 @@ while d<=end:
 # Temps forts et lancement
 EXTRA=[
 (D(2026,11,2),'—','Tous','Création des comptes','Marque','—','profil/sfl-profil-plaque','@sundayfiveleague partout, photo plaque gravée, bios, bannières'),
-(D(2026,11,3),'18:30','Instagram','Lancement : la saison','Marque','Post 4:5','posts/12-annonce-saison','Saison 1, 13 dimanches, Hippodrome de Marcq'),
+(D(2026,11,3),'18:30','Instagram','Lancement : la saison','Marque','Post 4:5','posts/12-annonce-saison','Saison 1, 13 dimanches, métropole lilloise'),
 (D(2026,11,4),'12:00','Instagram','Lancement : le lieu','Terrain','Post 4:5','posts/09-le-lieu','« Ici, tout le monde commence inconnu. »'),
 (D(2026,11,5),'12:00','Instagram','Lancement : les trophées','Compétition','Post 4:5','posts/10-trophees-saison','Ce qui se gagne cette saison'),
 (D(2026,11,5),'19:30','TikTok','Lancement : il manque 1','Marque','Vidéo 9:16','reels/03-il-manque-1','Recrutement'),

@@ -1,5 +1,7 @@
 # 04. Les décisions qui te reviennent
 
+**Règle de communication (12/11)** : aucun nom de ville ni de lieu dans ce qui est publié ; on dit « la métropole lilloise », sans géolocalisation des posts.
+
 ## Décidé le 01/11
 
 - **D0** : objectif 150 joueurs, 300 au plus « quand on aura vraiment des terrains ». L'app règle 30 places par dimanche : réglage à revoir avec toi.

@@ -13,7 +13,7 @@ On ne paie jamais pour des vues seules. On n'achète pas de pub tant qu'il n'y a
 ## Les trois régies
 | Régie | Pour quoi | Visuels du kit | Minimum |
 |---|---|---|---|
-| **Meta (Instagram)** | Recruter à Lille : Reels et stories, 18–35 ans, 20 km autour de Marcq | « Il manque 1. », « Ton nom ici. », « Le But du Dimanche » | Quelques euros par jour [E] |
+| **Meta (Instagram)** | Recruter à Lille : Reels et stories, 18–35 ans, dans la métropole lilloise | « Il manque 1. », « Ton nom ici. », « Le But du Dimanche » | Quelques euros par jour [E] |
 | **TikTok** | Pousser le meilleur TikTok organique de la semaine (Spark Ads), 18–25 ans | « Le But du Dimanche », POV | 20 $ par jour et par groupe d'annonces [F, aide TikTok] |
 | **Google** | Être trouvé par ceux qui cherchent : « foot à 5 Lille », « five Lille », « foot dimanche Lille » | Annonce texte | Libre [E] |
 

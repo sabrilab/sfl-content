@@ -28,17 +28,17 @@ profil=f'''{SB}
 <div style="display:flex;align-items:center;gap:18px;padding:0 16px">
 <img src="{AV}" style="width:86px;height:86px;border-radius:50%;outline:1px solid #dbdbdb">
 <div style="flex:1;display:flex;justify-content:space-around;text-align:center">{''.join(f'<div><b style="font-size:16px">{a}</b><div style="font-size:13px">{b}</div></div>' for a,b in [('9','publications'),('1 248','followers'),('112','suivi(e)s')])}</div></div>
-<div style="padding:10px 16px 0;font-size:13.5px;line-height:1.35"><b>SFL · Foot à 5 Lille</b><div style="color:#737373">Ligue sportive</div>
-Ligue de foot à 5 du dimanche · Lille · Marcq<br>Pas d'équipe : viens seul. 13 dimanches, une Pépite d'Or.<br>Stats et cartes : BOLA ↓<div style="color:#00376B;font-weight:600">🔗 getbola.app/inscription</div></div>
+<div style="padding:10px 16px 0;font-size:13.5px;line-height:1.35"><b>SFL · Sunday Five League</b><div style="color:#737373">Ligue sportive</div>
+Ligue de foot à 5 du dimanche · métropole lilloise<br>Pas d'équipe : viens seul. 13 dimanches, une Pépite d'Or.<br>Stats et cartes : BOLA ↓<div style="color:#00376B;font-weight:600">🔗 getbola.app/inscription</div></div>
 <div style="display:flex;gap:6px;padding:12px 16px 4px"><span class="btn">Modifier</span><span class="btn">Partager le profil</span><span class="btn" style="flex:none;width:34px">+</span></div>
 <div style="display:flex;gap:14px;padding:10px 14px 8px;overflow:hidden">{hl}</div>
 <div style="display:flex;justify-content:space-around;border-top:1px solid #efefef;padding:9px 0 7px">{svgi('<rect x="4" y="4" width="16" height="16"/><path d="M4 10h16M4 15h16M10 4v16M15 4v16"/>')}{REEL}{svgi('<circle cx="12" cy="9" r="3"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/>',stroke='#8e8e8e')}</div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">{grid}</div>{TAB}'''
 post=f'''{SB}
-<div style="display:flex;align-items:center;gap:10px;padding:6px 12px"><img src="{AV}" style="width:32px;height:32px;border-radius:50%"><div style="flex:1;font-size:13px"><b>sundayfiveleague</b> et <b>souley</b><div style="font-size:11.5px;color:#262626">Hippodrome de Marcq</div></div><span style="font-weight:700">···</span></div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px"><img src="{AV}" style="width:32px;height:32px;border-radius:50%"><div style="flex:1;font-size:13px"><b>sundayfiveleague</b> et <b>souley</b></div><span style="font-weight:700">···</span></div>
 <div style="position:relative"><img src="{im('posts/06-mvp.png')}" style="width:390px;display:block"><span style="position:absolute;right:10px;top:10px;background:#000a;color:#fff;font-size:12px;padding:3px 8px;border-radius:12px">1/4</span></div>
 <div style="display:flex;justify-content:space-between;padding:10px 12px 4px"><span style="display:flex;gap:14px">{HEART}{COM}{SEND}</span><span style="display:flex;gap:4px;align-items:center">{''.join(f'<span style="width:6px;height:6px;border-radius:50%;background:{"#0095F6" if i==0 else "#c7c7c7"}"></span>' for i in range(4))}</span>{SAVE}</div>
-<div style="padding:2px 12px;font-size:13.5px;line-height:1.4"><b>412 J'aime</b><br><b>sundayfiveleague</b> Les cartes de la J4. Souley, carte MVP du terrain 1 : 7 buts, 3 passes. Glisse pour Impact et Défensive →<br><span style="color:#00376B">#foota5 #lille #sundayfiveleague</span>
+<div style="padding:2px 12px;font-size:13.5px;line-height:1.4"><b>412 J'aime</b><br><b>sundayfiveleague</b> Les cartes de la J4. Souley, carte MVP du terrain 1 : 7 buts, 3 passes. Glisse pour Impact et Défensive →<br><span style="color:#00376B">#foota5 #sundayfiveleague</span>
 <div style="color:#737373;margin-top:4px">Afficher les 38 commentaires</div><div style="color:#737373;font-size:11px;margin-top:4px">LUNDI</div></div>{TAB}'''
 # story La Feuille
 teams=[('Match 1 · Terrain 1','Blancs','Noirs'),('Match 2 · Terrain 1','Blancs','Noirs'),('Match 1 · Terrain 2','Blancs','Noirs'),('Match 2 · Terrain 2','Blancs','Noirs')]
