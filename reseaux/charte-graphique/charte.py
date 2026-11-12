@@ -19,17 +19,21 @@ FT='<div class="ft"><span>SFL · Sunday Five League · Charte graphique réseaux
 def plq(txt,kind,w,h,size,sub=None,stretch=110):
     sb=('<div style="margin-top:3px">'+grave(sub,kind,size*.38,100,400,'Instrument Serif',True)+'</div>') if sub else ''
     return f'<div style="position:relative;width:{w}px;height:{h}px;border-radius:4px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.55)">{metal(kind,w,h)}<div style="position:absolute;inset:0;display:grid;place-items:center;text-align:center"><div>{grave(txt,kind,size,stretch)}{sb}</div></div></div>'
+def plqs(kind,w,h,sh):
+    a,b,cc,d=METAUX[kind]
+    g=f'<svg viewBox="0 0 735 237" style="position:absolute;height:{sh}px;left:50%;top:50%;transform:translate(-50%,-50%);overflow:visible"><path d="{D}" fill="{a}" opacity=".9" transform="translate(0,7)"/><path d="{D}" fill="{d}"/></svg>'
+    return f'<div style="position:relative;width:{w}px;height:{h}px;border-radius:4px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.55)">{metal(kind,w,h)}{g}</div>'
 def rgb(h): h=h.lstrip('#'); return ', '.join(str(int(h[i:i+2],16)) for i in (0,2,4))
 P=[]
 # 1 COUVERTURE
 P.append(f'''<div class="pg" style="padding:0">{cuir('#151313',1123,794,3)}{couture('#C9A03A',22,6)}
-<div style="position:absolute;left:0;right:0;top:230px;display:flex;justify-content:center">{plq('SFL','or',420,170,104,None,125)}</div>
+<div style="position:absolute;left:0;right:0;top:230px;display:flex;justify-content:center">{plqs('or',420,170,104)}</div>
 <div style="position:absolute;left:0;right:0;top:450px;text-align:center;color:#fff"><div class="S" style="font-size:34px;color:#D8B04A">Charte graphique</div><div class="A" {A(125,40,"margin-top:6px")}>Réseaux sociaux</div>
 <div class="M" style="margin-top:18px;color:#EEE6D3">Sunday Five League · Saison 1 · v2 · novembre 2026</div></div></div>''')
 # 2 LOGO
 P.append(f'''<div class="pg">{hd('01','Le logo','gravé, brodé, ou simple')}
 <div style="display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:18px">
-<div><div class="box" style="height:300px;border-radius:4px">{cuir('#151313',420,300,3)}<div style="position:absolute;inset:0;display:grid;place-items:center">{plq('SFL','or',230,92,56,None,125)}</div></div>
+<div><div class="box" style="height:300px;border-radius:4px">{cuir('#151313',420,300,3)}<div style="position:absolute;inset:0;display:grid;place-items:center">{plqs('or',230,92,56)}</div></div>
 <div class="A" {A(62,18,"margin-top:10px")}>Principal : la plaque gravée</div><p class="p">Or gravé sur cuir noir. Photo de profil sur les quatre réseaux, couverture, grands moments.</p></div>
 <div><div class="box" style="height:140px;border-radius:4px">{cuir('#5C1F2A',300,140,3)}<div style="position:absolute;inset:0;display:grid;place-items:center">{brode('#D8B04A','46px')}</div></div><div class="M" style="margin:6px 0 12px">Brodé or · cuir bordeaux</div>
 <div class="box" style="height:140px;border-radius:4px">{tissu('#1F3B2E',300,140)}<div style="position:absolute;inset:0;display:grid;place-items:center">{brode('#EEE6D3','46px')}</div></div><div class="M" style="margin-top:6px">Brodé craie · maillot vert bouteille</div></div>

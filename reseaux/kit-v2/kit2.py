@@ -20,6 +20,11 @@ NOIR='#0B0B0B'; BLANC='#FFFFFF'
 def plaque(txt,kind,w,h,size,sub=None,stretch=110):
     sb=('<div style="margin-top:2px">'+grave(sub,kind,size*.38,100,400,'Instrument Serif',True)+'</div>') if sub else ''
     return f'<div style="position:relative;width:{w}px;height:{h}px;border-radius:3px;overflow:hidden;box-shadow:0 3px 6px rgba(0,0,0,.55)">{metal(kind,w,h)}<div style="position:absolute;inset:0;display:grid;place-items:center;text-align:center"><div>{grave(txt,kind,size,stretch)}{sb}</div></div></div>'
+def plaque_sigle(kind,w,h,sh):
+    a,b,c,d=METAUX[kind]
+    p=D
+    g=f'<svg viewBox="0 0 735 237" style="position:absolute;height:{sh}px;left:50%;top:50%;transform:translate(-50%,-50%);overflow:visible"><path d="{p}" fill="{a}" opacity=".9" transform="translate(0,7)"/><path d="{p}" fill="{d}"/><path d="{p}" fill="none" stroke="{d}" stroke-width="3" opacity=".6"/></svg>'
+    return f'<div style="position:relative;width:{w}px;height:{h}px;border-radius:3px;overflow:hidden;box-shadow:0 3px 8px rgba(0,0,0,.6)">{metal(kind,w,h)}{g}</div>'
 def medaille(r,kind,s=16): return f'<div style="position:relative;width:{s}px;height:{s}px;border-radius:50%;overflow:hidden">{metal(kind,s,s,s/2)}<div style="position:absolute;inset:0;display:grid;place-items:center">{grave(r,kind,s*.55,110)}</div></div>'
 
 def job(path,w,h,scale,inner):
@@ -29,7 +34,7 @@ def job(path,w,h,scale,inner):
 W,H=180,225; V=320
 # PROFIL
 job('profil/sfl-profil-cuir',180,180,6,cuir(BX,180,180,3)+f'<div style="position:absolute;inset:0;display:grid;place-items:center">{brode(OR,"40px")}</div>')
-job('profil/sfl-profil-plaque',180,180,6,cuir('#151313',180,180,3)+f'<div style="position:absolute;left:30px;top:66px">{plaque("SFL","or",120,48,30,None,125)}</div>')
+job('profil/sfl-profil-plaque',180,180,6,cuir('#151313',180,180,3)+f'<div style="position:absolute;left:20px;top:61px">{plaque_sigle("or",140,58,34)}</div>')
 job('profil/sfl-profil-maillot',180,180,6,tissu(VB,180,180)+f'<div style="position:absolute;inset:0;display:grid;place-items:center">{brode(CR,"40px")}</div>')
 # POSTS
 MK={1:'or',2:'argent',3:'bronze'}
