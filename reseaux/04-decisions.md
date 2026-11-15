@@ -92,7 +92,7 @@ Quatorze décisions, triées par urgence. Pour chacune : la question, ma recomma
 
 ## D2. Quel nom pour les comptes ?
 
-**Créé (12/11)** : Instagram `@sundayfiveleague`. TikTok, YouTube et Twitch : à confirmer.
+**Créés** : Instagram `@sundayfiveleague` (12/11), YouTube `@SFLfr` et Twitch `sflfrance` (15/11). TikTok : à confirmer.
 
 **Ta décision (01/11) : en attente.** Tu crées toi-même les comptes et tu me donnes les noms retenus. Ma recommandation ne change pas.
 
