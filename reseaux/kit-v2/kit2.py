@@ -101,6 +101,11 @@ for n,c in HLS: job(f'a-la-une/{n}',W,V,6,f'<div style="position:absolute;inset:
 steps=[('1','Tu t\'inscris seul','sur getbola.app'),('2','L\'app fait les équipes','révélées le vendredi à 19 h'),('3','Tu joues le dimanche','12 h 30, dans la métropole lilloise'),('4','Tes stats montent','ta carte, ton rang, la Pépite d\'Or')]
 job('stories/le-principe',W,V,6,f'<div style="position:absolute;inset:0;background:{NOIR}"></div>'+top(BLANC,'Le principe',BLANC)+f'''<div style="position:absolute;left:14px;right:14px;top:12%;color:{BLANC}"><div class="S" style="font-size:22px">Comment ça</div><div class="A" {A(110,30)}>marche</div>
 <div style="margin-top:18px">{''.join(f'<div style="display:grid;grid-template-columns:26px 1fr;gap:8px;border-top:1px solid #ffffff33;padding:7px 0"><span class="A" {A(110,16)}>{n}</span><div><div class="A" {A(62,13)}>{t}</div>{mono(d,'#ffffffaa',4.8)}</div></div>' for n,t,d in steps)}</div></div>''')
+# TWITCH : panneaux 320 x 100
+for n,t,sub in [('a-propos','À propos','la ligue'),('viens-jouer','Viens jouer','getbola.app'),('pepite-or',"Pépite d'Or",'le classement'),('partenaires','Partenaires','ils nous suivent'),('horaires','Le direct','dimanche 12 h 30')]:
+    job(f'twitch/panneau-{n}',160,50,2,cuir('#151313',160,50,3)+f'<div style="position:absolute;left:10px;top:50%;transform:translateY(-50%);display:flex;gap:9px;align-items:center"><div>{plaque_sigle("or",46,19,11)}</div><div><div class="A" {A(80,13,f"color:{BLANC};white-space:nowrap")}>{t}</div><div class="S" style="font-size:9px;color:#D8B04A">{sub}</div></div></div>')
+# YOUTUBE : filigrane 150 x 150 (coin des vidéos)
+job('youtube/filigrane',75,75,2,f'<div style="position:absolute;inset:0;background:#151313;border-radius:6px;overflow:hidden">{cuir("#151313",75,75,3)}</div><div style="position:absolute;inset:0;display:grid;place-items:center">{plaque_sigle("or",62,26,15)}</div>')
 # YOUTUBE miniature 1280x720
 job('youtube/miniature-resume',160,90,8,f'''<div class="ph" style="left:0;top:0;bottom:0;width:58%;background-image:url({PH['02-terrain']})"></div><div style="position:absolute;left:58%;top:0;right:0;bottom:0">{cuir(BX,68,90,4)}</div>
 <div style="position:absolute;left:5px;top:5px">{brode(CR,"4.5px",False)}</div>
