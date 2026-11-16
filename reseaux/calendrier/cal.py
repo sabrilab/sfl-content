@@ -2,7 +2,7 @@ import datetime as dt, json
 D=dt.date
 J={D(2026,11,1):4}
 d=D(2026,11,1); n=4
-while d<=D(2027,1,24): J[d]=n; d+=dt.timedelta(7); n+=1
+while d<=D(2027,2,7): J[d]=n; d+=dt.timedelta(7); n+=1
 VERDICT={D(2026,11,30):'J8',D(2026,12,28):'J12',D(2027,1,25):'J16'}
 # (jour, heure, plateforme, série, univers, format, gabarit, contenu)
 SEM=[
@@ -27,7 +27,7 @@ SEM=[
 (3,'12:00','Instagram','Marque et infos','Marque','Story ou post','posts/07-ton-nom · reels/03-il-manque-1','Recrutement (s\'il reste des places) ou annonce'),
 ]
 rows=[]
-start=D(2026,11,2); end=D(2027,1,25)
+start=D(2026,11,2); end=D(2027,2,8)
 d=start
 def dimanche_suivant(x): return x+dt.timedelta((6-x.weekday())%7)
 def dimanche_precedent(x): return x-dt.timedelta((x.weekday()+1)%7)
@@ -43,7 +43,7 @@ while d<=end:
         ss=s.replace('{j}',str(jn)).replace('{jp}',str(jp))
         if d in VERDICT and 'Les Cartes' in ss:
             rows.append((d,h,'Instagram',f'Jour de Verdict · {VERDICT[d]}','Compétition','Carrousel 4:5','posts/08-verdict','Les cartes avant / après, temps fort')); continue
-        if d==D(2027,1,24) and 'Live' in ss: c='La Nuit de la Pépite : finale et remise, live long'
+        if d==D(2027,2,7) and 'Live' in ss: c='J18, dernière journée (date à confirmer)'
         rows.append((d,h,p,ss,u,f,g,c))
     d+=dt.timedelta(1)
 # Temps forts et lancement
@@ -54,10 +54,11 @@ EXTRA=[
 (D(2026,11,5),'12:00','Instagram','Lancement : les trophées','Compétition','Post 4:5','posts/10-trophees-saison','Ce qui se gagne cette saison'),
 (D(2026,11,5),'19:30','TikTok','Lancement : il manque 1','Marque','Vidéo 9:16','reels/03-il-manque-1','Recrutement'),
 (D(2026,12,6),'—','Interne','Point Twitch / YouTube','—','—','—','Bilan du direct, réglages'),
-(D(2027,1,10),'18:30','Instagram','Pré-inscriptions saison 2','Marque','Post 4:5','posts/07-ton-nom','Ouverture de la liste d\'attente (jusqu\'au 24/01)'),
-(D(2027,1,17),'19:00','Instagram','J-7 : la Pépite d\'Or','Compétition','Reel','reels/05-pepite-or','« 13 dimanches. Une seule. »'),
-(D(2027,1,23),'18:30','Instagram','Veille de finale','Compétition','Post 4:5','posts/11-pepite-or','La nuit de la Pépite d\'Or, demain'),
-(D(2027,1,24),'21:00','Instagram','Le vainqueur','Compétition','Post 4:5','posts/11-pepite-or','La Pépite d\'Or de la saison 1, plaque gravée'),
+(D(2027,1,24),'18:30','Instagram','Pré-inscriptions saison 2','Marque','Post 4:5','posts/07-ton-nom','Ouverture de la liste d\'attente (jusqu\'à la cérémonie)'),
+(D(2027,1,31),'19:00','Instagram','J-7 : la Pépite d\'Or','Compétition','Reel','reels/05-pepite-or','« 4 mois. Une seule. »'),
+(D(2027,2,6),'18:30','Instagram','Veille de la dernière journée','Compétition','Post 4:5','posts/11-pepite-or','La course se termine demain'),
+(D(2027,2,7),'21:00','Instagram','Le vainqueur','Compétition','Post 4:5','posts/11-pepite-or','La Pépite d\'Or de la saison 1'),
+(D(2027,2,13),'—','Tous','Cérémonie de remise des trophées','Compétition','Live + photos','trophees/','Date et lieu à fixer : Pépite d\'Or, Buteur, Passeur, Défenseur, MVP'),
 ]
 rows=[r for r in rows if not (r[0]==D(2026,11,5) and r[3]=='Marque et infos')]
 rows+=EXTRA
@@ -85,7 +86,7 @@ for (j,h,p,s,u,f,g,c) in sorted(SEM,key=lambda x:((x[0]-4)%7,x[1])): w2.append([
 for c in w2[1]: c.font=Font(bold=True,color='FFFFFF'); c.fill=PatternFill('solid',fgColor='0B0B0B')
 for col,w in zip('ABCDEFG',[10,8,11,26,13,15,34]): w2.column_dimensions[col].width=w
 w3=wb.create_sheet('Temps forts'); w3.append(['Date','Quoi'])
-for a,b in [('02/11','Création des comptes, lancement'),('08/11','J5 · premier dimanche publié'),('30/11','Jour de Verdict (J8)'),('06/12','Point Twitch / YouTube'),('21/12 → 03/01','Fêtes : rythme allégé'),('28/12','Jour de Verdict (J12)'),('10/01 → 24/01','Pré-inscriptions saison 2'),('24/01','La Nuit de la Pépite d\'Or (J16)'),('25/01','Jour de Verdict (J16), bilan de saison')]: w3.append([a,b])
+for a,b in [('02/11','Création des comptes, lancement'),('08/11','J5 · premier dimanche publié'),('30/11','Jour de Verdict (J8)'),('06/12','Point Twitch / YouTube'),('21/12 → 03/01','Fêtes : rythme allégé'),('28/12','Jour de Verdict (J12)'),('24/01','Jour de Verdict (J16) le lendemain'),('24/01 → cérémonie','Pré-inscriptions saison 2'),('≈ 07/02','J18, dernière journée (à confirmer)'),('février','Cérémonie de remise des trophées (date et lieu à fixer)')]: w3.append([a,b])
 for c in w3[1]: c.font=Font(bold=True,color='FFFFFF'); c.fill=PatternFill('solid',fgColor='0B0B0B')
 w3.column_dimensions['A'].width=16; w3.column_dimensions['B'].width=50
 wb.save('/home/user/sfl-content/reseaux/SFL-calendrier-editorial.xlsx')

@@ -1,6 +1,6 @@
 # 04. Les décisions qui te reviennent
 
-**Durée de la saison (Sabri, 16/11)** : 4 mois, au moins 16 journées, sans doute 18. On n'écrit plus « 13 dimanches » (c'était le nombre de dimanches filmés promis aux sponsors, du 1/11 au 24/01). Dans les visuels : « 4 mois ». La date de la finale reste à fixer.
+**Durée de la saison (Sabri, 16/11)** : 4 mois, au moins 16 journées, sans doute 18. On n'écrit plus « 13 dimanches » (c'était le nombre de dimanches filmés promis aux sponsors, du 1/11 au 24/01). Dans les visuels : « 4 mois ». La dernière journée (J18) tombe vers le 7 février 2027 (à confirmer), suivie d'une **cérémonie de remise des trophées** (date et lieu à fixer).
 
 **Règle de communication (12/11)** : aucun nom de ville ni de lieu dans ce qui est publié ; on dit « la métropole lilloise », sans géolocalisation des posts.
 
