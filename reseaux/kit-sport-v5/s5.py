@@ -7,11 +7,21 @@ N='#0A0A0A'; B='#FFFFFF'; G='#2F7D4E'; GN='#0C1F16'
 FONTS='<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@600;800&display=block">'
 CSS='*{box-sizing:border-box;margin:0}.H{font-family:Anton,Impact,sans-serif;text-transform:uppercase;line-height:.84;letter-spacing:-.005em;white-space:nowrap}.s{font:800 4px Inter;letter-spacing:.18em;text-transform:uppercase}'
 def sig(col,h): return f'<svg viewBox="0 0 735 237" style="height:{h}px;width:auto;display:block"><path d="{D}" fill="{col}"/></svg>'
-def photo(src,pos='center',bw=True,dark=.35): return f'<div style="position:absolute;inset:0;background:url({src}) {pos}/cover;filter:{"grayscale(1) contrast(1.15)" if bw else "contrast(1.05)"}"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,{dark})"></div>'
+def photo(src,pos='center',bw=True,dark=.35): return f'<div style="position:absolute;inset:0;background:url({src}) {pos}/cover;filter:{"grayscale(1) contrast(1.15)" if bw else "contrast(1.05)"}"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,{dark})"></div>'+trame()
+TEX=True
+def grain(o=.16):
+    if not TEX: return ''
+    return f'<svg style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:overlay;pointer-events:none"><filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="3" seed="9"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 {o*2}"/></feComponentTransfer></filter><rect width="100%" height="100%" filter="url(#gr)"/></svg>'
+def trame(o=.14):  # trame d'impression (points) sur les photos, façon affiche
+    if not TEX: return ''
+    return f'<div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,{o}) .45px,transparent .6px);background-size:1.6px 1.6px;mix-blend-mode:multiply"></div>'
+def encre():  # léger voile sur les aplats noirs
+    if not TEX: return ''
+    return '<svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"><filter id="ek"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0"/></filter><rect width="100%" height="100%" filter="url(#ek)"/></svg>'
 JOBS=[]
 def job(path,w,h,sc,inner,bg=N):
     f=pathlib.Path('html')/(path.replace('/','__')+'.html'); f.parent.mkdir(exist_ok=True)
-    f.write_text(f'<!DOCTYPE html><html><head><meta charset="utf-8">{FONTS}<style>{CSS}body{{width:{w}px;height:{h}px}}</style></head><body><div style="position:relative;overflow:hidden;width:{w}px;height:{h}px;background:{bg}">{inner}</div></body></html>')
+    f.write_text(f'<!DOCTYPE html><html><head><meta charset="utf-8">{FONTS}<style>{CSS}body{{width:{w}px;height:{h}px}}</style></head><body><div style="position:relative;overflow:hidden;width:{w}px;height:{h}px;background:{bg}">{encre() if bg in (N,) else ''}{inner}{grain()}</div></body></html>')
     JOBS.append({'html':str(f.resolve()),'out':path,'w':w,'h':h,'scale':sc})
 # YouTube 2560x1440 : photo N&B plein cadre, titre énorme dans la zone sûre (154.6 x 42.3 au centre)
 job('youtube/banniere-2560x1440',256,144,10,photo(T,'center 60%',True,.45)+f'''
@@ -34,4 +44,6 @@ for n,t,bg,fg,img in [('a-propos','La ligue',N,B,None),('le-direct','Le direct',
     job(f'twitch/panneau-{n}',160,50,2,inner,bg or N)
 job('youtube/filigrane',75,75,2,f'<div style="position:absolute;inset:0;display:grid;place-items:center">{sig(B,16)}</div>')
 job('profil/sfl-profil-noir',180,180,6,f'<div style="position:absolute;inset:0;display:grid;place-items:center">{sig(B,38)}</div>')
+import sys
+if len(sys.argv)>1: TEX=False
 json.dump(JOBS,open('jobs.json','w')); print(len(JOBS))
