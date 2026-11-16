@@ -10,7 +10,7 @@ Chaque dimanche, tu viens seul et l'app fait les équipes : Noirs contre Blancs.
 Coéquipier ce dimanche, adversaire le suivant. Ici, on est tous des mercenaires.
 Tes buts, tes passes, ta note, ton rang : tout compte.
 
-13 dimanches. Une seule Pépite d'Or.
+4 mois. Une seule Pépite d'Or.
 Viens seul : lien en bio.
 
 #foota5 #sundayfiveleague #metropolelilloise #football

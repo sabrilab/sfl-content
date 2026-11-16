@@ -16,7 +16,7 @@ META=[
 TT=[('T1 · Spark Ad du meilleur « But du Dimanche » de novembre','Le TikTok organique qui a le mieux marché en novembre (code d\'autorisation Spark à générer depuis le compte SFL)','Foot à 5 le dimanche, métropole lilloise. Viens seul. #foota5 #sundayfiveleague','le-but-spark'),
 ('T2 · Spark Ad « Il manque 1. »','Le TikTok « Il manque 1. » publié début décembre','Il manque un joueur dimanche. Viens seul. #foota5','il-manque-1-spark')]
 H=['Foot à 5 le dimanche','Viens seul, on te place','La ligue du dimanche','Le five du dimanche','Pas besoin d\'équipe','100 places chaque dimanche','Métropole lilloise','Tes stats, ta carte','Vise la Pépite d\'Or','Inscription en 2 minutes','Sunday Five League','Joue chaque dimanche','Le dimanche, 12 h 30','Rejoins la SFL','70 € la saison']
-DSC=['Foot à 5 le dimanche, métropole lilloise. Tu viens seul, l\'app te place.','Tes buts, tes passes et ta carte de joueur, mis à jour après chaque dimanche.','13 dimanches, un classement, une Pépite d\'Or. Inscris-toi sur getbola.app.','Chaque dimanche à 12 h 30. 100 places. 70 € la saison.']
+DSC=['Foot à 5 le dimanche, métropole lilloise. Tu viens seul, l\'app te place.','Tes buts, tes passes et ta carte de joueur, mis à jour après chaque dimanche.','4 mois, un classement, une Pépite d\'Or. Inscris-toi sur getbola.app.','Chaque dimanche à 12 h 30. 100 places. 70 € la saison.']
 KW=['"foot à 5 lille"','"five lille"','"foot 5 lille"','"foot dimanche lille"','"ligue foot lille"','"match de foot lille"','"futsal lille"','"jouer au foot lille"','[foot a 5 lille]','[five lille]']
 NEG=['emploi','recrutement club','urban soccer tarif','location terrain','anniversaire','enfant','école de foot','stage','pro','billet','losc']
 for h in H: assert len(h)<=30,(h,len(h))

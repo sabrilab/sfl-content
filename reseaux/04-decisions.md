@@ -1,5 +1,7 @@
 # 04. Les décisions qui te reviennent
 
+**Durée de la saison (Sabri, 16/11)** : 4 mois, au moins 16 journées, sans doute 18. On n'écrit plus « 13 dimanches » (c'était le nombre de dimanches filmés promis aux sponsors, du 1/11 au 24/01). Dans les visuels : « 4 mois ». La date de la finale reste à fixer.
+
 **Règle de communication (12/11)** : aucun nom de ville ni de lieu dans ce qui est publié ; on dit « la métropole lilloise », sans géolocalisation des posts.
 
 ## Décidé le 01/11

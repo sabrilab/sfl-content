@@ -11,7 +11,7 @@
 
 ```
 Ligue de foot à 5 du dimanche · métropole lilloise
-Pas d'équipe : viens seul. 13 dimanches, une Pépite d'Or.
+Pas d'équipe : viens seul. 4 mois, une Pépite d'Or.
 Stats et cartes : BOLA ↓
 ```
 - **Lien** : `https://getbola.app/sfl?utm_source=instagram&utm_medium=bio`
@@ -34,7 +34,7 @@ La grille affiche le plus récent en haut à gauche : on publie donc du n° 9 au
 | 8 | Jour 1 | `posts/10-trophees-saison.png` | — | Ce qui se gagne cette saison. Pépite d'Or, Buteur, Passeur, Défenseur, MVP : l'or au 1er, l'argent au 2e, le bronze au 3e. Gardés à vie. #foota5 #metropolelilloise #pepitedor |
 | 7 | Jour 1 | `posts/05-dimanche.png` | — | Dimanche, 12 h 30. Les crampons sont prêts, et toi ? Inscription : lien en bio. #foota5 #metropolelilloise #sundayfiveleague |
 | 6 | Jour 2 | `posts/14-dans-le-sac.png` | — | Dans le sac du dimanche : les crampons, le maillot, la gourde, le téléphone pour ta story. Et rien d'autre : tu viens seul. #foota5 #metropolelilloise |
-| 5 | Jour 3 | `posts/12-annonce-saison.png` | — | Saison 1. 13 dimanches, du 1er novembre au 24 janvier, dans la métropole lilloise. Une seule Pépite d'Or. #sundayfiveleague #foota5 #metropolelilloise |
+| 5 | Jour 3 | `posts/12-annonce-saison.png` | — | Saison 1. 4 mois, de novembre à février, dans la métropole lilloise. Une seule Pépite d'Or. #sundayfiveleague #foota5 #metropolelilloise |
 | 4 | Jour 4 | `posts/02-classement.png` | — | La course à la Pépite d'Or, après la J[n]. Qui te devance, et de combien ? Ta place est dans l'app. #pepitedor #foota5 #metropolelilloise |
 | 3 | Jour 5 | `posts/04-le-but.png` | Le buteur (s'il a signé) | Et soudain, but. [Prénom], terrain [n], [minute]. Le But du Dimanche de la J[n]. #foota5 #metropolelilloise #sundayfiveleague |
 | 2 | Jour 6 | `posts/13-la-tenue.png` | — | La tenue du dimanche. Maillot SFL, saison 1. #foota5 #metropolelilloise #football |

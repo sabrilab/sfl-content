@@ -40,7 +40,7 @@ yt=card(1,2,'YouTube','YouTube','@SFLfr · la chaîne',[
 ('Bannière',['Branding','Image de bannière'],'youtube-banniere-2560x1440'),
 ('Filigrane',['Branding','Filigrane vidéo','Toute la vidéo'],'youtube-filigrane'),
 ('Nom',['Informations de base','Nom'],'SFL · Sunday Five League'),
-('Description',['Informations de base','Description'],"La Sunday Five League : la ligue de foot à 5 du dimanche de la métropole lilloise. Tu viens seul, l'app BOLA fait les équipes, compte tes stats et fait évoluer ta carte. 13 dimanches, une Pépite d'Or.\nLe direct chaque dimanche à 12 h 30, le résumé chaque lundi.\nViens jouer : getbola.app/sfl"),
+('Description',['Informations de base','Description'],"La Sunday Five League : la ligue de foot à 5 du dimanche de la métropole lilloise. Tu viens seul, l'app BOLA fait les équipes, compte tes stats et fait évoluer ta carte. 4 mois, une Pépite d'Or.\nLe direct chaque dimanche à 12 h 30, le résumé chaque lundi.\nViens jouer : getbola.app/sfl"),
 ('Liens',['Informations de base','Liens'],'Viens jouer · getbola.app/sfl\nInstagram · instagram.com/sundayfiveleague\nTwitch · twitch.tv/sflfrance'),
 ('4 playlists',['Contenu','Playlists','Nouvelle'],'SFL Live\nLe Résumé\nLe Top 5\nLe Défi Pépite'),
 ('Active le direct (24 h d’attente)',['Créer','Passer au direct','Vérifier le téléphone'],''),
