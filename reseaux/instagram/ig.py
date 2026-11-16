@@ -29,7 +29,7 @@ profil=f'''{SB}
 <img src="{AV}" style="width:86px;height:86px;border-radius:50%;outline:1px solid #dbdbdb">
 <div style="flex:1;display:flex;justify-content:space-around;text-align:center">{''.join(f'<div><b style="font-size:16px">{a}</b><div style="font-size:13px">{b}</div></div>' for a,b in [('9','publications'),('1 248','followers'),('112','suivi(e)s')])}</div></div>
 <div style="padding:10px 16px 0;font-size:13.5px;line-height:1.35"><b>SFL · Sunday Five League</b><div style="color:#737373">Ligue sportive</div>
-Ligue de foot à 5 du dimanche · métropole lilloise<br>Pas d'équipe : viens seul. 13 dimanches, une Pépite d'Or.<br>Stats et cartes : BOLA ↓<div style="color:#00376B;font-weight:600">🔗 getbola.app/inscription</div></div>
+Ligue de foot à 5 du dimanche · métropole lilloise<br>Pas d'équipe : viens seul. 13 dimanches, une Pépite d'Or.<br>Stats et cartes : BOLA ↓<div style="color:#00376B;font-weight:600">🔗 getbola.app/sfl</div></div>
 <div style="display:flex;gap:6px;padding:12px 16px 4px"><span class="btn">Modifier</span><span class="btn">Partager le profil</span><span class="btn" style="flex:none;width:34px">+</span></div>
 <div style="display:flex;gap:14px;padding:10px 14px 8px;overflow:hidden">{hl}</div>
 <div style="display:flex;justify-content:space-around;border-top:1px solid #efefef;padding:9px 0 7px">{svgi('<rect x="4" y="4" width="16" height="16"/><path d="M4 10h16M4 15h16M10 4v16M15 4v16"/>')}{REEL}{svgi('<circle cx="12" cy="9" r="3"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/>',stroke='#8e8e8e')}</div>

@@ -14,7 +14,7 @@ Ligue de foot à 5 du dimanche · métropole lilloise
 Pas d'équipe : viens seul. 13 dimanches, une Pépite d'Or.
 Stats et cartes : BOLA ↓
 ```
-- **Lien** : `https://getbola.app/inscription?utm_source=instagram&utm_medium=bio`
+- **Lien** : `https://getbola.app/sfl?utm_source=instagram&utm_medium=bio`
 
 ## Les stories à la une (couvertures dans `kit-v2/a-la-une/`)
 | À la une | Couverture | Ce qu'on y range |

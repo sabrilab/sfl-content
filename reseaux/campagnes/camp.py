@@ -1,6 +1,6 @@
 import openpyxl
 from openpyxl.styles import Font,PatternFill,Alignment
-L='https://getbola.app/inscription'
+L='https://getbola.app/sfl'
 def utm(src,camp,content): return f'{L}?utm_source={src}&utm_medium=paid&utm_campaign={camp}&utm_content={content}'
 META=[
 ('M1 · Il manque 1','reels/03-il-manque-1 (9:16) + posts/07-ton-nom (4:5)',

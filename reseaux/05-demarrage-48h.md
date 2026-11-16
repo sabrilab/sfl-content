@@ -64,7 +64,7 @@ Tout ce qui demande de créer un compte, c'est toi qui le fais.
 > Le direct de la SFL, la ligue de foot à 5 du dimanche dans la métropole lilloise. Les Noirs contre les Blancs, une Pépite d'Or au bout. Stats et cartes : BOLA.
 
 **Lien en bio, marqué par plateforme, vers l'inscription** :
-- `https://getbola.app/inscription?utm_source=instagram&utm_medium=bio&utm_campaign=s1`
+- `https://getbola.app/sfl?utm_source=instagram&utm_medium=bio&utm_campaign=s1`
 - même chose avec `tiktok`, `youtube`, `twitch`.
 
 Pourquoi `/inscription` et pas « / » : pour un visiteur sans compte, « / » ouvre le site BOLA dans un cadre (le film, puis une liste d'attente pour l'app native) et la marque du lien s'y perd. **Teste le parcours sur un téléphone** avant de publier le lien : clic, inscription avec 4 photos, compte « en attente » jusqu'à ce qu'un admin l'accepte.
